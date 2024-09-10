@@ -8,6 +8,7 @@ import PageTitle from "./components/PageTitle"
 import Calendar from "./pages/Calendar"
 import Analysis from "./pages/Analysis"
 import Notification from "./pages/Notification"
+import Settings from "./pages/Settings"
 
 function App() {
 	const [loading, setLoading] = useState<boolean>(true)
@@ -59,6 +60,15 @@ function App() {
 						<>
 							<PageTitle title="Notification" />
 							<Notification />
+						</>
+					}
+				/>
+				<Route
+					path="settings"
+					element={
+						<>
+							<PageTitle title="Settings" />
+							<Settings />
 						</>
 					}
 				/>

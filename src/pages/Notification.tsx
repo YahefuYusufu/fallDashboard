@@ -1,7 +1,13 @@
 import React from "react"
 
 const Notification = () => {
-	return <div>Notification</div>
+	return (
+		<div>
+			<div className="flex justify-center items-center h-full w-full bg-yellow-300">
+				<h1 className="text-center text-3xl font-bold">Notification</h1>
+			</div>
+		</div>
+	)
 }
 
 export default Notification

@@ -4,7 +4,7 @@
 
 @layer base {
 	body {
-		@apply font-normal text-base      relative;
+		@apply font-satoshi font-normal text-base text-body bg-whiten relative z-1;
 	}
 }
 
