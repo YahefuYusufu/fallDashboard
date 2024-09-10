@@ -17,9 +17,10 @@ import User from "../../images/user/user-01.png"
 interface SidebarProps {
 	sidebarOpen: boolean
 	setSidebarOpen: (arg: boolean) => void
+	theme: "light" | "dark" // Add theme prop or use context/hook for theme management
 }
 
-const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
+const Sidebar = ({ sidebarOpen, setSidebarOpen, theme }: SidebarProps) => {
 	const trigger = useRef<any>(null)
 	const sidebar = useRef<any>(null)
 	const [activeIndex, setActiveIndex] = useState<number | null>(null)
@@ -79,6 +80,8 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
 	const isActive = (index: number) =>
 		activeIndex === index || hoveredIndex === index
 
+	// Determine colors based on theme
+	const iconColor = theme === "dark" ? "text-bodydark" : "text-body"
 	return (
 		<aside
 			ref={sidebar}
