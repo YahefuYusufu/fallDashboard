@@ -27,6 +27,7 @@ function App() {
 		<DefaultLayout>
 			<Routes>
 				<Route
+					index
 					element={
 						<>
 							<PageTitle title="Dashboard" />
