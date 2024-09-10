@@ -77,7 +77,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
 				</ul>
 			</div>
 			<div>
-				<ul className="p-4">
+				<ul className="p-4 mb-12">
 					<li className="p-4 flex items-center">
 						<Home size={20} />
 						<a href="/home" />
