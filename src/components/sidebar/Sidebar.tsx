@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useRef, useState } from "react"
-
 import {
 	HomeIcon,
 	CalendarIcon,
@@ -11,7 +10,6 @@ import {
 	ArrowRightStartOnRectangleIcon,
 	Bars3CenterLeftIcon,
 } from "@heroicons/react/24/solid"
-
 import { Link } from "react-router-dom"
 import Logo from "../../assets/hestia_logo.png"
 import User from "../../images/user/user-01.png"
@@ -22,18 +20,16 @@ interface SidebarProps {
 }
 
 const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
-	// const location = useLocation()
-	// const { pathname } = location
-
 	const trigger = useRef<any>(null)
 	const sidebar = useRef<any>(null)
+	const [activeIndex, setActiveIndex] = useState<number | null>(null)
+	const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
 	const storedSideBarExpanded = localStorage.getItem("sidebar-expanded")
 	const [sidebarExpanded] = useState(
 		storedSideBarExpanded === null ? false : storedSideBarExpanded === "true"
 	)
 
-	// close on click outside
 	useEffect(() => {
 		const clickHandler = ({ target }: MouseEvent) => {
 			if (!sidebar.current || !trigger.current) return
@@ -49,7 +45,6 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
 		return () => document.removeEventListener("click", clickHandler)
 	}, [sidebarOpen])
 
-	// close if the esc key is pressed
 	useEffect(() => {
 		const keyHandler = ({ keyCode }: KeyboardEvent) => {
 			if (!sidebarOpen || keyCode !== 27) return
@@ -68,17 +63,31 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
 		}
 	}, [sidebarExpanded])
 
+	const handleMouseEnter = (index: number) => {
+		setHoveredIndex(index)
+	}
+
+	const handleMouseLeave = () => {
+		setHoveredIndex(null)
+	}
+
+	const isActive = (index: number) =>
+		activeIndex === index || hoveredIndex === index
+
 	return (
 		<aside
 			ref={sidebar}
 			className={`absolute left-0 top-0 z-9999 flex h-screen w-27.5 flex-col overflow-y-hidden bg-whiter duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0 ${
 				sidebarOpen ? "translate-x-0" : "-translate-x-full"
 			}`}>
-			{/* <!-- SIDEBAR   --> */}
-
+			{/* SIDEBAR HEADER */}
 			<div className="flex items-center justify-between gap-1 px-6 py-5.5 lg:py-2.5">
 				<Link to="/" className="hidden lg:block">
-					<img src={Logo} alt="Logo" />
+					<img
+						src={Logo}
+						alt="Logo"
+						className="transition-transform duration-300 ease-in-out transform hover:scale-125"
+					/>
 				</Link>
 				<button
 					ref={trigger}
@@ -101,60 +110,88 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
 				</button>
 			</div>
 
-			{/* <!-- SIDEBAR   --> */}
-			<div>
+			{/* SIDEBAR CONTENT */}
+			<Link to="/" className="ml-1">
 				<ul className="p-6">
-					<li className="p-4 top-0 flex item-center justify-between indigo-700">
-						<Bars3CenterLeftIcon className="w-7 h-7  text-blue-500" />
-						<a href="/hunburger" />
+					<li className="p-3 flex items-center justify-between hover:bg-blue-500 rounded-lg transition duration-300 ease-in-out">
+						<Bars3CenterLeftIcon className="w-7 h-7 text-slate-300 transition-transform duration-300 ease-in-out transform hover:scale-125" />
+						<a href="/hamburger" />
 					</li>
 				</ul>
-			</div>
-			<div>
-				<ul className="p-6 mb-12">
-					<li className="p-4 flex items-center">
-						<Link to="/">
-							<HomeIcon className="w-6 h-6" />
-						</Link>
-					</li>
-					<li className="p-4 flex items-center">
-						<Link to="/calendar">
-							<CalendarIcon className="w-6 h-6" />
-						</Link>
-					</li>
-					<li className="p-4 flex items-center">
-						<Link to="/analysis">
-							<ChartBarIcon className="w-6 h-6" />
-						</Link>
-					</li>
-					<li className="p-4 flex items-center">
-						<Link to="/notification">
-							<BellIcon className="w-6 h-6" />
-						</Link>
-					</li>
-					<li className="p-4 flex items-center">
-						<Link to="/settings">
-							<CogIcon className="w-6 h-6" />
-						</Link>
-					</li>
+			</Link>
+			<div className="mt-4">
+				<ul>
+					{[
+						{
+							to: "/",
+							icon: (
+								<HomeIcon className="w-5 h-5 text-slate-300 transition-transform duration-300 ease-in-out transform hover:scale-125" />
+							),
+						},
+						{
+							to: "/calendar",
+							icon: (
+								<CalendarIcon className="w-5 h-5 text-slate-300 transition-transform duration-300 ease-in-out transform hover:scale-125" />
+							),
+						},
+						{
+							to: "/analysis",
+							icon: (
+								<ChartBarIcon className="w-5 h-5 text-slate-300 transition-transform duration-300 ease-in-out transform hover:scale-125" />
+							),
+						},
+						{
+							to: "/notification",
+							icon: (
+								<BellIcon className="w-5 h-5 text-slate-300 transition-transform duration-300 ease-in-out transform hover:scale-125" />
+							),
+						},
+						{
+							to: "/settings",
+							icon: (
+								<CogIcon className="w-6 h-6 text-slate-300 transition-transform duration-300 ease-in-out transform hover:scale-110" />
+							),
+						},
+					].map(({ to, icon }, index) => (
+						<li
+							key={index}
+							className="relative flex items-center p-5 rounded-lg transition duration-300 ease-in-out"
+							onMouseEnter={() => handleMouseEnter(index)}
+							onMouseLeave={handleMouseLeave}
+							onClick={() => setActiveIndex(index)}>
+							<div className="relative flex items-center w-full  pl-5 hover:bg-blue-500 rounded-lg">
+								{/* Blue line */}
+								<div
+									className={`absolute -left-4 top-1/2 transform -translate-y-1/2 w-1 h-8 bg-blue-500 transition-all duration-300 ease-in-out ${
+										isActive(index) ? "opacity-100" : "opacity-0"
+									}`}
+								/>
+								<Link to={to} className="flex items-center w-full space-x-2">
+									<div className="p-1 rounded-full transition duration-300 ease-in-out">
+										{icon}
+									</div>
+								</Link>
+							</div>
+						</li>
+					))}
 				</ul>
 			</div>
 
-			{/* Profile Images and Logout */}
+			{/* PROFILE IMAGE AND LOGOUT */}
 			<div className="mt-auto flex flex-col items-center justify-center p-6 mb-1">
-				{/* Two profile images */}
-				<div className="flex enter space-x-4 mb-6">
+				{/* Profile Image */}
+				<div className="flex space-x-4 mb-6">
 					<img
 						src={User}
-						alt="User 1"
-						className="flex items-center w-8 h-8 rounded-full"
+						alt="User"
+						className="w-8 h-8 rounded-full border border-gray-300 transition-transform duration-300 ease-in-out transform hover:scale-125"
 					/>
 				</div>
 
-				{/* Logout icon */}
+				{/* Logout Button */}
 				<div className="flex justify-center">
-					<button>
-						<ArrowRightStartOnRectangleIcon className="w-7 h-7" />
+					<button className="p-3 bg-blue-500 hover:bg-blue-600 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
+						<ArrowRightStartOnRectangleIcon className="w-7 h-7 text-white" />
 					</button>
 				</div>
 			</div>
