@@ -8,3 +8,8 @@ declare module "@material-tailwind/react" {
 	export const Typography: ComponentType<DrawerProps>
 	export const IconButton: ComponentType<DrawerProps>
 }
+
+declare module "@heroicons/react/solid" {
+	const content: undefined
+	export = content
+}

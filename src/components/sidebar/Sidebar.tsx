@@ -1,15 +1,20 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useRef, useState } from "react"
+
 import {
-	Home,
-	Calendar,
-	BarChart,
-	Bell,
-	Settings,
-	AlignLeft,
-} from "react-feather"
-import { Link, useLocation } from "react-router-dom"
-import Logo from "../../assets/logo.svg"
+	HomeIcon,
+	CalendarIcon,
+	ChartBarIcon,
+	BellIcon,
+	CogIcon,
+	ArrowRightStartOnRectangleIcon,
+	Bars3CenterLeftIcon,
+} from "@heroicons/react/24/solid"
+
+import { Link } from "react-router-dom"
+import Logo from "../../assets/hestia_logo.png"
+import User from "../../images/user/user-01.png"
 
 interface SidebarProps {
 	sidebarOpen: boolean
@@ -17,14 +22,14 @@ interface SidebarProps {
 }
 
 const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
-	const location = useLocation()
-	const { pathname } = location
+	// const location = useLocation()
+	// const { pathname } = location
 
 	const trigger = useRef<any>(null)
 	const sidebar = useRef<any>(null)
 
 	const storedSideBarExpanded = localStorage.getItem("sidebar-expanded")
-	const [sidebarExpanded, setSidebarExpanded] = useState(
+	const [sidebarExpanded] = useState(
 		storedSideBarExpanded === null ? false : storedSideBarExpanded === "true"
 	)
 
@@ -66,13 +71,13 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
 	return (
 		<aside
 			ref={sidebar}
-			className={`absolute left-0 top-0 z-9999 flex h-screen w-27.5 flex-col overflow-y-hidden bg-white duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0 ${
+			className={`absolute left-0 top-0 z-9999 flex h-screen w-27.5 flex-col overflow-y-hidden bg-whiter duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0 ${
 				sidebarOpen ? "translate-x-0" : "-translate-x-full"
 			}`}>
 			{/* <!-- SIDEBAR   --> */}
 
-			<div className="flex items-center justify-between gap-2 px-6 py-5.5 lg:py-6.5">
-				<Link to="/">
+			<div className="flex items-center justify-between gap-1 px-6 py-5.5 lg:py-2.5">
+				<Link to="/" className="hidden lg:block">
 					<img src={Logo} alt="Logo" />
 				</Link>
 				<button
@@ -99,8 +104,8 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
 			{/* <!-- SIDEBAR   --> */}
 			<div>
 				<ul className="p-6">
-					<li className="p-4 flex item-center justify-between indigo-700">
-						<AlignLeft size={22} color="#51459E" />
+					<li className="p-4 top-0 flex item-center justify-between indigo-700">
+						<Bars3CenterLeftIcon className="w-7 h-7  text-blue-500" />
 						<a href="/hunburger" />
 					</li>
 				</ul>
@@ -109,30 +114,49 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
 				<ul className="p-6 mb-12">
 					<li className="p-4 flex items-center">
 						<Link to="/">
-							<Home size={20} />
+							<HomeIcon className="w-6 h-6" />
 						</Link>
 					</li>
 					<li className="p-4 flex items-center">
 						<Link to="/calendar">
-							<Calendar size={20} />
+							<CalendarIcon className="w-6 h-6" />
 						</Link>
 					</li>
 					<li className="p-4 flex items-center">
 						<Link to="/analysis">
-							<BarChart size={20} />
+							<ChartBarIcon className="w-6 h-6" />
 						</Link>
 					</li>
 					<li className="p-4 flex items-center">
 						<Link to="/notification">
-							<Bell size={20} />
+							<BellIcon className="w-6 h-6" />
 						</Link>
 					</li>
 					<li className="p-4 flex items-center">
 						<Link to="/settings">
-							<Settings size={20} />
+							<CogIcon className="w-6 h-6" />
 						</Link>
 					</li>
 				</ul>
+			</div>
+
+			{/* Profile Images and Logout */}
+			<div className="mt-auto flex flex-col items-center justify-center p-6 mb-1">
+				{/* Two profile images */}
+				<div className="flex enter space-x-4 mb-6">
+					<img
+						src={User}
+						alt="User 1"
+						className="flex items-center w-8 h-8 rounded-full"
+					/>
+				</div>
+
+				{/* Logout icon */}
+				<div className="flex justify-center">
+					<button>
+						<ArrowRightStartOnRectangleIcon className="w-7 h-7" />
+					</button>
+				</div>
 			</div>
 		</aside>
 	)

@@ -539,6 +539,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@heroicons/react@npm:^2.1.5":
+  version: 2.1.5
+  resolution: "@heroicons/react@npm:2.1.5"
+  peerDependencies:
+    react: ">= 16"
+  checksum: 1c793f96443580416eccdb60d72c19f640ce068a95f8568bfe8176c6e8ef1318f3d4d4caa8656b571002fe3a7f2d989d6812429fd6bca4bdff641e4b8998c0cd
+  languageName: node
+  linkType: hard
+
 "@humanwhocodes/module-importer@npm:^1.0.1":
   version: 1.0.1
   resolution: "@humanwhocodes/module-importer@npm:1.0.1"
@@ -933,7 +942,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:^18.3.3":
+"@types/react@npm:*, @types/react@npm:^18.3.5":
   version: 18.3.5
   resolution: "@types/react@npm:18.3.5"
   dependencies:
@@ -1803,8 +1812,9 @@ __metadata:
   resolution: "falldashboard@workspace:."
   dependencies:
     "@eslint/js": ^9.9.0
+    "@heroicons/react": ^2.1.5
     "@material-tailwind/react": ^2.1.10
-    "@types/react": ^18.3.3
+    "@types/react": ^18.3.5
     "@types/react-dom": ^18.3.0
     "@vitejs/plugin-react": ^4.3.1
     autoprefixer: ^10.4.20
