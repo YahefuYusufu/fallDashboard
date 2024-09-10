@@ -71,6 +71,11 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
 		setHoveredIndex(null)
 	}
 
+	const handleLinkClick = (index: number) => {
+		setActiveIndex(index)
+		setSidebarOpen(false)
+	}
+
 	const isActive = (index: number) =>
 		activeIndex === index || hoveredIndex === index
 
@@ -81,7 +86,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
 				sidebarOpen ? "translate-x-0" : "-translate-x-full"
 			}`}>
 			{/* SIDEBAR HEADER */}
-			<div className="flex items-center justify-between gap-1 px-6 py-5.5 lg:py-2.5">
+			<div className="flex items-center justify-between gap-1 px-8 py-5.5 lg:py-2.5">
 				<Link to="/" className="hidden lg:block">
 					<img
 						src={Logo}
@@ -113,13 +118,15 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
 			{/* SIDEBAR CONTENT */}
 			<Link to="/" className="ml-1">
 				<ul className="p-6">
-					<li className="p-3 flex items-center justify-between hover:bg-blue-500 rounded-lg transition duration-300 ease-in-out">
-						<Bars3CenterLeftIcon className="w-7 h-7 text-slate-300 transition-transform duration-300 ease-in-out transform hover:scale-125" />
+					<li
+						className="p-4 flex items-center justify-between hover:bg-blue-500 rounded-lg transition duration-300 ease-in-out"
+						onClick={() => handleLinkClick(0)}>
+						<Bars3CenterLeftIcon className="w-5 h-5 text-slate-300 transition-transform duration-300 ease-in-out transform hover:scale-125" />
 						<a href="/hamburger" />
 					</li>
 				</ul>
 			</Link>
-			<div className="mt-4">
+			<div className="mt-8">
 				<ul>
 					{[
 						{
@@ -191,7 +198,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
 				{/* Logout Button */}
 				<div className="flex justify-center">
 					<button className="p-3 bg-blue-500 hover:bg-blue-600 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
-						<ArrowRightStartOnRectangleIcon className="w-7 h-7 text-white" />
+						<ArrowRightStartOnRectangleIcon className="w-5 h-5 text-white" />
 					</button>
 				</div>
 			</div>
