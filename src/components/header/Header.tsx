@@ -1,10 +1,13 @@
+import { useState } from "react"
 import DarkModeSwitcher from "./DarkModeSwitcher"
-import TimePicker from "./TimePicker"
+import TimePicker from "./CustomDatePicker"
 
 const Header = (props: {
 	sidebarOpen: string | boolean | undefined
 	setSidebarOpen: (arg0: boolean) => void
 }) => {
+	const [startDate, setStartDate] = useState<Date | null>(null)
+	const [endDate, setEndDate] = useState<Date | null>(null)
 	return (
 		<header className="sticky top-0 z-999 flex w-full  drop-shadow-1 dark:bg-boxdark dark:drop-shadow-none">
 			<div className="flex flex-grow items-center justify-between px-4 py-4   md:px-6 2xl:px-11">
@@ -84,10 +87,32 @@ const Header = (props: {
 					</form>
 				</div>
 
+				<div className="hidden sm:block">
+					<form action="https://formbold.com/s/unique_form_id" method="POST">
+						<div className="relative flex items-center gap-4">
+							<button
+								type="submit"
+								className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-primary dark:text-bodydark dark:hover:text-primary z-10">
+								{/* Search icon code here */}
+							</button>
+							<div className="flex gap-4 w-full">
+								<TimePicker
+									selectedDate={startDate}
+									onChange={(date) => setStartDate(date)}
+									placeHolder="from"
+								/>
+								<TimePicker
+									selectedDate={endDate}
+									onChange={(date) => setEndDate(date)}
+									placeHolder="to"
+								/>
+							</div>
+						</div>
+					</form>
+				</div>
+
 				<div className="flex items-center gap-3 2xsm:gap-7">
 					<ul className="flex items-center gap-2 2xsm:gap-4">
-						<TimePicker />
-						<TimePicker />
 						<DarkModeSwitcher />
 					</ul>
 				</div>
