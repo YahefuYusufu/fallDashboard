@@ -88,12 +88,12 @@ const Sidebar: React.FC<SidebarProps> = ({
 				sidebarOpen ? "translate-x-0" : "-translate-x-full"
 			}`}>
 			{/* SIDEBAR HEADER */}
-			<div className="flex items-center justify-between gap-1 px-11 py-5.5 lg:py-2.5">
+			<div className="flex items-center justify-between gap-1 px-6 py-5.5 lg:py-2.5">
 				<Link to="/" className="hidden lg:block">
 					<img
 						src={Logo}
 						alt="Logo"
-						className="w-11 h-10 mt-2 transition-transform duration-300 ease-in-out transform hover:scale-125"
+						className="transform transition-all duration-300 ease-in-out group-hover:scale-125"
 					/>
 				</Link>
 				<button
