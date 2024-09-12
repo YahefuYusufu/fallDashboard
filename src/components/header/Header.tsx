@@ -78,7 +78,7 @@ const Header = (props: {
 							<input
 								type="text"
 								placeholder="Type to search..."
-								className="w-full bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-200 placeholder-gray-500 dark:placeholder-gray-400 pl-10 pr-4 py-2 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-primary focus:ring-opacity-50 transition-all duration-500 ease-in-out transform xl:w-125"
+								className="w-full bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-200 placeholder-gray-500 dark:placeholder-gray-400 pl-10 pr-4 py-2 rounded-lg shadow-sm focus:outline-none focus:me-4 focus:ring-primary dark:focus:ring-primary focus:ring-opacity-50 transition-all duration-500 ease-in-out transform xl:w-125"
 							/>
 						</div>
 					</form>
