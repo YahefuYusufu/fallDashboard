@@ -4,12 +4,17 @@ import Sidebar from "../components/sidebar/Sidebar"
 
 const DefaultLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
 	const [sidebarOpen, setSidebarOpen] = useState<boolean>(false)
+	const [currentTheme] = useState<"light" | "dark">("light")
 
 	return (
 		<div className="dark:bg-boxdark-2 dark:text-bodydark">
 			<div className="flex h-screen overflow-hidden">
 				{/* Sidebar with full screen height */}
-				<Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
+				<Sidebar
+					sidebarOpen={sidebarOpen}
+					setSidebarOpen={setSidebarOpen}
+					theme={currentTheme}
+				/>
 
 				{/* Main content container */}
 				<div className="relative flex flex-1 flex-col">
