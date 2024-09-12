@@ -103,7 +103,7 @@ const Sidebar: React.FC<SidebarProps> = ({
 					aria-expanded={sidebarOpen}
 					className="block lg:hidden">
 					<ArrowLeftIcon
-						className={`w-5 h-5 transform transition-all duration-300 ease-in-out hover:scale-125 
+						className={`w-6 h-6 transform transition-all duration-300 ease-in-out hover:scale-125 
       ${theme === "light" ? "text-gray-600  " : "text-gray-300 "}`}
 					/>
 				</button>
