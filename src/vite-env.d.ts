@@ -13,3 +13,10 @@ declare module "@heroicons/react/solid" {
 	const content: undefined
 	export = content
 }
+declare module "@heroicons/react/outline" {
+	// You can declare specific icons here or leave it generic if you use multiple icons
+	export const MagnifyingGlassIcon: React.ComponentType<
+		React.SVGProps<SVGSVGElement>
+	>
+	// Add other outline icons similarly if you need more
+}
