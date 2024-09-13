@@ -9,11 +9,7 @@ const Header = (props: {
 }) => {
 	const [startDate, setStartDate] = useState<Date | null>(null)
 	const [endDate, setEndDate] = useState<Date | null>(null)
-	const [theme, setTheme] = useState<"light" | "dark">("light")
 
-	const handleThemeToggle = () => {
-		setTheme(theme === "light" ? "dark" : "light")
-	}
 	return (
 		<header className="sticky top-0 z-999 flex w-full  drop-shadow-1 dark:bg-boxdark dark:drop-shadow-none">
 			<div className="flex flex-grow items-center justify-between px-4 py-4   md:px-6 2xl:px-11">
@@ -62,7 +58,7 @@ const Header = (props: {
 					</form>
 				</div>
 				{/*datePicker*/}
-				<div className="hidden lg:flex items-center gap-4">
+				<div className="lg:flex md:flex  items-center gap-4 hidden sm:hidden">
 					<TimePicker
 						selectedDate={startDate}
 						onChange={(date) => setStartDate(date)}
@@ -75,7 +71,7 @@ const Header = (props: {
 					/>
 				</div>
 
-				<div className="flex items-center gap-2 lg:hidden ">
+				<div className="flex items-center gap-2 lg:hidden">
 					<DarkModeSwitcher />
 				</div>
 			</div>

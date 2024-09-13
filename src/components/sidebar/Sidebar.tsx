@@ -112,14 +112,14 @@ const Sidebar: React.FC<SidebarProps> = ({
 			{/* SIDEBAR CONTENT */}
 			<ul className="p-6">
 				<li
-					className="p-4 flex items-center justify-between transition duration-300 ease-in-out group"
+					className="p-5 flex items-center justify-between transition duration-300 ease-in-out group"
 					onClick={() => handleLinkClick(-1)}>
 					<Bars3CenterLeftIcon className="w-5 h-5 transition-all duration-300 ease-in-out transform group-hover:scale-125" />
 					{/* Removed unnecessary <a> tag */}
 				</li>
 			</ul>
 
-			<div className="mt-8">
+			<div className="mt-6">
 				<ul>
 					{navItems.map(({ to, icon: Icon }, index) => (
 						<li
@@ -138,7 +138,7 @@ const Sidebar: React.FC<SidebarProps> = ({
 								{/* Icon with theme-based color and consistent transitions */}
 								<Link to={to} className="flex items-center w-full">
 									<div
-										className={`w-10 h-10 flex items-center justify-center rounded-xl transition-all duration-300 ease-in-out ${
+										className={`w-9 h-9 flex items-center justify-center rounded-xl transition-all duration-300 ease-in-out ${
 											isActive(index) ? "bg-customPurple" : "bg-transparent"
 										}`}>
 										<Icon
