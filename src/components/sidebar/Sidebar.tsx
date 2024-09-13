@@ -103,8 +103,8 @@ const Sidebar: React.FC<SidebarProps> = ({
 					aria-expanded={sidebarOpen}
 					className="block lg:hidden">
 					<ArrowLeftIcon
-						className={`w-6 h-6 transform transition-all duration-300 ease-in-out hover:scale-125 
-      ${theme === "light" ? "text-gray-600  " : "text-gray-300 "}`}
+						className={`w-6 h-6 ml-4 transform transition-all duration-300 ease-in-out hover:scale-125 
+      ${theme === "light" ? "text-bodydark2  " : "text-white"}`}
 					/>
 				</button>
 			</div>
@@ -137,7 +137,7 @@ const Sidebar: React.FC<SidebarProps> = ({
 									}`}
 								/>
 								{/* Icon with theme-based color and consistent transitions */}
-								<Link to={to} className="flex items-center w-full space-x-6">
+								<Link to={to} className="flex items-center w-full ">
 									<div
 										className={`w-10 h-10 flex items-center justify-center rounded-xl transition-all duration-300 ease-in-out ${
 											isActive(index) ? "bg-customPurple" : "bg-transparent"
