@@ -129,20 +129,23 @@ const Sidebar: React.FC<SidebarProps> = ({
 							onMouseEnter={() => handleMouseEnter(index)}
 							onMouseLeave={handleMouseLeave}
 							onClick={() => handleLinkClick(index)}>
-							<div className="relative flex items-center w-full pl-4 hover:bg-blue-500 rounded-lg">
+							<div className="relative flex items-center w-full pl-4  rounded-lg">
 								{/* Left blue line */}
 								<div
-									className={`absolute -left-5 top-1/2 transform -translate-y-1/2 w-1.5 h-8 bg-blue-500 rounded-lg transition-all duration-300 ease-in-out ${
+									className={`absolute -left-5 top-1/2 transform -translate-y-1/2 w-1.5 h-8 bg-customPurple rounded-lg transition-all duration-300 ease-in-out ${
 										isActive(index) ? "opacity-100" : "opacity-0"
 									}`}
 								/>
 								{/* Icon with theme-based color and consistent transitions */}
-								<Link to={to} className="flex items-center w-full space-x-2">
-									<div className="p-1 rounded-full transition duration-300 ease-in-out">
+								<Link to={to} className="flex items-center w-full space-x-6">
+									<div
+										className={`w-10 h-10 flex items-center justify-center rounded-xl transition-all duration-300 ease-in-out ${
+											isActive(index) ? "bg-customPurple" : "bg-transparent"
+										}`}>
 										<Icon
-											className={`w-5 h-5 transform transition-all duration-300 ease-in-out group-hover:scale-125 
-									${theme === "light" ? "text-gray-600" : "text-gray-300"} 
-									group-hover:text-white`}
+											className={`w-5 h-5 transform transition-all duration-300 ease-in-out group-hover:scale-125 ${
+												isActive(index) ? "text-white" : "text-gray-600"
+											}`}
 										/>
 									</div>
 								</Link>
