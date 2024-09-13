@@ -88,12 +88,12 @@ const Sidebar: React.FC<SidebarProps> = ({
 				sidebarOpen ? "translate-x-0" : "-translate-x-full"
 			}`}>
 			{/* SIDEBAR HEADER */}
-			<div className="flex items-center justify-between gap-1 px-6 py-5.5 lg:py-2.5">
+			<div className="flex items-center justify-between gap-1 px-6 py-5.5 lg:py-2.5 lg:px-8">
 				<Link to="/" className="hidden lg:block">
 					<img
 						src={Logo}
 						alt="Logo"
-						className="transform transition-all duration-300 ease-in-out group-hover:scale-125"
+						className="transform transition duration-300 ease-in-out hover:scale-125"
 					/>
 				</Link>
 				<button
@@ -103,24 +103,23 @@ const Sidebar: React.FC<SidebarProps> = ({
 					aria-expanded={sidebarOpen}
 					className="block lg:hidden">
 					<ArrowLeftIcon
-						className={`w-5 h-5 transform transition-all duration-300 ease-in-out hover:scale-125 
-      ${theme === "light" ? "text-gray-600  " : "text-gray-300 "}`}
+						className={`w-6 h-6 ml-4 transform transition-all duration-300 ease-in-out hover:scale-125 
+      ${theme === "light" ? "text-bodydark2  " : "text-blue-600"}`}
 					/>
 				</button>
 			</div>
 
 			{/* SIDEBAR CONTENT */}
-			<Link to="/" className="ml-1">
-				<ul className="p-6">
-					<li
-						className="p-4 flex items-center justify-between   transition duration-300 ease-in-out group"
-						onClick={() => handleLinkClick(-1)}>
-						<Bars3CenterLeftIcon className="w-5 h-5 transition-all duration-300 ease-in-out transform group-hover:scale-125" />
-						<a href="/hamburger" />
-					</li>
-				</ul>
-			</Link>
-			<div className="mt-8">
+			<ul className="p-6">
+				<li
+					className="p-5 flex items-center justify-between transition duration-300 ease-in-out group"
+					onClick={() => handleLinkClick(-1)}>
+					<Bars3CenterLeftIcon className="w-5 h-5 transition-all duration-300 ease-in-out transform group-hover:scale-125" />
+					{/* Removed unnecessary <a> tag */}
+				</li>
+			</ul>
+
+			<div className="mt-6">
 				<ul>
 					{navItems.map(({ to, icon: Icon }, index) => (
 						<li
@@ -129,20 +128,23 @@ const Sidebar: React.FC<SidebarProps> = ({
 							onMouseEnter={() => handleMouseEnter(index)}
 							onMouseLeave={handleMouseLeave}
 							onClick={() => handleLinkClick(index)}>
-							<div className="relative flex items-center w-full pl-4 hover:bg-blue-500 rounded-lg">
+							<div className="relative flex items-center w-full pl-4 rounded-lg">
 								{/* Left blue line */}
 								<div
-									className={`absolute -left-5 top-1/2 transform -translate-y-1/2 w-1.5 h-8 bg-blue-500 rounded-lg transition-all duration-300 ease-in-out ${
+									className={`absolute -left-5 top-1/2 transform -translate-y-1/2 w-1.5 h-8 bg-customPurple rounded-lg transition-all duration-300 ease-in-out ${
 										isActive(index) ? "opacity-100" : "opacity-0"
 									}`}
 								/>
 								{/* Icon with theme-based color and consistent transitions */}
-								<Link to={to} className="flex items-center w-full space-x-2">
-									<div className="p-1 rounded-full transition duration-300 ease-in-out">
+								<Link to={to} className="flex items-center w-full">
+									<div
+										className={`w-9 h-9 flex items-center justify-center rounded-xl transition-all duration-300 ease-in-out ${
+											isActive(index) ? "bg-customPurple" : "bg-transparent"
+										}`}>
 										<Icon
-											className={`w-5 h-5 transform transition-all duration-300 ease-in-out group-hover:scale-125 
-									${theme === "light" ? "text-gray-600" : "text-gray-300"} 
-									group-hover:text-white`}
+											className={`w-5 h-5 transform transition-all duration-300 ease-in-out group-hover:scale-125 ${
+												isActive(index) ? "text-white" : "text-gray-600"
+											}`}
 										/>
 									</div>
 								</Link>
@@ -162,7 +164,7 @@ const Sidebar: React.FC<SidebarProps> = ({
 					/>
 				</div>
 				<div className="flex justify-center">
-					<button className="p-3   hover:bg-blue-600 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 group">
+					<button className="p-3 hover:bg-blue-600 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 group">
 						<ArrowRightStartOnRectangleIcon className={iconClassName} />
 					</button>
 				</div>

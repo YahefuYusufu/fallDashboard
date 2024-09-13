@@ -4,7 +4,7 @@ const DarkModeSwitcher = () => {
 	const [colorMode, setColorMode] = useColorMode()
 
 	return (
-		<li>
+		<div>
 			<label
 				className={`relative m-0 block h-7.5 w-14 rounded-full ${
 					colorMode === "dark" ? "bg-red-400" : "bg-meta-3"
@@ -54,7 +54,7 @@ const DarkModeSwitcher = () => {
 					</span>
 				</span>
 			</label>
-		</li>
+		</div>
 	)
 }
 

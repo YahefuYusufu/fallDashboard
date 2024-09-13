@@ -16,6 +16,7 @@ module.exports = {
 		},
 		extend: {
 			colors: {
+				customPurple: "#563aff",
 				current: "currentColor",
 				transparent: "transparent",
 				white: "#FFFFFF",
