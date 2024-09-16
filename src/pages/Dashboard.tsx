@@ -25,8 +25,15 @@ const Dashboard: React.FC = () => {
 			<div className="grid grid-cols-1 md:grid-cols-8 gap-4 h-full">
 				{/* First Column */}
 				<div className="md:col-span-5 flex flex-col gap-y-4 h-full">
+					<div className="flex justify-between">
+						<h2 className="text-lg font-bold">Month Of Fall</h2>
+						<h4 className="font-semibold">Year</h4>
+					</div>
 					<div className="bg-bodydark1 dark:bg-bodydark2 p-4 rounded-lg shadow-md flex-1">
 						<MonthOfFallChart data={sampleMonthOfFallData} />
+					</div>
+					<div className="flex">
+						<h2 className="text-lg font-bold">Reason Of Fall</h2>
 					</div>
 					<div className="bg-bodydark1 dark:bg-bodydark2 p-4 rounded-lg shadow-md flex-1">
 						<h2 className="text-xl font-semibold">Chart 2</h2>

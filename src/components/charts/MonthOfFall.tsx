@@ -5,7 +5,6 @@ import {
 	XAxis,
 	Tooltip,
 	ResponsiveContainer,
-	CartesianGrid,
 	ReferenceDot,
 	Label,
 } from "recharts"
@@ -65,8 +64,9 @@ const MonthOfFallChart: React.FC<MonthOfFallChartProps> = ({
 
 	return (
 		<>
+			<style>{`.custom-li::marker { color: blue; }`}</style>
 			<div className="flex justify-between items-center mb-4">
-				<li className="text-xl font-semibold">Month of Fall</li>
+				<li className="text-xl font-bold ml-auto custom-li">Current Period</li>
 			</div>
 
 			<div className="w-full" style={{ height: 300 }}>
@@ -74,7 +74,7 @@ const MonthOfFallChart: React.FC<MonthOfFallChartProps> = ({
 					<LineChart
 						data={data}
 						margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-						<CartesianGrid strokeDasharray="3 3" />
+						{/* <CartesianGrid strokeDasharray="3 3" /> */}
 						<XAxis dataKey="name" tick={renderCustomAxisTick} />
 						<Tooltip />
 						<Line
@@ -87,26 +87,18 @@ const MonthOfFallChart: React.FC<MonthOfFallChartProps> = ({
 						{selectedDataPoint && (
 							<ReferenceDot
 								r={6}
-								fill="#563BFF"
-								stroke="#fff"
+								fill="#2D9CDB"
+								stroke="#1C1C1E"
 								strokeWidth={2}
-								x={
-									data.findIndex(
-										(point) => point.name === selectedDataPoint.name
-									) *
-									(100 / data.length)
-								}
-								y={
-									300 -
-									(selectedDataPoint.value /
-										Math.max(...data.map((d) => d.value))) *
-										300
-								}>
+								x={selectedDataPoint.name} // X-axis uses the month (name)
+								y={selectedDataPoint.value} // Y-axis uses the value
+								isFront={true} // Ensure the dot is rendered in front
+							>
 								<Label
 									value={`Value: ${selectedDataPoint.value}`}
 									position="top"
 									offset={10}
-									fill="#563BFF"
+									fill="#333333"
 									fontSize={12}
 								/>
 							</ReferenceDot>
