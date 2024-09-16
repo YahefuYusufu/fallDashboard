@@ -79,12 +79,12 @@ const Sidebar: React.FC<SidebarProps> = ({
 		activeIndex === index || hoveredIndex === index
 
 	const iconClassName =
-		"w-5 h-5 transition-all duration-300 ease-in-out transform group-hover:scale-125 group-hover:text-white"
+		"w-5 h-5 transition-all duration-300 ease-in-out transform  group-hover:text-white"
 
 	return (
 		<aside
 			ref={sidebar}
-			className={`absolute left-0 top-0 z-9999 flex h-screen w-27.5 flex-col overflow-y-hidden bg-whiter duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0 ${
+			className={`absolute left-0 top-0 z-9999 flex h-screen w-27.5 flex-col overflow-y-hidden bg-white duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0 ${
 				sidebarOpen ? "translate-x-0" : "-translate-x-full"
 			}`}>
 			{/* SIDEBAR HEADER */}

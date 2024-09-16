@@ -35,7 +35,7 @@ module.exports = {
 				"gray-3": "#FAFAFA",
 				whiten: "#F1F5F9",
 				whiter: "#F5F7FD",
-				boxdark: "#24303F",
+
 				"boxdark-2": "#1A222C",
 				strokedark: "#2E3A47",
 				"form-strokedark": "#3d4d60",
@@ -52,6 +52,8 @@ module.exports = {
 				success: "#219653",
 				danger: "#D34053",
 				warning: "#FFA70B",
+				boxWhite: "#DCE2EA",
+				boxdark: "#24303F",
 				chartHeader: "#4E4E4E",
 			},
 			fontSize: {
