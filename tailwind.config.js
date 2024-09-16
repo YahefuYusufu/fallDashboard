@@ -207,7 +207,7 @@ module.exports = {
 				65: ".65",
 			},
 			backgroundImage: {
-				video: "url('../images/video/video.png')",
+				video: "url('./src/images/cover/cover-01.png')",
 			},
 			content: {
 				"icon-copy": 'url("../images/icon/icon-copy-alt.svg")',
