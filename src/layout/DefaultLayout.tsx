@@ -7,7 +7,7 @@ const DefaultLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
 	const [currentTheme] = useState<"light" | "dark">("light")
 
 	return (
-		<div className="dark:bg-boxdark-2 dark:text-bodydark">
+		<div className=" bg-boxWhite dark:bg-boxdark-2 dark:text-bodydark">
 			<div className="flex h-screen overflow-hidden">
 				{/* Sidebar with full screen height */}
 				<Sidebar
