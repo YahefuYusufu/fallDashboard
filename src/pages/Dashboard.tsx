@@ -3,6 +3,9 @@ import MonthOfFallChart, {
 	MonthDataPoint,
 } from "../components/charts/MonthOfFall"
 import SectionHeader from "../components/charts/SectionHeader"
+import ReasonOfFall, {
+	ReasonOfFallData,
+} from "../components/charts/ReasonOfFall"
 
 // Sample data - replace with your actual data
 export const sampleMonthOfFallData: MonthDataPoint[] = [
@@ -20,6 +23,14 @@ export const sampleMonthOfFallData: MonthDataPoint[] = [
 	{ name: "Dec", value: 32 },
 ]
 
+export const sampleReasonOfFallData: ReasonOfFallData[] = [
+	{ reason: "Halkade", value: 23.4 },
+	{ reason: "Yrsel", value: 15.0 },
+	{ reason: "Mörker", value: 30.0 },
+	{ reason: "Olämpliga skor", value: 22.0 },
+	{ reason: "Icke fungerande hjälpmedel", value: 10.0 },
+]
+
 const Dashboard: React.FC = () => {
 	return (
 		<div className="h-screen w-full p-4 dark:bg-boxdark rounded-lg">
@@ -33,6 +44,7 @@ const Dashboard: React.FC = () => {
 
 					<div className="bg-white dark:bg-bodydark2 p-4 rounded-lg shadow-md flex-1">
 						<h2 className="text-xl font-semibold text-black">Reason Of Fall</h2>
+						<ReasonOfFall data={sampleReasonOfFallData} />
 						{/* Render your chart component here */}
 					</div>
 				</div>
