@@ -2,6 +2,7 @@ import React from "react"
 import MonthOfFallChart, {
 	MonthDataPoint,
 } from "../components/charts/MonthOfFall"
+import SectionHeader from "../components/charts/SectionHeader"
 
 // Sample data - replace with your actual data
 export const sampleMonthOfFallData: MonthDataPoint[] = [
@@ -22,37 +23,37 @@ export const sampleMonthOfFallData: MonthDataPoint[] = [
 const Dashboard: React.FC = () => {
 	return (
 		<div className="h-screen w-full p-4 dark:bg-boxdark rounded-lg">
-			<div className="grid grid-cols-1 md:grid-cols-8 gap-4 h-full">
+			<div className="grid grid-cols-1 md:grid-cols-8 gap-8 h-full">
 				{/* First Column */}
 				<div className="md:col-span-5 flex flex-col gap-y-4 h-full">
-					<div className="flex justify-between">
-						<h2 className="text-lg font-bold">Month Of Fall</h2>
-						<h4 className="font-semibold">Year</h4>
-					</div>
+					<SectionHeader title="Month Of Fall" year="Year" />
 					<div className="bg-bodydark1 dark:bg-bodydark2 p-4 rounded-lg shadow-md flex-1">
 						<MonthOfFallChart data={sampleMonthOfFallData} />
 					</div>
-					<div className="flex">
-						<h2 className="text-lg font-bold">Reason Of Fall</h2>
-					</div>
+
 					<div className="bg-bodydark1 dark:bg-bodydark2 p-4 rounded-lg shadow-md flex-1">
-						<h2 className="text-xl font-semibold">Chart 2</h2>
+						<h2 className="text-xl font-semibold text-black">Reason Of Fall</h2>
 						{/* Render your chart component here */}
 					</div>
 				</div>
 
 				{/* Second Column */}
-				<div className="md:col-span-3 grid grid-cols-1 gap-4">
-					<div className="bg-bodydark1 dark:bg-bodydark2 p-4 rounded-lg shadow-md">
-						<h2 className="text-xl font-semibold">Chart 3</h2>
+				<div className="md:col-span-3 flex flex-col gap-y-4 h-full">
+					<SectionHeader title="Place Of Fall" year="Year" />
+
+					{/* Chart 3 Section */}
+					<div className="bg-bodydark1 dark:bg-bodydark2 p-4 rounded-lg shadow-md flex-1">
+						<h2 className="text-xl font-semibold text-black">Chart 3</h2>
 						{/* Render your chart component here */}
 					</div>
-					<div className="bg-bodydark1 dark:bg-bodydark2 p-4 rounded-lg shadow-md">
-						<h2 className="text-xl font-semibold">Chart 4</h2>
+					{/* Gender Section */}
+					<div className="bg-bodydark1 dark:bg-bodydark2 p-4 rounded-lg shadow-md flex-1">
+						<h2 className="text-xl font-semibold text-black">Gender</h2>
 						{/* Render your chart component here */}
 					</div>
-					<div className="bg-bodydark1 dark:bg-bodydark2 p-4 rounded-lg shadow-md">
-						<h2 className="text-xl font-semibold">Chart 5</h2>
+					{/* Age Section */}
+					<div className="bg-bodydark1 dark:bg-bodydark2 p-4 rounded-lg shadow-md flex-1">
+						<h2 className="text-xl font-semibold text-black">Age</h2>
 						{/* Render your chart component here */}
 					</div>
 				</div>

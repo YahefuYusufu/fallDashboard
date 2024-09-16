@@ -52,6 +52,7 @@ module.exports = {
 				success: "#219653",
 				danger: "#D34053",
 				warning: "#FFA70B",
+				chartHeader: "#4E4E4E",
 			},
 			fontSize: {
 				"title-xxl": ["44px", "55px"],

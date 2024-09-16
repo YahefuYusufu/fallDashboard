@@ -48,7 +48,7 @@ const MonthOfFallChart: React.FC<MonthOfFallChartProps> = ({
 			<text
 				x={x}
 				y={y + 10} // Adjust vertical position
-				fill={isSelected ? "#4E4E4E" : "#A3ADDB"} // Highlight selected month
+				fill={isSelected ? "#4E4E4E" : "#A3ABBD"} // Highlight selected month
 				fontWeight={isSelected ? "bold" : "normal"} // Bold for the selected month
 				textAnchor="middle"
 				style={{ cursor: "pointer" }}
