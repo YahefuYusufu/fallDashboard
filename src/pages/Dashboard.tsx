@@ -43,7 +43,9 @@ const Dashboard: React.FC = () => {
 					</div>
 
 					<div className="bg-white dark:bg-bodydark2 p-4 rounded-lg shadow-md flex-1">
-						<h2 className="text-xl font-semibold text-black">Reason Of Fall</h2>
+						<h2 className="text-xl font-semibold text-black mb-4">
+							Reason Of Fall
+						</h2>
 						<ReasonOfFall data={sampleReasonOfFallData} />
 						{/* Render your chart component here */}
 					</div>
