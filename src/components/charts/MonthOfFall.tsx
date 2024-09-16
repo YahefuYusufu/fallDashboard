@@ -65,7 +65,7 @@ const MonthOfFallChart: React.FC<MonthOfFallChartProps> = ({
 	return (
 		<>
 			<style>{`.custom-li::marker { color: blue; }`}</style>
-			<div className="flex justify-between items-center mb-4">
+			<div className="flex justify-between items-center">
 				<li className="text-xl font-bold ml-auto custom-li">Current Period</li>
 			</div>
 
@@ -76,7 +76,7 @@ const MonthOfFallChart: React.FC<MonthOfFallChartProps> = ({
 						margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
 						{/* <CartesianGrid strokeDasharray="3 3" /> */}
 						<XAxis dataKey="name" tick={renderCustomAxisTick} />
-						<Tooltip />
+						<Tooltip animationEasing="ease-in-out" />
 						<Line
 							type="natural"
 							dataKey="value"
