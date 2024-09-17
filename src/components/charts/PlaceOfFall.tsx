@@ -42,22 +42,18 @@ const CustomTooltip: React.FC<CustomTooltipProps> = ({ active, payload }) => {
 const CustomDot = (props: DotProps) => {
 	const { cx, cy, stroke } = props
 
-	// Check if the dot is on the right side (usually the last point)
-	if (cx && cx > 50) {
-		return (
-			<rect
-				x={cx! - 6}
-				y={cy! - 6}
-				width={12}
-				height={12}
-				rx={6}
-				ry={6}
-				fill={stroke}
-				stroke="none"
-			/>
-		)
-	}
-	return null
+	return (
+		<rect
+			x={cx! - 6}
+			y={cy! - 6}
+			width={12}
+			height={12}
+			rx={6}
+			ry={6}
+			fill={stroke}
+			stroke="none"
+		/>
+	)
 }
 
 const PlaceOfFall: React.FC<PlaceOfFallProps> = ({ data = [] }) => {
@@ -131,9 +127,10 @@ const PlaceOfFall: React.FC<PlaceOfFallProps> = ({ data = [] }) => {
 										</ResponsiveContainer>
 									</div>
 								</div>
-								<div className="flex flex-row items-center space-x-1 text-xs sm:text-sm md:text-sm text-right w-1/4 overflow-hidden">
+								<div className="flex flex-row items-center justify-end text-xs sm:text-sm md:text-sm space-x-1 sm:space-x-2 w-1/4 overflow-hidden">
 									<span>{item.people.toLocaleString()}</span>
-									<span>people</span>
+									<span className="hidden sm:inline">people</span>
+									{/* Adjusted visibility for small screens */}
 								</div>
 							</div>
 						</div>
@@ -142,28 +139,28 @@ const PlaceOfFall: React.FC<PlaceOfFallProps> = ({ data = [] }) => {
 			})}
 
 			{/* Rectangles and percentage */}
-			<div
-				className="flex flex-row justify-center space-x-16  w-full"
-				style={{ marginTop: "3rem" }}>
-				<div className="relative flex flex-col items-center">
+			<div className="flex flex-row justify-center  sm:space-x-16 w-full mt-8 sm:mt-10">
+				{/* Adjusted space between rectangles and margin-top for small screens */}
+				{/* Adjusted space between rectangles and margin-top for small, medium, and large screens */}
+				<div className="relative flex flex-col items-center mt-10">
 					<span>Inside</span>
 					<div
-						className="w-7 h-7 rounded-lg mt-1"
+						className="w-7 h-7 rounded-lg  file:"
 						style={{
 							background: colors[0], // Using the first color for the "Inside" rectangle
 						}}
 					/>
-					<div className="text-center text-xs mt-2">{insidePercentage}%</div>
+					<div className="text-center text-xs  ">{insidePercentage}%</div>
 				</div>
-				<div className="relative flex flex-col items-center">
+				<div className="relative flex flex-col items-center mt-10">
 					<span>Outside</span>
 					<div
-						className="w-7 h-7 rounded-lg mt-1"
+						className="w-7 h-7 rounded-lg  "
 						style={{
 							background: colors[1], // Using the second color for the "Outside" rectangle
 						}}
 					/>
-					<div className="text-center text-xs mt-2">{outsidePercentage}%</div>
+					<div className="text-center text-xs  ">{outsidePercentage}%</div>
 				</div>
 			</div>
 		</div>
