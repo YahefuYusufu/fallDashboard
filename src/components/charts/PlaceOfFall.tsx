@@ -11,6 +11,8 @@ import {
 } from "recharts"
 import { useNumberAnimation } from "../../hooks/useNumberAnimation"
 
+// import { AnnotationIcon } from "@heroicons/react/outline"
+
 export interface PlaceOfFallData {
 	place: string
 	people: number
@@ -89,8 +91,8 @@ const PlaceOfFall: React.FC<PlaceOfFallProps> = ({ data = [] }) => {
 		<div className="flex flex-col space-y-4 w-full">
 			{data.map((item, index) => {
 				const lineWidth = Math.max(
-					40,
-					(item.people / Math.max(...data.map((d) => d.people))) * 120
+					30,
+					(item.people / Math.max(...data.map((d) => d.people))) * 90
 				)
 
 				return (
@@ -124,6 +126,8 @@ const PlaceOfFall: React.FC<PlaceOfFallProps> = ({ data = [] }) => {
 													stroke={colors[index % colors.length]}
 													strokeWidth={10}
 													dot={<CustomDot />}
+													animationDuration={2000}
+													animationEasing="ease-in-out"
 												/>
 												<YAxis
 													hide={true}
@@ -135,9 +139,12 @@ const PlaceOfFall: React.FC<PlaceOfFallProps> = ({ data = [] }) => {
 										</ResponsiveContainer>
 									</div>
 								</div>
-								<div className="flex flex-row items-center justify-end text-xs sm:text-sm md:text-sm space-x-1 sm:space-x-2 w-1/4 overflow-hidden">
+
+								<div className="flex flex-row items-center justify-end text-xs sm:text-sm md:text-sm space-x-1 sm:space-x-2 w-1/4">
 									<AnimatedValue value={item.people} />
 									<span className="hidden sm:inline">people</span>
+									{/* <AnnotationIcon className="h-4 w-4 text-gray-500" /> 
+									Adjust size and color as needed */}
 								</div>
 							</div>
 						</div>

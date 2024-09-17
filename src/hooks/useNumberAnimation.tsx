@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 
 export const useNumberAnimation = (
 	endValue: number,
-	duration: number = 1000
+	duration: number = 2000
 ) => {
 	const [displayValue, setDisplayValue] = useState(0)
 
