@@ -34,7 +34,7 @@ export const sampleReasonOfFallData: ReasonOfFallData[] = [
 
 export const placeOfFallData = [
 	{ place: "Inside", people: 240 },
-	{ place: "Outside", people: 87 },
+	{ place: "Outside", people: 187 },
 ]
 
 const Dashboard: React.FC = () => {
