@@ -79,9 +79,7 @@ const ReasonOfFall: React.FC<ReasonOfFallProps> = ({ data = [] }) => {
 				)
 
 				return (
-					<div
-						key={index}
-						className="flex items-center justify-between relative">
+					<div key={index} className="flex items-center justify-between ">
 						<span className="w-1/4 text-sm text-left">{item.reason}</span>
 						<div
 							className="flex-grow flex justify-start my-3"
