@@ -9,6 +9,7 @@ import {
 	TooltipProps,
 	DotProps,
 } from "recharts"
+import { useNumberAnimation } from "../../hooks/useNumberAnimation"
 
 export interface ReasonOfFallData {
 	reason: string
@@ -59,6 +60,11 @@ const CustomDot = (props: DotProps) => {
 	return null
 }
 
+const AnimatedValue = ({ value }: { value: number }) => {
+	const animatedValue = useNumberAnimation(value)
+	return <span>{animatedValue.toFixed(1)}</span>
+}
+
 const ReasonOfFall: React.FC<ReasonOfFallProps> = ({ data = [] }) => {
 	if (!Array.isArray(data) || data.length === 0) {
 		return <div>No data available</div>
@@ -106,7 +112,7 @@ const ReasonOfFall: React.FC<ReasonOfFallProps> = ({ data = [] }) => {
 							</div>
 						</div>
 						<span className="w-12 text-sm text-right">
-							{item.value.toFixed(1)}
+							<AnimatedValue value={item.value} />
 						</span>
 					</div>
 				)

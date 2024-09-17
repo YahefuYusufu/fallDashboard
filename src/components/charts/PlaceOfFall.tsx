@@ -9,6 +9,7 @@ import {
 	TooltipProps,
 	DotProps,
 } from "recharts"
+import { useNumberAnimation } from "../../hooks/useNumberAnimation"
 
 export interface PlaceOfFallData {
 	place: string
@@ -56,39 +57,46 @@ const CustomDot = (props: DotProps) => {
 	)
 }
 
+const AnimatedValue = ({ value }: { value: number }) => {
+	const animatedValue = useNumberAnimation(value)
+	return <span>{animatedValue}</span>
+}
+
+const AnimatedPercentage = ({ value }: { value: number }) => {
+	const animatedValue = useNumberAnimation(value)
+	return <span>{animatedValue.toFixed(1)}%</span>
+}
+
 const PlaceOfFall: React.FC<PlaceOfFallProps> = ({ data = [] }) => {
 	if (!Array.isArray(data) || data.length === 0) {
 		return <div>No data available</div>
 	}
 
-	const totalPeople = data.reduce((acc, curr) => acc + curr.people, 0) // Total people for percentage calculation
+	const totalPeople = data.reduce((acc, curr) => acc + curr.people, 0)
 	const colors = ["#FF8F6B", "#5B93FF"]
 
-	// Ensure we have data for "Inside" and "Outside"
 	const insideData = data.find((item) => item.place === "Inside")
 	const outsideData = data.find((item) => item.place === "Outside")
 
-	// Calculate percentages
 	const insidePercentage = insideData
-		? ((insideData.people / totalPeople) * 100).toFixed(1)
-		: "0.0"
+		? (insideData.people / totalPeople) * 100
+		: 0
 	const outsidePercentage = outsideData
-		? ((outsideData.people / totalPeople) * 100).toFixed(1)
-		: "0.0"
+		? (outsideData.people / totalPeople) * 100
+		: 0
 
 	return (
 		<div className="flex flex-col space-y-4 w-full">
 			{data.map((item, index) => {
 				const lineWidth = Math.max(
-					40, // Minimum width for responsiveness
-					(item.people / Math.max(...data.map((d) => d.people))) * 120 // Maximum width for responsiveness
+					40,
+					(item.people / Math.max(...data.map((d) => d.people))) * 120
 				)
 
 				return (
 					<div
 						key={index}
 						className="relative flex flex-col items-center w-full">
-						{/* Line and People Count */}
 						<div className="flex flex-col items-center space-y-2 w-full">
 							<div className="flex flex-row items-center justify-between w-full overflow-hidden">
 								<span className="w-1/4 text-xs sm:text-sm md:text-base text-left flex-shrink-0">
@@ -128,9 +136,8 @@ const PlaceOfFall: React.FC<PlaceOfFallProps> = ({ data = [] }) => {
 									</div>
 								</div>
 								<div className="flex flex-row items-center justify-end text-xs sm:text-sm md:text-sm space-x-1 sm:space-x-2 w-1/4 overflow-hidden">
-									<span>{item.people.toLocaleString()}</span>
+									<AnimatedValue value={item.people} />
 									<span className="hidden sm:inline">people</span>
-									{/* Adjusted visibility for small screens */}
 								</div>
 							</div>
 						</div>
@@ -138,29 +145,30 @@ const PlaceOfFall: React.FC<PlaceOfFallProps> = ({ data = [] }) => {
 				)
 			})}
 
-			{/* Rectangles and percentage */}
-			<div className="flex flex-row justify-center  sm:space-x-16 w-full mt-8 sm:mt-10">
-				{/* Adjusted space between rectangles and margin-top for small screens */}
-				{/* Adjusted space between rectangles and margin-top for small, medium, and large screens */}
-				<div className="relative flex flex-col items-center mt-10">
-					<span>Inside</span>
+			<div className="flex flex-row justify-center space-x-8 sm:space-x-16 w-full mt-8 sm:mt-10">
+				<div className="relative flex flex-col items-center">
+					<span className="mb-2">Inside</span>
 					<div
-						className="w-7 h-7 rounded-lg  file:"
+						className="w-7 h-7 rounded-lg mt-2"
 						style={{
-							background: colors[0], // Using the first color for the "Inside" rectangle
+							background: colors[0],
 						}}
 					/>
-					<div className="text-center text-xs  ">{insidePercentage}%</div>
+					<div className="text-center text-xs mt-3">
+						<AnimatedPercentage value={insidePercentage} />
+					</div>
 				</div>
-				<div className="relative flex flex-col items-center mt-10">
-					<span>Outside</span>
+				<div className="relative flex flex-col items-center">
+					<span className="mb-2">Outside</span>
 					<div
-						className="w-7 h-7 rounded-lg  "
+						className="w-7 h-7 rounded-lg mt-2"
 						style={{
-							background: colors[1], // Using the second color for the "Outside" rectangle
+							background: colors[1],
 						}}
 					/>
-					<div className="text-center text-xs  ">{outsidePercentage}%</div>
+					<div className="text-center text-xs mt-3">
+						<AnimatedPercentage value={outsidePercentage} />
+					</div>
 				</div>
 			</div>
 		</div>
