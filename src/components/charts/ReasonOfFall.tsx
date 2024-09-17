@@ -73,7 +73,7 @@ const ReasonOfFall: React.FC<ReasonOfFallProps> = ({ data = [] }) => {
 	const maxValue = Math.max(...data.map((d) => d.value))
 	const colors = ["#FF8F6B", "#5B93FF"]
 	const minLineWidth = 50 // Minimum width for very small values
-	const maxLineWidth = 280 // Maximum width for the largest value
+	const maxLineWidth = 250 // Maximum width for the largest value
 
 	return (
 		<div className="flex flex-col space-y-4">
@@ -92,7 +92,11 @@ const ReasonOfFall: React.FC<ReasonOfFallProps> = ({ data = [] }) => {
 						<div
 							className="flex-grow flex justify-start my-3"
 							style={{ maxWidth: `${maxLineWidth}px` }}>
-							<div style={{ width: `${lineWidth}px` }}>
+							<div
+								style={{
+									width: `${lineWidth}px`,
+									maxWidth: `${maxLineWidth}`,
+								}}>
 								<ResponsiveContainer width="100%" height={12}>
 									<LineChart
 										data={[
@@ -105,6 +109,8 @@ const ReasonOfFall: React.FC<ReasonOfFallProps> = ({ data = [] }) => {
 											stroke={colors[index % colors.length]}
 											strokeWidth={12}
 											dot={<CustomDot />}
+											animationDuration={2000}
+											animationEasing="ease-in-out"
 										/>
 										<YAxis hide={true} domain={[0, maxValue]} />
 										<XAxis hide={true} dataKey="x" />
