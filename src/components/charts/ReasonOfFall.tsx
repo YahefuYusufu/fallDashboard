@@ -38,43 +38,45 @@ const CustomTooltip: React.FC<CustomTooltipProps> = ({ active, payload }) => {
 	}
 	return null
 }
-
-// Custom dot to add a circular effect to the end of the line
 const CustomDot = (props: DotProps) => {
-	const { cx, cy } = props
-	return (
-		<circle
-			cx={cx}
-			cy={cy}
-			r={6} // Adjust size of the circle here
-			stroke="none"
-			fill={props.stroke}
-			style={{
-				borderTopRightRadius: "10px", // Simulate the rounded corner
-			}}
-		/>
-	)
+	const { cx, cy, stroke } = props
+
+	// Check if the dot is on the right side (usually the last point)
+	if (cx && cx > 50) {
+		return (
+			<rect
+				x={cx! - 6}
+				y={cy! - 6}
+				width={12}
+				height={12}
+				rx={6}
+				ry={6}
+				fill={stroke}
+				stroke="none"
+			/>
+		)
+	}
+	return null
 }
 
 const ReasonOfFall: React.FC<ReasonOfFallProps> = ({ data = [] }) => {
 	if (!Array.isArray(data) || data.length === 0) {
-		// Handle the case when data is not an array or is empty
 		return <div>No data available</div>
 	}
 
 	const maxValue = Math.max(...data.map((d) => d.value))
 	const colors = ["#FF8F6B", "#5B93FF"]
-	const minLineWidth = 100 // Minimum fixed width for the lines
-	const containerWidth = 400 // Width of the container for responsive design
+	const minLineWidth = 50 // Minimum width for very small values
+	const maxLineWidth = 280 // Maximum width for the largest value
 
 	return (
 		<div className="flex flex-col space-y-4">
 			{data.map((item, index) => {
 				// Calculate the dynamic width as a percentage of the max value
-				const dynamicWidth =
-					(item.value / maxValue) * (containerWidth - minLineWidth) +
-					minLineWidth // Adjusting width proportionally
-				const lineWidth = Math.max(minLineWidth, dynamicWidth) // Ensure width doesn't go below minimum
+				const lineWidth = Math.max(
+					minLineWidth,
+					(item.value / maxValue) * maxLineWidth
+				)
 
 				return (
 					<div
@@ -82,27 +84,28 @@ const ReasonOfFall: React.FC<ReasonOfFallProps> = ({ data = [] }) => {
 						className="flex items-center justify-between relative">
 						<span className="w-1/4 text-sm text-left">{item.reason}</span>
 						<div
-							className="flex-grow flex justify-center"
-							style={{ width: `${lineWidth}px` }}>
-							<ResponsiveContainer width="100%" height={6}>
-								<LineChart
-									data={[
-										{ x: 0, value: 0 }, // Starting point
-										{ x: 1, value: item.value }, // End point with item value
-									]}>
-									<Line
-										type="linear" // Make lines straight
-										dataKey="value"
-										stroke={colors[Math.floor(Math.random() * colors.length)]} // Random color
-										strokeWidth={12}
-										dot={<CustomDot />} // Custom dot on the right top
-									/>
-									<XAxis hide={true} dataKey="x" />{" "}
-									{/* X-axis to fix the line */}
-									<YAxis hide={true} domain={[0, maxValue]} />
-									<Tooltip content={<CustomTooltip />} />
-								</LineChart>
-							</ResponsiveContainer>
+							className="flex-grow flex justify-start my-3"
+							style={{ maxWidth: `${maxLineWidth}px` }}>
+							<div style={{ width: `${lineWidth}px` }}>
+								<ResponsiveContainer width="100%" height={12}>
+									<LineChart
+										data={[
+											{ x: 0, value: 0 },
+											{ x: 1, value: item.value },
+										]}>
+										<Line
+											type="linear"
+											dataKey="value"
+											stroke={colors[index % colors.length]}
+											strokeWidth={12}
+											dot={<CustomDot />}
+										/>
+										<YAxis hide={true} domain={[0, maxValue]} />
+										<XAxis hide={true} dataKey="x" />
+										<Tooltip content={<CustomTooltip />} />
+									</LineChart>
+								</ResponsiveContainer>
+							</div>
 						</div>
 						<span className="w-12 text-sm text-right">
 							{item.value.toFixed(1)}
