@@ -9,6 +9,7 @@ import {
 	TooltipProps,
 	DotProps,
 } from "recharts"
+import { useNumberAnimation } from "../../hooks/useNumberAnimation"
 
 export interface ReasonOfFallData {
 	reason: string
@@ -59,6 +60,11 @@ const CustomDot = (props: DotProps) => {
 	return null
 }
 
+const AnimatedValue = ({ value }: { value: number }) => {
+	const animatedValue = useNumberAnimation(value)
+	return <span>{animatedValue.toFixed(1)}</span>
+}
+
 const ReasonOfFall: React.FC<ReasonOfFallProps> = ({ data = [] }) => {
 	if (!Array.isArray(data) || data.length === 0) {
 		return <div>No data available</div>
@@ -67,7 +73,7 @@ const ReasonOfFall: React.FC<ReasonOfFallProps> = ({ data = [] }) => {
 	const maxValue = Math.max(...data.map((d) => d.value))
 	const colors = ["#FF8F6B", "#5B93FF"]
 	const minLineWidth = 50 // Minimum width for very small values
-	const maxLineWidth = 280 // Maximum width for the largest value
+	const maxLineWidth = 250 // Maximum width for the largest value
 
 	return (
 		<div className="flex flex-col space-y-4">
@@ -81,12 +87,16 @@ const ReasonOfFall: React.FC<ReasonOfFallProps> = ({ data = [] }) => {
 				return (
 					<div
 						key={index}
-						className="flex items-center justify-between relative">
+						className="flex items-center justify-between sm:space-x-6">
 						<span className="w-1/4 text-sm text-left">{item.reason}</span>
 						<div
 							className="flex-grow flex justify-start my-3"
 							style={{ maxWidth: `${maxLineWidth}px` }}>
-							<div style={{ width: `${lineWidth}px` }}>
+							<div
+								style={{
+									width: `${lineWidth}px`,
+									maxWidth: `${maxLineWidth}`,
+								}}>
 								<ResponsiveContainer width="100%" height={12}>
 									<LineChart
 										data={[
@@ -99,6 +109,8 @@ const ReasonOfFall: React.FC<ReasonOfFallProps> = ({ data = [] }) => {
 											stroke={colors[index % colors.length]}
 											strokeWidth={12}
 											dot={<CustomDot />}
+											animationDuration={2000}
+											animationEasing="ease-in-out"
 										/>
 										<YAxis hide={true} domain={[0, maxValue]} />
 										<XAxis hide={true} dataKey="x" />
@@ -108,7 +120,7 @@ const ReasonOfFall: React.FC<ReasonOfFallProps> = ({ data = [] }) => {
 							</div>
 						</div>
 						<span className="w-12 text-sm text-right">
-							{item.value.toFixed(1)}
+							<AnimatedValue value={item.value} />
 						</span>
 					</div>
 				)
