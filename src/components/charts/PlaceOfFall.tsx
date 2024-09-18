@@ -121,7 +121,7 @@ const PlaceOfFall: React.FC<PlaceOfFallProps> = ({ data = [] }) => {
 													{ x: 1, people: item.people },
 												]}>
 												<Line
-													type="linear"
+													type="monotone"
 													dataKey="people"
 													stroke={colors[index % colors.length]}
 													strokeWidth={10}

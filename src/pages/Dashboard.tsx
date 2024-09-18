@@ -7,6 +7,7 @@ import ReasonOfFall, {
 	ReasonOfFallData,
 } from "../components/charts/ReasonOfFall"
 import PlaceOfFall from "../components/charts/PlaceOfFall"
+import Gender, { GenderData } from "../components/charts/Gender"
 
 // Sample data - replace with your actual data
 export const sampleMonthOfFallData: MonthDataPoint[] = [
@@ -37,6 +38,11 @@ export const placeOfFallData = [
 	{ place: "Outside", people: 87 },
 ]
 
+const mockData: GenderData[] = [
+	{ gender: "Male", value: 51.3 },
+	{ gender: "Female", value: 23.1 },
+	{ gender: "Other", value: 0.6 },
+]
 const Dashboard: React.FC = () => {
 	return (
 		<div className="h-screen w-full p-4 dark:bg-boxdark rounded-lg">
@@ -64,6 +70,7 @@ const Dashboard: React.FC = () => {
 					</div>
 					<div className="bg-white dark:bg-bodydark2 p-4 rounded-lg shadow-md flex-1">
 						<h2 className="text-xl font-semibold text-black">Gender</h2>
+						<Gender data={mockData} />
 					</div>
 					<div className="bg-white dark:bg-bodydark2 p-4 rounded-lg shadow-md flex-1">
 						<h2 className="text-xl font-semibold text-black">Age</h2>
