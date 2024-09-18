@@ -6,8 +6,9 @@ import SectionHeader from "../components/charts/SectionHeader"
 import ReasonOfFall, {
 	ReasonOfFallData,
 } from "../components/charts/ReasonOfFall"
-import PlaceOfFall from "../components/charts/PlaceOfFall"
+import PlaceOfFall, { PlaceOfFallData } from "../components/charts/PlaceOfFall"
 import Gender, { GenderData } from "../components/charts/Gender"
+import Age, { AgeData } from "../components/charts/Age"
 
 // Sample data - replace with your actual data
 export const sampleMonthOfFallData: MonthDataPoint[] = [
@@ -33,16 +34,28 @@ export const sampleReasonOfFallData: ReasonOfFallData[] = [
 	{ reason: "Icke fungerande hjälpmedel", value: 10.0 },
 ]
 
-export const placeOfFallData = [
+export const placeOfFallData: PlaceOfFallData[] = [
 	{ place: "Inside", people: 240 },
 	{ place: "Outside", people: 87 },
 ]
 
-const mockData: GenderData[] = [
+const genderData: GenderData[] = [
 	{ gender: "Male", value: 51.3 },
 	{ gender: "Female", value: 23.1 },
 	{ gender: "Other", value: 0.6 },
 ]
+
+const ageData: AgeData[] = [
+	{ ageGroup: "65-69", falls: 233 },
+	{ ageGroup: "70-74", falls: 189 },
+	{ ageGroup: "75-79", falls: 302 },
+	{ ageGroup: "80-84", falls: 274 },
+	{ ageGroup: "85-89", falls: 211 },
+	{ ageGroup: "90-94", falls: 153 },
+	{ ageGroup: "95-99", falls: 82 },
+	{ ageGroup: "99+", falls: 40 },
+]
+
 const Dashboard: React.FC = () => {
 	return (
 		<div className="h-screen w-full p-4 dark:bg-boxdark rounded-lg">
@@ -55,7 +68,7 @@ const Dashboard: React.FC = () => {
 					</div>
 
 					<div className="bg-white dark:bg-bodydark2 p-4 rounded-lg shadow-md flex-1">
-						<h2 className="text-xl font-semibold text-black mb-4">
+						<h2 className="text-xl font-semibold text-black dark:text-bodydark mb-4">
 							Reason Of Fall
 						</h2>
 						<ReasonOfFall data={sampleReasonOfFallData} />
@@ -68,12 +81,19 @@ const Dashboard: React.FC = () => {
 					<div className="bg-white dark:bg-bodydark2 p-4 rounded-lg shadow-md flex-1">
 						<PlaceOfFall data={placeOfFallData} />
 					</div>
+
 					<div className="bg-white dark:bg-bodydark2 p-4 rounded-lg shadow-md flex-1">
-						<h2 className="text-xl font-semibold text-black">Gender</h2>
-						<Gender data={mockData} />
+						<h2 className="text-xl font-semibold text-black dark:text-bodydark">
+							Gender
+						</h2>
+						<Gender data={genderData} />
 					</div>
+
 					<div className="bg-white dark:bg-bodydark2 p-4 rounded-lg shadow-md flex-1">
-						<h2 className="text-xl font-semibold text-black">Age</h2>
+						<h2 className="text-xl font-semibold text-black dark:text-bodydark mb-2">
+							Age
+						</h2>
+						<Age data={ageData} />
 					</div>
 				</div>
 			</div>

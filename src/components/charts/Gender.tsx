@@ -128,7 +128,7 @@ const Gender: React.FC<GenderChartProps> = ({ data = [] }) => {
 											type="monotone"
 											dataKey="value"
 											stroke={colors[index % colors.length]}
-											strokeWidth={12}
+											strokeWidth={11}
 											dot={<CustomDot />}
 											animationDuration={2000}
 											animationEasing="ease-in-out"
