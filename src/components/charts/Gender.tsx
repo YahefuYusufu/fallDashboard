@@ -46,12 +46,12 @@ const CustomDot = (props: DotProps) => {
 	if (cx && cx > 50) {
 		return (
 			<rect
-				x={cx - 6}
+				x={cx! - 6}
 				y={cy! - 6}
-				width={1}
-				height={1}
-				rx={12}
-				ry={12}
+				width={12}
+				height={12}
+				rx={6}
+				ry={6}
 				fill={stroke}
 				stroke="none"
 			/>
@@ -128,7 +128,7 @@ const Gender: React.FC<GenderChartProps> = ({ data = [] }) => {
 											type="monotone"
 											dataKey="value"
 											stroke={colors[index % colors.length]}
-											strokeWidth={8}
+											strokeWidth={12}
 											dot={<CustomDot />}
 											animationDuration={2000}
 											animationEasing="ease-in-out"
