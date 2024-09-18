@@ -1,5 +1,3 @@
-import React from "react"
-
 const Notification = () => {
 	return (
 		<div className="h-screen w-full bg-blue-500">
