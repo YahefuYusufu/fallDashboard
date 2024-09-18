@@ -75,7 +75,12 @@ const MonthOfFallChart: React.FC<MonthOfFallChartProps> = ({
 						data={data}
 						margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
 						{/* <CartesianGrid strokeDasharray="3 3" /> */}
-						<XAxis dataKey="name" tick={renderCustomAxisTick} />
+						<XAxis
+							dataKey="name"
+							tick={renderCustomAxisTick}
+							axisLine={false}
+							tickLine={false}
+						/>
 						<Tooltip animationEasing="ease-in-out" />
 						<Line
 							type="natural"
