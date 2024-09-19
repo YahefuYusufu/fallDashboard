@@ -75,15 +75,15 @@ const PlaceOfFall: React.FC<PlaceOfFallProps> = ({ data = [] }) => {
 	const totalPeople = data.reduce((acc, curr) => acc + curr.people, 0)
 	const colors = ["#FF8F6B", "#5B93FF"]
 
-	const insideData = data.find((item) => item.place === "Inside")
-	const outsideData = data.find((item) => item.place === "Outside")
+	const insideData = data.find((item) => item.place === "Inomhus")
+	const outsideData = data.find((item) => item.place === "Utomhus")
 
-	const insidePercentage = insideData
-		? (insideData.people / totalPeople) * 100
-		: 0
-	const outsidePercentage = outsideData
-		? (outsideData.people / totalPeople) * 100
-		: 0
+	const insidePercentage =
+		totalPeople > 0 && insideData ? (insideData.people / totalPeople) * 100 : 0
+	const outsidePercentage =
+		totalPeople > 0 && outsideData
+			? (outsideData.people / totalPeople) * 100
+			: 0
 
 	return (
 		<div className="flex flex-col space-y-4 w-full">
@@ -141,8 +141,6 @@ const PlaceOfFall: React.FC<PlaceOfFallProps> = ({ data = [] }) => {
 								<div className="flex flex-row items-center justify-end text-xs sm:text-sm md:text-sm space-x-1 sm:space-x-2 w-1/4">
 									<AnimatedValue value={item.people} />
 									<span className="hidden sm:inline">people</span>
-									{/* <AnnotationIcon className="h-4 w-4 text-gray-500" /> 
-									Adjust size and color as needed */}
 								</div>
 							</div>
 						</div>
@@ -152,7 +150,7 @@ const PlaceOfFall: React.FC<PlaceOfFallProps> = ({ data = [] }) => {
 
 			<div className="flex flex-row justify-center space-x-8 sm:space-x-16 w-full mt-8 sm:mt-10">
 				<div className="relative flex flex-col items-center">
-					<span className="mt-7">Inside</span>
+					<span className="mt-7">Inomhus</span>
 					<div
 						className="w-7 h-7 rounded-lg mt-2"
 						style={{
@@ -164,7 +162,7 @@ const PlaceOfFall: React.FC<PlaceOfFallProps> = ({ data = [] }) => {
 					</div>
 				</div>
 				<div className="relative flex flex-col items-center">
-					<span className="mt-7">Outside</span>
+					<span className="mt-7">Utomhus</span>
 					<div
 						className="w-7 h-7 rounded-lg mt-2"
 						style={{

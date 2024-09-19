@@ -11,6 +11,7 @@ import Gender, { GenderData } from "../components/charts/Gender"
 import Age, { AgeData } from "../components/charts/Age"
 import { fetchReports } from "../data/fetchReports"
 import { Report } from "../types"
+import { getPlaceOfFallData } from "../utils/fallAlgorithms"
 
 // Sample data - replace with your actual data
 // export const sampleMonthOfFallData: MonthDataPoint[] = [
@@ -76,6 +77,7 @@ const Dashboard: React.FC = () => {
 	const [reasonOfFallData, setReasonOfFallData] = useState<ReasonOfFallData[]>(
 		[]
 	)
+	const [placeOfFallsData, setPlaceOfFallData] = useState<PlaceOfFallData[]>([])
 
 	useEffect(() => {
 		const loadReports = async () => {
@@ -115,6 +117,10 @@ const Dashboard: React.FC = () => {
 				value: (value / reports.length) * 100, // Convert to percentage
 			}))
 			setReasonOfFallData(reasonData)
+
+			// Process place of fall data
+			const placeData = getPlaceOfFallData(reports)
+			setPlaceOfFallData(placeData)
 		}
 
 		loadReports()
@@ -142,7 +148,7 @@ const Dashboard: React.FC = () => {
 				<div className="md:col-span-3 flex flex-col gap-y-4 h-full">
 					<SectionHeader title="Place Of Fall" year="Year" />
 					<div className="bg-white dark:bg-bodydark2 p-4 rounded-lg shadow-md flex-1">
-						<PlaceOfFall data={placeOfFallData} />
+						<PlaceOfFall data={placeOfFallsData} />
 					</div>
 
 					<div className="bg-white dark:bg-bodydark2 p-4 rounded-lg shadow-md flex-1">
