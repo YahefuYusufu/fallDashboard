@@ -8,7 +8,6 @@ import {
 	ReferenceDot,
 	Label,
 } from "recharts"
-import { sampleMonthOfFallData } from "../../pages/Dashboard"
 
 // Define the type for our data points
 export interface MonthDataPoint {
@@ -18,12 +17,10 @@ export interface MonthDataPoint {
 
 // Define the props for our component
 export interface MonthOfFallChartProps {
-	data?: MonthDataPoint[]
+	data: MonthDataPoint[]
 }
 
-const MonthOfFallChart: React.FC<MonthOfFallChartProps> = ({
-	data = sampleMonthOfFallData, // Default parameter value
-}) => {
+const MonthOfFallChart: React.FC<MonthOfFallChartProps> = ({ data }) => {
 	const [selectedMonth, setSelectedMonth] = useState<string | null>(null)
 
 	// Function to handle month click
@@ -47,7 +44,7 @@ const MonthOfFallChart: React.FC<MonthOfFallChartProps> = ({
 		return (
 			<text
 				x={x}
-				y={y + 10} // Adjust vertical position
+				y={y + 19} // Adjust vertical position
 				fill={isSelected ? "#4E4E4E" : "#A3ABBD"} // Highlight selected month
 				fontWeight={isSelected ? "bold" : "normal"} // Bold for the selected month
 				textAnchor="middle"
@@ -73,8 +70,7 @@ const MonthOfFallChart: React.FC<MonthOfFallChartProps> = ({
 				<ResponsiveContainer width="100%" height="100%">
 					<LineChart
 						data={data}
-						margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-						{/* <CartesianGrid strokeDasharray="3 3" /> */}
+						margin={{ top: 25, right: 20, left: 20, bottom: 1 }}>
 						<XAxis
 							dataKey="name"
 							tick={renderCustomAxisTick}

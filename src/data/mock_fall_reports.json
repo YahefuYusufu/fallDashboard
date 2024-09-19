@@ -1,3425 +1,529 @@
 [
-    {
-        "id": 1,
-        "elderly_name": "Liam Johnson",
-        "was_fall_last_3_months": "no",
-        "accident_date": "2024-11-04",
-        "accident_time": "00:30",
-        "accident_place": "Utomhus: Tr\u00e4dg\u00e5rd",
-        "witness": "John Doe",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Felbed\u00f6mning"
-        ],
-        "userActivity": [
-            "Reste/satte sig"
-        ],
-        "precedingSymptoms": [
-            "Oro"
-        ],
-        "fallConsequence": [
-            "Medvetsl\u00f6shet"
-        ],
-        "injuryType": [
-            "Fraktur"
-        ],
-        "takenMeasures": [
-            "Milj\u00f6f\u00f6r\u00e4ndringar"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 2,
-        "elderly_name": "Aiden Cooper",
-        "was_fall_last_3_months": "yes",
-        "accident_date": "2024-07-27",
-        "accident_time": "22:13",
-        "accident_place": "Utomhus: Tr\u00e4dg\u00e5rd",
-        "witness": "No Witness",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Att hantera object",
-            "Oj\u00e4mn mark"
-        ],
-        "userActivity": [
-            "P\u00e5/avkl\u00e4nning, hygien"
-        ],
-        "precedingSymptoms": [
-            "Oro",
-            "Yrsel"
-        ],
-        "fallConsequence": [
-            "Ingen skada",
-            "Medvetsl\u00f6shet"
-        ],
-        "injuryType": [
-            "Fraktur",
-            "Bl\u00e5m\u00e4rke/sm\u00e5 s\u00e5r"
-        ],
-        "takenMeasures": [
-            "Extra tillsyn"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 3,
-        "elderly_name": "Liam Johnson",
-        "was_fall_last_3_months": "yes",
-        "accident_date": "2024-07-30",
-        "accident_time": "13:32",
-        "accident_place": "Inomhus: K\u00f6k",
-        "witness": "No Witness",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Felbed\u00f6mning"
-        ],
-        "userActivity": [
-            "P\u00e5/avkl\u00e4nning, hygien"
-        ],
-        "precedingSymptoms": [
-            "Urintr\u00e5ngning"
-        ],
-        "fallConsequence": [
-            "Skada",
-            "Ingen skada"
-        ],
-        "injuryType": [
-            "L\u00e4tt skada",
-            "Fraktur"
-        ],
-        "takenMeasures": [
-            "Extra tillsyn",
-            "Milj\u00f6f\u00f6r\u00e4ndringar"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 4,
-        "elderly_name": "Sloane Patrick",
-        "was_fall_last_3_months": "yes",
-        "accident_date": "2024-04-20",
-        "accident_time": "10:45",
-        "accident_place": "Inomhus: Balkong",
-        "witness": "No Witness",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Oj\u00e4mn mark"
-        ],
-        "userActivity": [
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got"
-        ],
-        "precedingSymptoms": [
-            "Yrsel",
-            "Oro"
-        ],
-        "fallConsequence": [
-            "Medvetsl\u00f6shet"
-        ],
-        "injuryType": [
-            "Bl\u00e5m\u00e4rke/sm\u00e5 s\u00e5r",
-            "L\u00e4tt skada"
-        ],
-        "takenMeasures": [
-            "Milj\u00f6f\u00f6r\u00e4ndringar",
-            "Extra tillsyn"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 5,
-        "elderly_name": "James White",
-        "was_fall_last_3_months": "no",
-        "accident_date": "2024-12-01",
-        "accident_time": "13:50",
-        "accident_place": "Inomhus: Vardagsrum",
-        "witness": "Michael Scott",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Oj\u00e4mn mark"
-        ],
-        "userActivity": [
-            "P\u00e5/avkl\u00e4nning, hygien",
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got"
-        ],
-        "precedingSymptoms": [
-            "Oro"
-        ],
-        "fallConsequence": [
-            "Skada"
-        ],
-        "injuryType": [
-            "Bl\u00e5m\u00e4rke/sm\u00e5 s\u00e5r",
-            "L\u00e4tt skada"
-        ],
-        "takenMeasures": [
-            "Varning vid risk"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 6,
-        "elderly_name": "Olivia Jones",
-        "was_fall_last_3_months": "no",
-        "accident_date": "2024-07-07",
-        "accident_time": "20:05",
-        "accident_place": "Utomhus: Tr\u00e4dg\u00e5rd",
-        "witness": "Jane Doe",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Att hantera object"
-        ],
-        "userActivity": [
-            "Reste/satte sig"
-        ],
-        "precedingSymptoms": [
-            "Oro",
-            "Svaghet"
-        ],
-        "fallConsequence": [
-            "Skada",
-            "Ingen skada"
-        ],
-        "injuryType": [
-            "St\u00f6rre s\u00e5rskada"
-        ],
-        "takenMeasures": [
-            "Varning vid risk"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 7,
-        "elderly_name": "Olivia Jones",
-        "was_fall_last_3_months": "no",
-        "accident_date": "2024-09-16",
-        "accident_time": "20:44",
-        "accident_place": "Inomhus: Balkong",
-        "witness": "Jane Doe",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Oj\u00e4mn mark"
-        ],
-        "userActivity": [
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got",
-            "P\u00e5/avkl\u00e4nning, hygien"
-        ],
-        "precedingSymptoms": [
-            "Urintr\u00e5ngning",
-            "Yrsel"
-        ],
-        "fallConsequence": [
-            "Skada"
-        ],
-        "injuryType": [
-            "Fraktur",
-            "Bl\u00e5m\u00e4rke/sm\u00e5 s\u00e5r"
-        ],
-        "takenMeasures": [
-            "Varning vid risk",
-            "Milj\u00f6f\u00f6r\u00e4ndringar"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 8,
-        "elderly_name": "Sophia Smith",
-        "was_fall_last_3_months": "yes",
-        "accident_date": "2024-08-17",
-        "accident_time": "11:47",
-        "accident_place": "Utomhus: Tr\u00e4dg\u00e5rd",
-        "witness": "John Doe",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Oj\u00e4mn mark"
-        ],
-        "userActivity": [
-            "Reste/satte sig",
-            "P\u00e5/avkl\u00e4nning, hygien"
-        ],
-        "precedingSymptoms": [
-            "Urintr\u00e5ngning",
-            "Oro"
-        ],
-        "fallConsequence": [
-            "Ingen skada",
-            "Medvetsl\u00f6shet"
-        ],
-        "injuryType": [
-            "L\u00e4tt skada"
-        ],
-        "takenMeasures": [
-            "Extra tillsyn"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 9,
-        "elderly_name": "James White",
-        "was_fall_last_3_months": "yes",
-        "accident_date": "2024-07-11",
-        "accident_time": "20:09",
-        "accident_place": "Inomhus: K\u00f6k",
-        "witness": "Jane Doe",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Oj\u00e4mn mark",
-            "Att hantera object"
-        ],
-        "userActivity": [
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got",
-            "P\u00e5/avkl\u00e4nning, hygien"
-        ],
-        "precedingSymptoms": [
-            "Yrsel",
-            "Svaghet"
-        ],
-        "fallConsequence": [
-            "Medvetsl\u00f6shet",
-            "Skada"
-        ],
-        "injuryType": [
-            "Fraktur"
-        ],
-        "takenMeasures": [
-            "Varning vid risk",
-            "Extra tillsyn"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 10,
-        "elderly_name": "Emma Brown",
-        "was_fall_last_3_months": "no",
-        "accident_date": "2024-09-18",
-        "accident_time": "13:03",
-        "accident_place": "Utomhus: Park",
-        "witness": "No Witness",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Oj\u00e4mn mark"
-        ],
-        "userActivity": [
-            "P\u00e5/avkl\u00e4nning, hygien"
-        ],
-        "precedingSymptoms": [
-            "Urintr\u00e5ngning"
-        ],
-        "fallConsequence": [
-            "Skada",
-            "Ingen skada"
-        ],
-        "injuryType": [
-            "L\u00e4tt skada",
-            "St\u00f6rre s\u00e5rskada"
-        ],
-        "takenMeasures": [
-            "Extra tillsyn",
-            "Milj\u00f6f\u00f6r\u00e4ndringar"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 11,
-        "elderly_name": "Elijah Harris",
-        "was_fall_last_3_months": "yes",
-        "accident_date": "2024-10-10",
-        "accident_time": "13:36",
-        "accident_place": "Utomhus: Park",
-        "witness": "Jane Doe",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Felbed\u00f6mning",
-            "Att hantera object"
-        ],
-        "userActivity": [
-            "P\u00e5/avkl\u00e4nning, hygien"
-        ],
-        "precedingSymptoms": [
-            "Oro"
-        ],
-        "fallConsequence": [
-            "Medvetsl\u00f6shet"
-        ],
-        "injuryType": [
-            "St\u00f6rre s\u00e5rskada"
-        ],
-        "takenMeasures": [
-            "Varning vid risk"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 12,
-        "elderly_name": "Olivia Jones",
-        "was_fall_last_3_months": "no",
-        "accident_date": "2024-05-06",
-        "accident_time": "02:06",
-        "accident_place": "Utomhus: Park",
-        "witness": "John Doe",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Oj\u00e4mn mark"
-        ],
-        "userActivity": [
-            "Reste/satte sig",
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got"
-        ],
-        "precedingSymptoms": [
-            "Oro",
-            "Yrsel"
-        ],
-        "fallConsequence": [
-            "Medvetsl\u00f6shet",
-            "Skada"
-        ],
-        "injuryType": [
-            "Bl\u00e5m\u00e4rke/sm\u00e5 s\u00e5r"
-        ],
-        "takenMeasures": [
-            "Varning vid risk",
-            "Milj\u00f6f\u00f6r\u00e4ndringar"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 13,
-        "elderly_name": "Emma Brown",
-        "was_fall_last_3_months": "yes",
-        "accident_date": "2024-04-16",
-        "accident_time": "05:52",
-        "accident_place": "Utomhus: Tr\u00e4dg\u00e5rd",
-        "witness": "Jane Doe",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Att hantera object",
-            "Oj\u00e4mn mark"
-        ],
-        "userActivity": [
-            "P\u00e5/avkl\u00e4nning, hygien"
-        ],
-        "precedingSymptoms": [
-            "Oro"
-        ],
-        "fallConsequence": [
-            "Ingen skada",
-            "Medvetsl\u00f6shet"
-        ],
-        "injuryType": [
-            "L\u00e4tt skada"
-        ],
-        "takenMeasures": [
-            "Varning vid risk",
-            "Extra tillsyn"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 14,
-        "elderly_name": "Emma Brown",
-        "was_fall_last_3_months": "yes",
-        "accident_date": "2024-07-13",
-        "accident_time": "17:16",
-        "accident_place": "Utomhus: Park",
-        "witness": "Michael Scott",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Att hantera object"
-        ],
-        "userActivity": [
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got",
-            "Reste/satte sig"
-        ],
-        "precedingSymptoms": [
-            "Urintr\u00e5ngning",
-            "Oro"
-        ],
-        "fallConsequence": [
-            "Skada"
-        ],
-        "injuryType": [
-            "St\u00f6rre s\u00e5rskada",
-            "Fraktur"
-        ],
-        "takenMeasures": [
-            "Extra tillsyn",
-            "Varning vid risk"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 15,
-        "elderly_name": "Liam Johnson",
-        "was_fall_last_3_months": "yes",
-        "accident_date": "2024-10-27",
-        "accident_time": "23:47",
-        "accident_place": "Inomhus: K\u00f6k",
-        "witness": "Sarah Connor",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Att hantera object"
-        ],
-        "userActivity": [
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got",
-            "P\u00e5/avkl\u00e4nning, hygien"
-        ],
-        "precedingSymptoms": [
-            "Oro",
-            "Yrsel"
-        ],
-        "fallConsequence": [
-            "Skada"
-        ],
-        "injuryType": [
-            "Bl\u00e5m\u00e4rke/sm\u00e5 s\u00e5r"
-        ],
-        "takenMeasures": [
-            "Extra tillsyn"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 16,
-        "elderly_name": "Olivia Jones",
-        "was_fall_last_3_months": "yes",
-        "accident_date": "2024-04-21",
-        "accident_time": "00:56",
-        "accident_place": "Utomhus: Park",
-        "witness": "Michael Scott",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Felbed\u00f6mning",
-            "Oj\u00e4mn mark"
-        ],
-        "userActivity": [
-            "P\u00e5/avkl\u00e4nning, hygien",
-            "Reste/satte sig"
-        ],
-        "precedingSymptoms": [
-            "Svaghet"
-        ],
-        "fallConsequence": [
-            "Medvetsl\u00f6shet"
-        ],
-        "injuryType": [
-            "St\u00f6rre s\u00e5rskada",
-            "L\u00e4tt skada"
-        ],
-        "takenMeasures": [
-            "Milj\u00f6f\u00f6r\u00e4ndringar",
-            "Varning vid risk"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 17,
-        "elderly_name": "Emma Brown",
-        "was_fall_last_3_months": "no",
-        "accident_date": "2024-09-20",
-        "accident_time": "10:34",
-        "accident_place": "Utomhus: Park",
-        "witness": "John Doe",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Felbed\u00f6mning",
-            "Att hantera object"
-        ],
-        "userActivity": [
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got"
-        ],
-        "precedingSymptoms": [
-            "Svaghet",
-            "Urintr\u00e5ngning"
-        ],
-        "fallConsequence": [
-            "Ingen skada",
-            "Skada"
-        ],
-        "injuryType": [
-            "St\u00f6rre s\u00e5rskada"
-        ],
-        "takenMeasures": [
-            "Milj\u00f6f\u00f6r\u00e4ndringar"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 18,
-        "elderly_name": "Sloane Patrick",
-        "was_fall_last_3_months": "no",
-        "accident_date": "2024-11-17",
-        "accident_time": "02:03",
-        "accident_place": "Utomhus: Park",
-        "witness": "No Witness",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Att hantera object",
-            "Felbed\u00f6mning"
-        ],
-        "userActivity": [
-            "Reste/satte sig"
-        ],
-        "precedingSymptoms": [
-            "Yrsel",
-            "Svaghet"
-        ],
-        "fallConsequence": [
-            "Medvetsl\u00f6shet"
-        ],
-        "injuryType": [
-            "Bl\u00e5m\u00e4rke/sm\u00e5 s\u00e5r",
-            "St\u00f6rre s\u00e5rskada"
-        ],
-        "takenMeasures": [
-            "Milj\u00f6f\u00f6r\u00e4ndringar",
-            "Varning vid risk"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 19,
-        "elderly_name": "Sloane Patrick",
-        "was_fall_last_3_months": "no",
-        "accident_date": "2024-07-27",
-        "accident_time": "03:33",
-        "accident_place": "Utomhus: Park",
-        "witness": "Jane Doe",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Felbed\u00f6mning",
-            "Oj\u00e4mn mark"
-        ],
-        "userActivity": [
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got",
-            "Reste/satte sig"
-        ],
-        "precedingSymptoms": [
-            "Svaghet"
-        ],
-        "fallConsequence": [
-            "Skada"
-        ],
-        "injuryType": [
-            "L\u00e4tt skada"
-        ],
-        "takenMeasures": [
-            "Milj\u00f6f\u00f6r\u00e4ndringar",
-            "Extra tillsyn"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 20,
-        "elderly_name": "Sloane Patrick",
-        "was_fall_last_3_months": "no",
-        "accident_date": "2024-05-30",
-        "accident_time": "22:43",
-        "accident_place": "Utomhus: Tr\u00e4dg\u00e5rd",
-        "witness": "Sarah Connor",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Att hantera object",
-            "Felbed\u00f6mning"
-        ],
-        "userActivity": [
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got"
-        ],
-        "precedingSymptoms": [
-            "Svaghet"
-        ],
-        "fallConsequence": [
-            "Ingen skada",
-            "Medvetsl\u00f6shet"
-        ],
-        "injuryType": [
-            "Fraktur"
-        ],
-        "takenMeasures": [
-            "Varning vid risk",
-            "Extra tillsyn"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 21,
-        "elderly_name": "Elijah Harris",
-        "was_fall_last_3_months": "yes",
-        "accident_date": "2024-10-09",
-        "accident_time": "04:45",
-        "accident_place": "Inomhus: K\u00f6k",
-        "witness": "Michael Scott",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Felbed\u00f6mning",
-            "Oj\u00e4mn mark"
-        ],
-        "userActivity": [
-            "Reste/satte sig",
-            "P\u00e5/avkl\u00e4nning, hygien"
-        ],
-        "precedingSymptoms": [
-            "Oro",
-            "Svaghet"
-        ],
-        "fallConsequence": [
-            "Skada",
-            "Medvetsl\u00f6shet"
-        ],
-        "injuryType": [
-            "Fraktur",
-            "St\u00f6rre s\u00e5rskada"
-        ],
-        "takenMeasures": [
-            "Extra tillsyn"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 22,
-        "elderly_name": "Olivia Jones",
-        "was_fall_last_3_months": "no",
-        "accident_date": "2024-12-01",
-        "accident_time": "00:04",
-        "accident_place": "Utomhus: Tr\u00e4dg\u00e5rd",
-        "witness": "Jane Doe",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Att hantera object",
-            "Felbed\u00f6mning"
-        ],
-        "userActivity": [
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got"
-        ],
-        "precedingSymptoms": [
-            "Yrsel"
-        ],
-        "fallConsequence": [
-            "Medvetsl\u00f6shet"
-        ],
-        "injuryType": [
-            "L\u00e4tt skada",
-            "St\u00f6rre s\u00e5rskada"
-        ],
-        "takenMeasures": [
-            "Varning vid risk",
-            "Extra tillsyn"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 23,
-        "elderly_name": "Sloane Patrick",
-        "was_fall_last_3_months": "no",
-        "accident_date": "2024-04-21",
-        "accident_time": "10:37",
-        "accident_place": "Inomhus: K\u00f6k",
-        "witness": "Jane Doe",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Att hantera object",
-            "Felbed\u00f6mning"
-        ],
-        "userActivity": [
-            "P\u00e5/avkl\u00e4nning, hygien"
-        ],
-        "precedingSymptoms": [
-            "Oro",
-            "Yrsel"
-        ],
-        "fallConsequence": [
-            "Medvetsl\u00f6shet",
-            "Skada"
-        ],
-        "injuryType": [
-            "Bl\u00e5m\u00e4rke/sm\u00e5 s\u00e5r"
-        ],
-        "takenMeasures": [
-            "Extra tillsyn"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 24,
-        "elderly_name": "Elijah Harris",
-        "was_fall_last_3_months": "yes",
-        "accident_date": "2024-08-28",
-        "accident_time": "04:15",
-        "accident_place": "Inomhus: K\u00f6k",
-        "witness": "No Witness",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Att hantera object"
-        ],
-        "userActivity": [
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got",
-            "Reste/satte sig"
-        ],
-        "precedingSymptoms": [
-            "Yrsel",
-            "Urintr\u00e5ngning"
-        ],
-        "fallConsequence": [
-            "Ingen skada"
-        ],
-        "injuryType": [
-            "Bl\u00e5m\u00e4rke/sm\u00e5 s\u00e5r"
-        ],
-        "takenMeasures": [
-            "Extra tillsyn"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 25,
-        "elderly_name": "Emma Brown",
-        "was_fall_last_3_months": "yes",
-        "accident_date": "2024-02-07",
-        "accident_time": "15:52",
-        "accident_place": "Inomhus: Balkong",
-        "witness": "John Doe",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Att hantera object"
-        ],
-        "userActivity": [
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got",
-            "Reste/satte sig"
-        ],
-        "precedingSymptoms": [
-            "Yrsel"
-        ],
-        "fallConsequence": [
-            "Ingen skada",
-            "Medvetsl\u00f6shet"
-        ],
-        "injuryType": [
-            "St\u00f6rre s\u00e5rskada",
-            "Fraktur"
-        ],
-        "takenMeasures": [
-            "Milj\u00f6f\u00f6r\u00e4ndringar"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 26,
-        "elderly_name": "Olivia Jones",
-        "was_fall_last_3_months": "yes",
-        "accident_date": "2024-06-12",
-        "accident_time": "00:38",
-        "accident_place": "Inomhus: K\u00f6k",
-        "witness": "Jane Doe",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Att hantera object"
-        ],
-        "userActivity": [
-            "P\u00e5/avkl\u00e4nning, hygien",
-            "Reste/satte sig"
-        ],
-        "precedingSymptoms": [
-            "Yrsel",
-            "Oro"
-        ],
-        "fallConsequence": [
-            "Ingen skada"
-        ],
-        "injuryType": [
-            "St\u00f6rre s\u00e5rskada",
-            "Bl\u00e5m\u00e4rke/sm\u00e5 s\u00e5r"
-        ],
-        "takenMeasures": [
-            "Extra tillsyn"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 27,
-        "elderly_name": "Aiden Cooper",
-        "was_fall_last_3_months": "no",
-        "accident_date": "2024-02-08",
-        "accident_time": "16:19",
-        "accident_place": "Utomhus: Tr\u00e4dg\u00e5rd",
-        "witness": "Michael Scott",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Oj\u00e4mn mark",
-            "Felbed\u00f6mning"
-        ],
-        "userActivity": [
-            "Reste/satte sig",
-            "P\u00e5/avkl\u00e4nning, hygien"
-        ],
-        "precedingSymptoms": [
-            "Urintr\u00e5ngning"
-        ],
-        "fallConsequence": [
-            "Ingen skada"
-        ],
-        "injuryType": [
-            "Fraktur"
-        ],
-        "takenMeasures": [
-            "Varning vid risk",
-            "Extra tillsyn"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 28,
-        "elderly_name": "Olivia Jones",
-        "was_fall_last_3_months": "no",
-        "accident_date": "2024-04-23",
-        "accident_time": "06:22",
-        "accident_place": "Inomhus: Balkong",
-        "witness": "Jane Doe",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Felbed\u00f6mning"
-        ],
-        "userActivity": [
-            "Reste/satte sig"
-        ],
-        "precedingSymptoms": [
-            "Yrsel",
-            "Svaghet"
-        ],
-        "fallConsequence": [
-            "Ingen skada",
-            "Medvetsl\u00f6shet"
-        ],
-        "injuryType": [
-            "Bl\u00e5m\u00e4rke/sm\u00e5 s\u00e5r",
-            "St\u00f6rre s\u00e5rskada"
-        ],
-        "takenMeasures": [
-            "Varning vid risk",
-            "Extra tillsyn"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 29,
-        "elderly_name": "Elijah Harris",
-        "was_fall_last_3_months": "yes",
-        "accident_date": "2024-06-09",
-        "accident_time": "21:41",
-        "accident_place": "Utomhus: Park",
-        "witness": "John Doe",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Felbed\u00f6mning"
-        ],
-        "userActivity": [
-            "P\u00e5/avkl\u00e4nning, hygien"
-        ],
-        "precedingSymptoms": [
-            "Oro"
-        ],
-        "fallConsequence": [
-            "Skada",
-            "Ingen skada"
-        ],
-        "injuryType": [
-            "Bl\u00e5m\u00e4rke/sm\u00e5 s\u00e5r"
-        ],
-        "takenMeasures": [
-            "Extra tillsyn",
-            "Varning vid risk"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 30,
-        "elderly_name": "Liam Johnson",
-        "was_fall_last_3_months": "no",
-        "accident_date": "2024-10-06",
-        "accident_time": "06:32",
-        "accident_place": "Inomhus: Vardagsrum",
-        "witness": "Michael Scott",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Oj\u00e4mn mark"
-        ],
-        "userActivity": [
-            "Reste/satte sig",
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got"
-        ],
-        "precedingSymptoms": [
-            "Urintr\u00e5ngning"
-        ],
-        "fallConsequence": [
-            "Ingen skada",
-            "Skada"
-        ],
-        "injuryType": [
-            "L\u00e4tt skada"
-        ],
-        "takenMeasures": [
-            "Extra tillsyn"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 31,
-        "elderly_name": "James White",
-        "was_fall_last_3_months": "yes",
-        "accident_date": "2024-11-30",
-        "accident_time": "17:38",
-        "accident_place": "Inomhus: Balkong",
-        "witness": "No Witness",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Felbed\u00f6mning",
-            "Oj\u00e4mn mark"
-        ],
-        "userActivity": [
-            "Reste/satte sig"
-        ],
-        "precedingSymptoms": [
-            "Svaghet"
-        ],
-        "fallConsequence": [
-            "Skada",
-            "Ingen skada"
-        ],
-        "injuryType": [
-            "L\u00e4tt skada"
-        ],
-        "takenMeasures": [
-            "Varning vid risk",
-            "Milj\u00f6f\u00f6r\u00e4ndringar"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 32,
-        "elderly_name": "Olivia Jones",
-        "was_fall_last_3_months": "yes",
-        "accident_date": "2024-09-28",
-        "accident_time": "10:00",
-        "accident_place": "Inomhus: K\u00f6k",
-        "witness": "Jane Doe",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Oj\u00e4mn mark",
-            "Att hantera object"
-        ],
-        "userActivity": [
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got"
-        ],
-        "precedingSymptoms": [
-            "Urintr\u00e5ngning"
-        ],
-        "fallConsequence": [
-            "Ingen skada",
-            "Medvetsl\u00f6shet"
-        ],
-        "injuryType": [
-            "Fraktur",
-            "Bl\u00e5m\u00e4rke/sm\u00e5 s\u00e5r"
-        ],
-        "takenMeasures": [
-            "Varning vid risk"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 33,
-        "elderly_name": "James White",
-        "was_fall_last_3_months": "no",
-        "accident_date": "2024-05-14",
-        "accident_time": "07:37",
-        "accident_place": "Inomhus: Vardagsrum",
-        "witness": "Michael Scott",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Oj\u00e4mn mark"
-        ],
-        "userActivity": [
-            "Reste/satte sig"
-        ],
-        "precedingSymptoms": [
-            "Urintr\u00e5ngning"
-        ],
-        "fallConsequence": [
-            "Ingen skada"
-        ],
-        "injuryType": [
-            "L\u00e4tt skada"
-        ],
-        "takenMeasures": [
-            "Varning vid risk",
-            "Milj\u00f6f\u00f6r\u00e4ndringar"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 34,
-        "elderly_name": "Emma Brown",
-        "was_fall_last_3_months": "yes",
-        "accident_date": "2024-07-10",
-        "accident_time": "10:19",
-        "accident_place": "Inomhus: Balkong",
-        "witness": "Michael Scott",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Att hantera object",
-            "Oj\u00e4mn mark"
-        ],
-        "userActivity": [
-            "Reste/satte sig",
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got"
-        ],
-        "precedingSymptoms": [
-            "Svaghet"
-        ],
-        "fallConsequence": [
-            "Skada",
-            "Medvetsl\u00f6shet"
-        ],
-        "injuryType": [
-            "L\u00e4tt skada",
-            "Bl\u00e5m\u00e4rke/sm\u00e5 s\u00e5r"
-        ],
-        "takenMeasures": [
-            "Varning vid risk",
-            "Milj\u00f6f\u00f6r\u00e4ndringar"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 35,
-        "elderly_name": "Aiden Cooper",
-        "was_fall_last_3_months": "yes",
-        "accident_date": "2024-12-23",
-        "accident_time": "20:28",
-        "accident_place": "Utomhus: Tr\u00e4dg\u00e5rd",
-        "witness": "Jane Doe",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Att hantera object",
-            "Oj\u00e4mn mark"
-        ],
-        "userActivity": [
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got"
-        ],
-        "precedingSymptoms": [
-            "Yrsel"
-        ],
-        "fallConsequence": [
-            "Medvetsl\u00f6shet",
-            "Ingen skada"
-        ],
-        "injuryType": [
-            "Fraktur"
-        ],
-        "takenMeasures": [
-            "Extra tillsyn",
-            "Varning vid risk"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 36,
-        "elderly_name": "Olivia Jones",
-        "was_fall_last_3_months": "yes",
-        "accident_date": "2024-01-04",
-        "accident_time": "06:58",
-        "accident_place": "Inomhus: K\u00f6k",
-        "witness": "John Doe",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Felbed\u00f6mning"
-        ],
-        "userActivity": [
-            "P\u00e5/avkl\u00e4nning, hygien",
-            "Reste/satte sig"
-        ],
-        "precedingSymptoms": [
-            "Oro",
-            "Yrsel"
-        ],
-        "fallConsequence": [
-            "Medvetsl\u00f6shet"
-        ],
-        "injuryType": [
-            "Fraktur",
-            "L\u00e4tt skada"
-        ],
-        "takenMeasures": [
-            "Varning vid risk"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 37,
-        "elderly_name": "Emma Brown",
-        "was_fall_last_3_months": "no",
-        "accident_date": "2024-12-29",
-        "accident_time": "08:35",
-        "accident_place": "Inomhus: Vardagsrum",
-        "witness": "Jane Doe",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Felbed\u00f6mning"
-        ],
-        "userActivity": [
-            "Reste/satte sig"
-        ],
-        "precedingSymptoms": [
-            "Yrsel",
-            "Oro"
-        ],
-        "fallConsequence": [
-            "Ingen skada"
-        ],
-        "injuryType": [
-            "L\u00e4tt skada",
-            "Fraktur"
-        ],
-        "takenMeasures": [
-            "Extra tillsyn",
-            "Varning vid risk"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 38,
-        "elderly_name": "James White",
-        "was_fall_last_3_months": "no",
-        "accident_date": "2024-05-23",
-        "accident_time": "08:53",
-        "accident_place": "Utomhus: Park",
-        "witness": "John Doe",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Oj\u00e4mn mark"
-        ],
-        "userActivity": [
-            "P\u00e5/avkl\u00e4nning, hygien",
-            "Reste/satte sig"
-        ],
-        "precedingSymptoms": [
-            "Svaghet"
-        ],
-        "fallConsequence": [
-            "Medvetsl\u00f6shet"
-        ],
-        "injuryType": [
-            "Bl\u00e5m\u00e4rke/sm\u00e5 s\u00e5r"
-        ],
-        "takenMeasures": [
-            "Varning vid risk"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 39,
-        "elderly_name": "Aiden Cooper",
-        "was_fall_last_3_months": "no",
-        "accident_date": "2024-11-08",
-        "accident_time": "01:15",
-        "accident_place": "Inomhus: Balkong",
-        "witness": "No Witness",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Att hantera object",
-            "Felbed\u00f6mning"
-        ],
-        "userActivity": [
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got"
-        ],
-        "precedingSymptoms": [
-            "Yrsel",
-            "Svaghet"
-        ],
-        "fallConsequence": [
-            "Skada",
-            "Medvetsl\u00f6shet"
-        ],
-        "injuryType": [
-            "Fraktur",
-            "St\u00f6rre s\u00e5rskada"
-        ],
-        "takenMeasures": [
-            "Extra tillsyn",
-            "Varning vid risk"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 40,
-        "elderly_name": "Aiden Cooper",
-        "was_fall_last_3_months": "no",
-        "accident_date": "2024-09-20",
-        "accident_time": "07:28",
-        "accident_place": "Inomhus: Vardagsrum",
-        "witness": "Michael Scott",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Oj\u00e4mn mark",
-            "Att hantera object"
-        ],
-        "userActivity": [
-            "P\u00e5/avkl\u00e4nning, hygien",
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got"
-        ],
-        "precedingSymptoms": [
-            "Oro"
-        ],
-        "fallConsequence": [
-            "Medvetsl\u00f6shet",
-            "Ingen skada"
-        ],
-        "injuryType": [
-            "Bl\u00e5m\u00e4rke/sm\u00e5 s\u00e5r",
-            "St\u00f6rre s\u00e5rskada"
-        ],
-        "takenMeasures": [
-            "Varning vid risk"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 41,
-        "elderly_name": "Olivia Jones",
-        "was_fall_last_3_months": "yes",
-        "accident_date": "2024-09-11",
-        "accident_time": "18:04",
-        "accident_place": "Inomhus: K\u00f6k",
-        "witness": "John Doe",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Oj\u00e4mn mark",
-            "Att hantera object"
-        ],
-        "userActivity": [
-            "Reste/satte sig"
-        ],
-        "precedingSymptoms": [
-            "Oro",
-            "Svaghet"
-        ],
-        "fallConsequence": [
-            "Medvetsl\u00f6shet",
-            "Skada"
-        ],
-        "injuryType": [
-            "Bl\u00e5m\u00e4rke/sm\u00e5 s\u00e5r"
-        ],
-        "takenMeasures": [
-            "Varning vid risk",
-            "Milj\u00f6f\u00f6r\u00e4ndringar"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 42,
-        "elderly_name": "James White",
-        "was_fall_last_3_months": "yes",
-        "accident_date": "2024-08-14",
-        "accident_time": "21:35",
-        "accident_place": "Utomhus: Tr\u00e4dg\u00e5rd",
-        "witness": "Sarah Connor",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Felbed\u00f6mning",
-            "Oj\u00e4mn mark"
-        ],
-        "userActivity": [
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got",
-            "Reste/satte sig"
-        ],
-        "precedingSymptoms": [
-            "Svaghet",
-            "Urintr\u00e5ngning"
-        ],
-        "fallConsequence": [
-            "Medvetsl\u00f6shet",
-            "Ingen skada"
-        ],
-        "injuryType": [
-            "L\u00e4tt skada"
-        ],
-        "takenMeasures": [
-            "Extra tillsyn",
-            "Milj\u00f6f\u00f6r\u00e4ndringar"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 43,
-        "elderly_name": "Sloane Patrick",
-        "was_fall_last_3_months": "yes",
-        "accident_date": "2024-09-08",
-        "accident_time": "04:47",
-        "accident_place": "Inomhus: Vardagsrum",
-        "witness": "Jane Doe",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Felbed\u00f6mning"
-        ],
-        "userActivity": [
-            "P\u00e5/avkl\u00e4nning, hygien"
-        ],
-        "precedingSymptoms": [
-            "Urintr\u00e5ngning"
-        ],
-        "fallConsequence": [
-            "Skada"
-        ],
-        "injuryType": [
-            "L\u00e4tt skada"
-        ],
-        "takenMeasures": [
-            "Varning vid risk"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 44,
-        "elderly_name": "Liam Johnson",
-        "was_fall_last_3_months": "no",
-        "accident_date": "2024-03-24",
-        "accident_time": "15:44",
-        "accident_place": "Utomhus: Park",
-        "witness": "Michael Scott",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Oj\u00e4mn mark",
-            "Felbed\u00f6mning"
-        ],
-        "userActivity": [
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got"
-        ],
-        "precedingSymptoms": [
-            "Yrsel",
-            "Oro"
-        ],
-        "fallConsequence": [
-            "Medvetsl\u00f6shet",
-            "Ingen skada"
-        ],
-        "injuryType": [
-            "L\u00e4tt skada",
-            "St\u00f6rre s\u00e5rskada"
-        ],
-        "takenMeasures": [
-            "Milj\u00f6f\u00f6r\u00e4ndringar",
-            "Extra tillsyn"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 45,
-        "elderly_name": "Elijah Harris",
-        "was_fall_last_3_months": "yes",
-        "accident_date": "2024-10-10",
-        "accident_time": "22:44",
-        "accident_place": "Inomhus: Balkong",
-        "witness": "Jane Doe",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Oj\u00e4mn mark"
-        ],
-        "userActivity": [
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got",
-            "P\u00e5/avkl\u00e4nning, hygien"
-        ],
-        "precedingSymptoms": [
-            "Urintr\u00e5ngning"
-        ],
-        "fallConsequence": [
-            "Medvetsl\u00f6shet"
-        ],
-        "injuryType": [
-            "L\u00e4tt skada"
-        ],
-        "takenMeasures": [
-            "Extra tillsyn",
-            "Varning vid risk"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 46,
-        "elderly_name": "Sophia Smith",
-        "was_fall_last_3_months": "no",
-        "accident_date": "2024-05-23",
-        "accident_time": "03:15",
-        "accident_place": "Inomhus: Vardagsrum",
-        "witness": "Jane Doe",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Felbed\u00f6mning"
-        ],
-        "userActivity": [
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got",
-            "Reste/satte sig"
-        ],
-        "precedingSymptoms": [
-            "Oro"
-        ],
-        "fallConsequence": [
-            "Medvetsl\u00f6shet"
-        ],
-        "injuryType": [
-            "Fraktur"
-        ],
-        "takenMeasures": [
-            "Milj\u00f6f\u00f6r\u00e4ndringar",
-            "Varning vid risk"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 47,
-        "elderly_name": "Sloane Patrick",
-        "was_fall_last_3_months": "no",
-        "accident_date": "2024-07-12",
-        "accident_time": "01:07",
-        "accident_place": "Inomhus: K\u00f6k",
-        "witness": "Sarah Connor",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Att hantera object",
-            "Oj\u00e4mn mark"
-        ],
-        "userActivity": [
-            "P\u00e5/avkl\u00e4nning, hygien"
-        ],
-        "precedingSymptoms": [
-            "Oro"
-        ],
-        "fallConsequence": [
-            "Skada",
-            "Ingen skada"
-        ],
-        "injuryType": [
-            "Bl\u00e5m\u00e4rke/sm\u00e5 s\u00e5r"
-        ],
-        "takenMeasures": [
-            "Extra tillsyn",
-            "Varning vid risk"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 48,
-        "elderly_name": "Emma Brown",
-        "was_fall_last_3_months": "yes",
-        "accident_date": "2024-08-21",
-        "accident_time": "18:50",
-        "accident_place": "Inomhus: Vardagsrum",
-        "witness": "Jane Doe",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Felbed\u00f6mning"
-        ],
-        "userActivity": [
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got"
-        ],
-        "precedingSymptoms": [
-            "Yrsel",
-            "Urintr\u00e5ngning"
-        ],
-        "fallConsequence": [
-            "Medvetsl\u00f6shet"
-        ],
-        "injuryType": [
-            "Bl\u00e5m\u00e4rke/sm\u00e5 s\u00e5r",
-            "St\u00f6rre s\u00e5rskada"
-        ],
-        "takenMeasures": [
-            "Milj\u00f6f\u00f6r\u00e4ndringar"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 49,
-        "elderly_name": "Aiden Cooper",
-        "was_fall_last_3_months": "yes",
-        "accident_date": "2024-07-09",
-        "accident_time": "03:02",
-        "accident_place": "Inomhus: Balkong",
-        "witness": "Michael Scott",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Att hantera object",
-            "Oj\u00e4mn mark"
-        ],
-        "userActivity": [
-            "Reste/satte sig",
-            "P\u00e5/avkl\u00e4nning, hygien"
-        ],
-        "precedingSymptoms": [
-            "Urintr\u00e5ngning",
-            "Yrsel"
-        ],
-        "fallConsequence": [
-            "Ingen skada"
-        ],
-        "injuryType": [
-            "St\u00f6rre s\u00e5rskada",
-            "Bl\u00e5m\u00e4rke/sm\u00e5 s\u00e5r"
-        ],
-        "takenMeasures": [
-            "Extra tillsyn",
-            "Varning vid risk"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 50,
-        "elderly_name": "Sophia Smith",
-        "was_fall_last_3_months": "yes",
-        "accident_date": "2024-09-28",
-        "accident_time": "15:52",
-        "accident_place": "Utomhus: Tr\u00e4dg\u00e5rd",
-        "witness": "Jane Doe",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Att hantera object",
-            "Oj\u00e4mn mark"
-        ],
-        "userActivity": [
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got",
-            "P\u00e5/avkl\u00e4nning, hygien"
-        ],
-        "precedingSymptoms": [
-            "Svaghet",
-            "Urintr\u00e5ngning"
-        ],
-        "fallConsequence": [
-            "Medvetsl\u00f6shet",
-            "Ingen skada"
-        ],
-        "injuryType": [
-            "Bl\u00e5m\u00e4rke/sm\u00e5 s\u00e5r"
-        ],
-        "takenMeasures": [
-            "Extra tillsyn"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 51,
-        "elderly_name": "Aiden Cooper",
-        "was_fall_last_3_months": "no",
-        "accident_date": "2024-05-17",
-        "accident_time": "09:48",
-        "accident_place": "Inomhus: K\u00f6k",
-        "witness": "Sarah Connor",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Felbed\u00f6mning",
-            "Att hantera object"
-        ],
-        "userActivity": [
-            "Reste/satte sig",
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got"
-        ],
-        "precedingSymptoms": [
-            "Oro",
-            "Urintr\u00e5ngning"
-        ],
-        "fallConsequence": [
-            "Medvetsl\u00f6shet"
-        ],
-        "injuryType": [
-            "St\u00f6rre s\u00e5rskada"
-        ],
-        "takenMeasures": [
-            "Milj\u00f6f\u00f6r\u00e4ndringar",
-            "Varning vid risk"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 52,
-        "elderly_name": "Elijah Harris",
-        "was_fall_last_3_months": "yes",
-        "accident_date": "2024-01-24",
-        "accident_time": "00:59",
-        "accident_place": "Inomhus: Vardagsrum",
-        "witness": "No Witness",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Felbed\u00f6mning"
-        ],
-        "userActivity": [
-            "P\u00e5/avkl\u00e4nning, hygien",
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got"
-        ],
-        "precedingSymptoms": [
-            "Oro",
-            "Urintr\u00e5ngning"
-        ],
-        "fallConsequence": [
-            "Medvetsl\u00f6shet"
-        ],
-        "injuryType": [
-            "St\u00f6rre s\u00e5rskada",
-            "Bl\u00e5m\u00e4rke/sm\u00e5 s\u00e5r"
-        ],
-        "takenMeasures": [
-            "Extra tillsyn",
-            "Varning vid risk"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 53,
-        "elderly_name": "Olivia Jones",
-        "was_fall_last_3_months": "no",
-        "accident_date": "2024-06-12",
-        "accident_time": "00:21",
-        "accident_place": "Inomhus: K\u00f6k",
-        "witness": "Michael Scott",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Att hantera object",
-            "Felbed\u00f6mning"
-        ],
-        "userActivity": [
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got",
-            "Reste/satte sig"
-        ],
-        "precedingSymptoms": [
-            "Urintr\u00e5ngning"
-        ],
-        "fallConsequence": [
-            "Skada",
-            "Ingen skada"
-        ],
-        "injuryType": [
-            "St\u00f6rre s\u00e5rskada"
-        ],
-        "takenMeasures": [
-            "Varning vid risk",
-            "Milj\u00f6f\u00f6r\u00e4ndringar"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 54,
-        "elderly_name": "James White",
-        "was_fall_last_3_months": "no",
-        "accident_date": "2024-11-28",
-        "accident_time": "22:09",
-        "accident_place": "Inomhus: Vardagsrum",
-        "witness": "John Doe",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Felbed\u00f6mning",
-            "Att hantera object"
-        ],
-        "userActivity": [
-            "Reste/satte sig",
-            "P\u00e5/avkl\u00e4nning, hygien"
-        ],
-        "precedingSymptoms": [
-            "Urintr\u00e5ngning"
-        ],
-        "fallConsequence": [
-            "Ingen skada"
-        ],
-        "injuryType": [
-            "St\u00f6rre s\u00e5rskada"
-        ],
-        "takenMeasures": [
-            "Varning vid risk"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 55,
-        "elderly_name": "Aiden Cooper",
-        "was_fall_last_3_months": "yes",
-        "accident_date": "2024-06-29",
-        "accident_time": "07:56",
-        "accident_place": "Inomhus: Balkong",
-        "witness": "John Doe",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Oj\u00e4mn mark",
-            "Felbed\u00f6mning"
-        ],
-        "userActivity": [
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got"
-        ],
-        "precedingSymptoms": [
-            "Urintr\u00e5ngning"
-        ],
-        "fallConsequence": [
-            "Skada"
-        ],
-        "injuryType": [
-            "Bl\u00e5m\u00e4rke/sm\u00e5 s\u00e5r"
-        ],
-        "takenMeasures": [
-            "Milj\u00f6f\u00f6r\u00e4ndringar"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 56,
-        "elderly_name": "Aiden Cooper",
-        "was_fall_last_3_months": "no",
-        "accident_date": "2024-08-18",
-        "accident_time": "01:27",
-        "accident_place": "Inomhus: K\u00f6k",
-        "witness": "John Doe",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Oj\u00e4mn mark",
-            "Att hantera object"
-        ],
-        "userActivity": [
-            "P\u00e5/avkl\u00e4nning, hygien"
-        ],
-        "precedingSymptoms": [
-            "Yrsel",
-            "Urintr\u00e5ngning"
-        ],
-        "fallConsequence": [
-            "Ingen skada",
-            "Medvetsl\u00f6shet"
-        ],
-        "injuryType": [
-            "L\u00e4tt skada",
-            "Bl\u00e5m\u00e4rke/sm\u00e5 s\u00e5r"
-        ],
-        "takenMeasures": [
-            "Milj\u00f6f\u00f6r\u00e4ndringar",
-            "Varning vid risk"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 57,
-        "elderly_name": "Sophia Smith",
-        "was_fall_last_3_months": "no",
-        "accident_date": "2024-09-20",
-        "accident_time": "06:11",
-        "accident_place": "Inomhus: Balkong",
-        "witness": "Jane Doe",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Att hantera object"
-        ],
-        "userActivity": [
-            "Reste/satte sig",
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got"
-        ],
-        "precedingSymptoms": [
-            "Yrsel"
-        ],
-        "fallConsequence": [
-            "Skada",
-            "Medvetsl\u00f6shet"
-        ],
-        "injuryType": [
-            "Bl\u00e5m\u00e4rke/sm\u00e5 s\u00e5r",
-            "St\u00f6rre s\u00e5rskada"
-        ],
-        "takenMeasures": [
-            "Milj\u00f6f\u00f6r\u00e4ndringar"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 58,
-        "elderly_name": "Sophia Smith",
-        "was_fall_last_3_months": "no",
-        "accident_date": "2024-01-31",
-        "accident_time": "12:52",
-        "accident_place": "Inomhus: K\u00f6k",
-        "witness": "John Doe",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Att hantera object",
-            "Felbed\u00f6mning"
-        ],
-        "userActivity": [
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got"
-        ],
-        "precedingSymptoms": [
-            "Yrsel",
-            "Svaghet"
-        ],
-        "fallConsequence": [
-            "Medvetsl\u00f6shet"
-        ],
-        "injuryType": [
-            "St\u00f6rre s\u00e5rskada",
-            "Bl\u00e5m\u00e4rke/sm\u00e5 s\u00e5r"
-        ],
-        "takenMeasures": [
-            "Milj\u00f6f\u00f6r\u00e4ndringar",
-            "Extra tillsyn"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 59,
-        "elderly_name": "Liam Johnson",
-        "was_fall_last_3_months": "yes",
-        "accident_date": "2024-07-14",
-        "accident_time": "10:45",
-        "accident_place": "Inomhus: K\u00f6k",
-        "witness": "No Witness",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Oj\u00e4mn mark",
-            "Att hantera object"
-        ],
-        "userActivity": [
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got"
-        ],
-        "precedingSymptoms": [
-            "Yrsel"
-        ],
-        "fallConsequence": [
-            "Ingen skada",
-            "Skada"
-        ],
-        "injuryType": [
-            "Bl\u00e5m\u00e4rke/sm\u00e5 s\u00e5r",
-            "St\u00f6rre s\u00e5rskada"
-        ],
-        "takenMeasures": [
-            "Extra tillsyn",
-            "Milj\u00f6f\u00f6r\u00e4ndringar"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 60,
-        "elderly_name": "Sophia Smith",
-        "was_fall_last_3_months": "yes",
-        "accident_date": "2024-07-28",
-        "accident_time": "07:56",
-        "accident_place": "Utomhus: Tr\u00e4dg\u00e5rd",
-        "witness": "Michael Scott",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Felbed\u00f6mning"
-        ],
-        "userActivity": [
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got",
-            "Reste/satte sig"
-        ],
-        "precedingSymptoms": [
-            "Yrsel",
-            "Urintr\u00e5ngning"
-        ],
-        "fallConsequence": [
-            "Ingen skada",
-            "Skada"
-        ],
-        "injuryType": [
-            "L\u00e4tt skada"
-        ],
-        "takenMeasures": [
-            "Varning vid risk",
-            "Milj\u00f6f\u00f6r\u00e4ndringar"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 61,
-        "elderly_name": "Sophia Smith",
-        "was_fall_last_3_months": "no",
-        "accident_date": "2024-12-10",
-        "accident_time": "15:27",
-        "accident_place": "Inomhus: Balkong",
-        "witness": "Sarah Connor",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Oj\u00e4mn mark"
-        ],
-        "userActivity": [
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got"
-        ],
-        "precedingSymptoms": [
-            "Svaghet",
-            "Urintr\u00e5ngning"
-        ],
-        "fallConsequence": [
-            "Medvetsl\u00f6shet",
-            "Skada"
-        ],
-        "injuryType": [
-            "St\u00f6rre s\u00e5rskada",
-            "L\u00e4tt skada"
-        ],
-        "takenMeasures": [
-            "Milj\u00f6f\u00f6r\u00e4ndringar"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 62,
-        "elderly_name": "Elijah Harris",
-        "was_fall_last_3_months": "no",
-        "accident_date": "2024-06-04",
-        "accident_time": "00:00",
-        "accident_place": "Inomhus: Balkong",
-        "witness": "Jane Doe",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Oj\u00e4mn mark"
-        ],
-        "userActivity": [
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got",
-            "Reste/satte sig"
-        ],
-        "precedingSymptoms": [
-            "Urintr\u00e5ngning",
-            "Yrsel"
-        ],
-        "fallConsequence": [
-            "Skada",
-            "Ingen skada"
-        ],
-        "injuryType": [
-            "Bl\u00e5m\u00e4rke/sm\u00e5 s\u00e5r"
-        ],
-        "takenMeasures": [
-            "Varning vid risk",
-            "Milj\u00f6f\u00f6r\u00e4ndringar"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 63,
-        "elderly_name": "Liam Johnson",
-        "was_fall_last_3_months": "yes",
-        "accident_date": "2024-07-20",
-        "accident_time": "13:35",
-        "accident_place": "Inomhus: Vardagsrum",
-        "witness": "John Doe",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Att hantera object"
-        ],
-        "userActivity": [
-            "P\u00e5/avkl\u00e4nning, hygien",
-            "Reste/satte sig"
-        ],
-        "precedingSymptoms": [
-            "Yrsel",
-            "Urintr\u00e5ngning"
-        ],
-        "fallConsequence": [
-            "Ingen skada",
-            "Medvetsl\u00f6shet"
-        ],
-        "injuryType": [
-            "St\u00f6rre s\u00e5rskada"
-        ],
-        "takenMeasures": [
-            "Varning vid risk",
-            "Milj\u00f6f\u00f6r\u00e4ndringar"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 64,
-        "elderly_name": "James White",
-        "was_fall_last_3_months": "yes",
-        "accident_date": "2024-07-29",
-        "accident_time": "15:49",
-        "accident_place": "Inomhus: Vardagsrum",
-        "witness": "Sarah Connor",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Oj\u00e4mn mark",
-            "Att hantera object"
-        ],
-        "userActivity": [
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got",
-            "Reste/satte sig"
-        ],
-        "precedingSymptoms": [
-            "Yrsel",
-            "Urintr\u00e5ngning"
-        ],
-        "fallConsequence": [
-            "Ingen skada"
-        ],
-        "injuryType": [
-            "St\u00f6rre s\u00e5rskada",
-            "L\u00e4tt skada"
-        ],
-        "takenMeasures": [
-            "Extra tillsyn"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 65,
-        "elderly_name": "Aiden Cooper",
-        "was_fall_last_3_months": "no",
-        "accident_date": "2024-04-07",
-        "accident_time": "15:04",
-        "accident_place": "Inomhus: K\u00f6k",
-        "witness": "Jane Doe",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Att hantera object",
-            "Felbed\u00f6mning"
-        ],
-        "userActivity": [
-            "Reste/satte sig",
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got"
-        ],
-        "precedingSymptoms": [
-            "Svaghet",
-            "Urintr\u00e5ngning"
-        ],
-        "fallConsequence": [
-            "Medvetsl\u00f6shet",
-            "Skada"
-        ],
-        "injuryType": [
-            "L\u00e4tt skada"
-        ],
-        "takenMeasures": [
-            "Extra tillsyn",
-            "Varning vid risk"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 66,
-        "elderly_name": "Liam Johnson",
-        "was_fall_last_3_months": "yes",
-        "accident_date": "2024-07-16",
-        "accident_time": "02:41",
-        "accident_place": "Utomhus: Tr\u00e4dg\u00e5rd",
-        "witness": "Sarah Connor",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Oj\u00e4mn mark"
-        ],
-        "userActivity": [
-            "P\u00e5/avkl\u00e4nning, hygien"
-        ],
-        "precedingSymptoms": [
-            "Yrsel",
-            "Svaghet"
-        ],
-        "fallConsequence": [
-            "Medvetsl\u00f6shet",
-            "Skada"
-        ],
-        "injuryType": [
-            "Fraktur",
-            "Bl\u00e5m\u00e4rke/sm\u00e5 s\u00e5r"
-        ],
-        "takenMeasures": [
-            "Varning vid risk",
-            "Extra tillsyn"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 67,
-        "elderly_name": "Emma Brown",
-        "was_fall_last_3_months": "no",
-        "accident_date": "2024-12-04",
-        "accident_time": "19:27",
-        "accident_place": "Inomhus: Vardagsrum",
-        "witness": "John Doe",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Oj\u00e4mn mark",
-            "Felbed\u00f6mning"
-        ],
-        "userActivity": [
-            "Reste/satte sig",
-            "P\u00e5/avkl\u00e4nning, hygien"
-        ],
-        "precedingSymptoms": [
-            "Oro"
-        ],
-        "fallConsequence": [
-            "Ingen skada"
-        ],
-        "injuryType": [
-            "L\u00e4tt skada"
-        ],
-        "takenMeasures": [
-            "Milj\u00f6f\u00f6r\u00e4ndringar",
-            "Varning vid risk"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 68,
-        "elderly_name": "Olivia Jones",
-        "was_fall_last_3_months": "yes",
-        "accident_date": "2024-07-27",
-        "accident_time": "03:52",
-        "accident_place": "Inomhus: Vardagsrum",
-        "witness": "John Doe",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Felbed\u00f6mning"
-        ],
-        "userActivity": [
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got",
-            "Reste/satte sig"
-        ],
-        "precedingSymptoms": [
-            "Svaghet"
-        ],
-        "fallConsequence": [
-            "Medvetsl\u00f6shet",
-            "Skada"
-        ],
-        "injuryType": [
-            "St\u00f6rre s\u00e5rskada",
-            "L\u00e4tt skada"
-        ],
-        "takenMeasures": [
-            "Extra tillsyn"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 69,
-        "elderly_name": "Olivia Jones",
-        "was_fall_last_3_months": "no",
-        "accident_date": "2024-02-23",
-        "accident_time": "04:41",
-        "accident_place": "Inomhus: Balkong",
-        "witness": "John Doe",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Att hantera object"
-        ],
-        "userActivity": [
-            "P\u00e5/avkl\u00e4nning, hygien",
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got"
-        ],
-        "precedingSymptoms": [
-            "Oro",
-            "Yrsel"
-        ],
-        "fallConsequence": [
-            "Skada",
-            "Medvetsl\u00f6shet"
-        ],
-        "injuryType": [
-            "St\u00f6rre s\u00e5rskada"
-        ],
-        "takenMeasures": [
-            "Extra tillsyn",
-            "Milj\u00f6f\u00f6r\u00e4ndringar"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 70,
-        "elderly_name": "James White",
-        "was_fall_last_3_months": "no",
-        "accident_date": "2024-11-09",
-        "accident_time": "06:43",
-        "accident_place": "Utomhus: Tr\u00e4dg\u00e5rd",
-        "witness": "Jane Doe",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Oj\u00e4mn mark",
-            "Att hantera object"
-        ],
-        "userActivity": [
-            "P\u00e5/avkl\u00e4nning, hygien",
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got"
-        ],
-        "precedingSymptoms": [
-            "Svaghet"
-        ],
-        "fallConsequence": [
-            "Medvetsl\u00f6shet"
-        ],
-        "injuryType": [
-            "L\u00e4tt skada",
-            "Bl\u00e5m\u00e4rke/sm\u00e5 s\u00e5r"
-        ],
-        "takenMeasures": [
-            "Extra tillsyn"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 71,
-        "elderly_name": "Emma Brown",
-        "was_fall_last_3_months": "no",
-        "accident_date": "2024-12-22",
-        "accident_time": "03:07",
-        "accident_place": "Utomhus: Tr\u00e4dg\u00e5rd",
-        "witness": "John Doe",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Att hantera object"
-        ],
-        "userActivity": [
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got",
-            "Reste/satte sig"
-        ],
-        "precedingSymptoms": [
-            "Svaghet",
-            "Yrsel"
-        ],
-        "fallConsequence": [
-            "Medvetsl\u00f6shet"
-        ],
-        "injuryType": [
-            "Fraktur",
-            "L\u00e4tt skada"
-        ],
-        "takenMeasures": [
-            "Milj\u00f6f\u00f6r\u00e4ndringar"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 72,
-        "elderly_name": "Aiden Cooper",
-        "was_fall_last_3_months": "no",
-        "accident_date": "2024-08-14",
-        "accident_time": "22:50",
-        "accident_place": "Inomhus: Vardagsrum",
-        "witness": "Michael Scott",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Att hantera object",
-            "Felbed\u00f6mning"
-        ],
-        "userActivity": [
-            "Reste/satte sig",
-            "P\u00e5/avkl\u00e4nning, hygien"
-        ],
-        "precedingSymptoms": [
-            "Oro"
-        ],
-        "fallConsequence": [
-            "Medvetsl\u00f6shet",
-            "Ingen skada"
-        ],
-        "injuryType": [
-            "Bl\u00e5m\u00e4rke/sm\u00e5 s\u00e5r",
-            "L\u00e4tt skada"
-        ],
-        "takenMeasures": [
-            "Varning vid risk"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 73,
-        "elderly_name": "James White",
-        "was_fall_last_3_months": "yes",
-        "accident_date": "2024-05-30",
-        "accident_time": "13:03",
-        "accident_place": "Inomhus: K\u00f6k",
-        "witness": "Michael Scott",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Felbed\u00f6mning",
-            "Att hantera object"
-        ],
-        "userActivity": [
-            "Reste/satte sig",
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got"
-        ],
-        "precedingSymptoms": [
-            "Yrsel",
-            "Svaghet"
-        ],
-        "fallConsequence": [
-            "Ingen skada"
-        ],
-        "injuryType": [
-            "Fraktur"
-        ],
-        "takenMeasures": [
-            "Extra tillsyn",
-            "Varning vid risk"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 74,
-        "elderly_name": "Elijah Harris",
-        "was_fall_last_3_months": "yes",
-        "accident_date": "2024-11-04",
-        "accident_time": "21:14",
-        "accident_place": "Utomhus: Tr\u00e4dg\u00e5rd",
-        "witness": "No Witness",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Felbed\u00f6mning"
-        ],
-        "userActivity": [
-            "P\u00e5/avkl\u00e4nning, hygien",
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got"
-        ],
-        "precedingSymptoms": [
-            "Oro",
-            "Svaghet"
-        ],
-        "fallConsequence": [
-            "Skada",
-            "Medvetsl\u00f6shet"
-        ],
-        "injuryType": [
-            "St\u00f6rre s\u00e5rskada",
-            "Fraktur"
-        ],
-        "takenMeasures": [
-            "Varning vid risk",
-            "Extra tillsyn"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 75,
-        "elderly_name": "James White",
-        "was_fall_last_3_months": "no",
-        "accident_date": "2024-09-10",
-        "accident_time": "04:54",
-        "accident_place": "Utomhus: Tr\u00e4dg\u00e5rd",
-        "witness": "No Witness",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Felbed\u00f6mning"
-        ],
-        "userActivity": [
-            "Reste/satte sig"
-        ],
-        "precedingSymptoms": [
-            "Svaghet"
-        ],
-        "fallConsequence": [
-            "Medvetsl\u00f6shet",
-            "Skada"
-        ],
-        "injuryType": [
-            "Fraktur",
-            "Bl\u00e5m\u00e4rke/sm\u00e5 s\u00e5r"
-        ],
-        "takenMeasures": [
-            "Varning vid risk",
-            "Extra tillsyn"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 76,
-        "elderly_name": "James White",
-        "was_fall_last_3_months": "yes",
-        "accident_date": "2024-06-13",
-        "accident_time": "09:54",
-        "accident_place": "Inomhus: K\u00f6k",
-        "witness": "No Witness",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Att hantera object",
-            "Oj\u00e4mn mark"
-        ],
-        "userActivity": [
-            "P\u00e5/avkl\u00e4nning, hygien",
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got"
-        ],
-        "precedingSymptoms": [
-            "Oro",
-            "Yrsel"
-        ],
-        "fallConsequence": [
-            "Ingen skada",
-            "Medvetsl\u00f6shet"
-        ],
-        "injuryType": [
-            "St\u00f6rre s\u00e5rskada",
-            "L\u00e4tt skada"
-        ],
-        "takenMeasures": [
-            "Extra tillsyn"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 77,
-        "elderly_name": "Liam Johnson",
-        "was_fall_last_3_months": "no",
-        "accident_date": "2024-08-25",
-        "accident_time": "15:07",
-        "accident_place": "Utomhus: Park",
-        "witness": "John Doe",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Att hantera object",
-            "Oj\u00e4mn mark"
-        ],
-        "userActivity": [
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got"
-        ],
-        "precedingSymptoms": [
-            "Urintr\u00e5ngning"
-        ],
-        "fallConsequence": [
-            "Skada"
-        ],
-        "injuryType": [
-            "St\u00f6rre s\u00e5rskada"
-        ],
-        "takenMeasures": [
-            "Extra tillsyn"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 78,
-        "elderly_name": "Aiden Cooper",
-        "was_fall_last_3_months": "yes",
-        "accident_date": "2024-01-30",
-        "accident_time": "04:58",
-        "accident_place": "Utomhus: Tr\u00e4dg\u00e5rd",
-        "witness": "No Witness",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Att hantera object",
-            "Felbed\u00f6mning"
-        ],
-        "userActivity": [
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got",
-            "Reste/satte sig"
-        ],
-        "precedingSymptoms": [
-            "Yrsel",
-            "Oro"
-        ],
-        "fallConsequence": [
-            "Ingen skada",
-            "Skada"
-        ],
-        "injuryType": [
-            "Bl\u00e5m\u00e4rke/sm\u00e5 s\u00e5r"
-        ],
-        "takenMeasures": [
-            "Extra tillsyn"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 79,
-        "elderly_name": "Sloane Patrick",
-        "was_fall_last_3_months": "no",
-        "accident_date": "2024-12-02",
-        "accident_time": "03:37",
-        "accident_place": "Inomhus: K\u00f6k",
-        "witness": "Sarah Connor",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Att hantera object"
-        ],
-        "userActivity": [
-            "Reste/satte sig",
-            "P\u00e5/avkl\u00e4nning, hygien"
-        ],
-        "precedingSymptoms": [
-            "Urintr\u00e5ngning",
-            "Oro"
-        ],
-        "fallConsequence": [
-            "Medvetsl\u00f6shet"
-        ],
-        "injuryType": [
-            "Fraktur"
-        ],
-        "takenMeasures": [
-            "Varning vid risk",
-            "Milj\u00f6f\u00f6r\u00e4ndringar"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 80,
-        "elderly_name": "Elijah Harris",
-        "was_fall_last_3_months": "yes",
-        "accident_date": "2024-03-13",
-        "accident_time": "09:52",
-        "accident_place": "Inomhus: Balkong",
-        "witness": "No Witness",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Att hantera object"
-        ],
-        "userActivity": [
-            "Reste/satte sig"
-        ],
-        "precedingSymptoms": [
-            "Urintr\u00e5ngning",
-            "Svaghet"
-        ],
-        "fallConsequence": [
-            "Medvetsl\u00f6shet"
-        ],
-        "injuryType": [
-            "L\u00e4tt skada"
-        ],
-        "takenMeasures": [
-            "Extra tillsyn"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 81,
-        "elderly_name": "James White",
-        "was_fall_last_3_months": "yes",
-        "accident_date": "2024-11-06",
-        "accident_time": "14:59",
-        "accident_place": "Inomhus: Balkong",
-        "witness": "Jane Doe",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Felbed\u00f6mning"
-        ],
-        "userActivity": [
-            "Reste/satte sig",
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got"
-        ],
-        "precedingSymptoms": [
-            "Yrsel",
-            "Urintr\u00e5ngning"
-        ],
-        "fallConsequence": [
-            "Medvetsl\u00f6shet"
-        ],
-        "injuryType": [
-            "Fraktur"
-        ],
-        "takenMeasures": [
-            "Varning vid risk"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 82,
-        "elderly_name": "Aiden Cooper",
-        "was_fall_last_3_months": "yes",
-        "accident_date": "2024-07-15",
-        "accident_time": "13:33",
-        "accident_place": "Inomhus: Vardagsrum",
-        "witness": "Jane Doe",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Felbed\u00f6mning",
-            "Att hantera object"
-        ],
-        "userActivity": [
-            "Reste/satte sig",
-            "P\u00e5/avkl\u00e4nning, hygien"
-        ],
-        "precedingSymptoms": [
-            "Oro",
-            "Svaghet"
-        ],
-        "fallConsequence": [
-            "Ingen skada",
-            "Skada"
-        ],
-        "injuryType": [
-            "Fraktur",
-            "L\u00e4tt skada"
-        ],
-        "takenMeasures": [
-            "Milj\u00f6f\u00f6r\u00e4ndringar",
-            "Varning vid risk"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 83,
-        "elderly_name": "James White",
-        "was_fall_last_3_months": "no",
-        "accident_date": "2024-12-06",
-        "accident_time": "22:54",
-        "accident_place": "Utomhus: Tr\u00e4dg\u00e5rd",
-        "witness": "Michael Scott",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Felbed\u00f6mning",
-            "Oj\u00e4mn mark"
-        ],
-        "userActivity": [
-            "Reste/satte sig"
-        ],
-        "precedingSymptoms": [
-            "Svaghet",
-            "Yrsel"
-        ],
-        "fallConsequence": [
-            "Ingen skada"
-        ],
-        "injuryType": [
-            "L\u00e4tt skada"
-        ],
-        "takenMeasures": [
-            "Varning vid risk",
-            "Extra tillsyn"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 84,
-        "elderly_name": "Aiden Cooper",
-        "was_fall_last_3_months": "no",
-        "accident_date": "2024-01-21",
-        "accident_time": "21:20",
-        "accident_place": "Inomhus: Balkong",
-        "witness": "Michael Scott",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Felbed\u00f6mning"
-        ],
-        "userActivity": [
-            "Reste/satte sig",
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got"
-        ],
-        "precedingSymptoms": [
-            "Yrsel"
-        ],
-        "fallConsequence": [
-            "Ingen skada",
-            "Skada"
-        ],
-        "injuryType": [
-            "St\u00f6rre s\u00e5rskada",
-            "L\u00e4tt skada"
-        ],
-        "takenMeasures": [
-            "Varning vid risk",
-            "Extra tillsyn"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 85,
-        "elderly_name": "Aiden Cooper",
-        "was_fall_last_3_months": "no",
-        "accident_date": "2024-10-10",
-        "accident_time": "09:39",
-        "accident_place": "Inomhus: K\u00f6k",
-        "witness": "Sarah Connor",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Felbed\u00f6mning",
-            "Att hantera object"
-        ],
-        "userActivity": [
-            "Reste/satte sig",
-            "P\u00e5/avkl\u00e4nning, hygien"
-        ],
-        "precedingSymptoms": [
-            "Urintr\u00e5ngning"
-        ],
-        "fallConsequence": [
-            "Ingen skada"
-        ],
-        "injuryType": [
-            "St\u00f6rre s\u00e5rskada",
-            "Fraktur"
-        ],
-        "takenMeasures": [
-            "Extra tillsyn",
-            "Milj\u00f6f\u00f6r\u00e4ndringar"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 86,
-        "elderly_name": "Sloane Patrick",
-        "was_fall_last_3_months": "no",
-        "accident_date": "2024-11-08",
-        "accident_time": "09:23",
-        "accident_place": "Inomhus: K\u00f6k",
-        "witness": "No Witness",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Oj\u00e4mn mark",
-            "Felbed\u00f6mning"
-        ],
-        "userActivity": [
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got",
-            "Reste/satte sig"
-        ],
-        "precedingSymptoms": [
-            "Yrsel",
-            "Svaghet"
-        ],
-        "fallConsequence": [
-            "Ingen skada",
-            "Skada"
-        ],
-        "injuryType": [
-            "Fraktur"
-        ],
-        "takenMeasures": [
-            "Varning vid risk",
-            "Milj\u00f6f\u00f6r\u00e4ndringar"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 87,
-        "elderly_name": "Olivia Jones",
-        "was_fall_last_3_months": "no",
-        "accident_date": "2024-07-04",
-        "accident_time": "12:03",
-        "accident_place": "Utomhus: Tr\u00e4dg\u00e5rd",
-        "witness": "Sarah Connor",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Att hantera object",
-            "Oj\u00e4mn mark"
-        ],
-        "userActivity": [
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got"
-        ],
-        "precedingSymptoms": [
-            "Yrsel",
-            "Oro"
-        ],
-        "fallConsequence": [
-            "Skada"
-        ],
-        "injuryType": [
-            "Bl\u00e5m\u00e4rke/sm\u00e5 s\u00e5r"
-        ],
-        "takenMeasures": [
-            "Varning vid risk"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 88,
-        "elderly_name": "Liam Johnson",
-        "was_fall_last_3_months": "no",
-        "accident_date": "2024-11-24",
-        "accident_time": "07:59",
-        "accident_place": "Inomhus: Balkong",
-        "witness": "Sarah Connor",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Att hantera object"
-        ],
-        "userActivity": [
-            "Reste/satte sig"
-        ],
-        "precedingSymptoms": [
-            "Urintr\u00e5ngning"
-        ],
-        "fallConsequence": [
-            "Ingen skada",
-            "Skada"
-        ],
-        "injuryType": [
-            "L\u00e4tt skada",
-            "Fraktur"
-        ],
-        "takenMeasures": [
-            "Varning vid risk",
-            "Milj\u00f6f\u00f6r\u00e4ndringar"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 89,
-        "elderly_name": "Olivia Jones",
-        "was_fall_last_3_months": "yes",
-        "accident_date": "2024-01-15",
-        "accident_time": "21:35",
-        "accident_place": "Utomhus: Park",
-        "witness": "John Doe",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Oj\u00e4mn mark",
-            "Felbed\u00f6mning"
-        ],
-        "userActivity": [
-            "Reste/satte sig"
-        ],
-        "precedingSymptoms": [
-            "Svaghet",
-            "Oro"
-        ],
-        "fallConsequence": [
-            "Ingen skada",
-            "Medvetsl\u00f6shet"
-        ],
-        "injuryType": [
-            "Fraktur"
-        ],
-        "takenMeasures": [
-            "Milj\u00f6f\u00f6r\u00e4ndringar",
-            "Varning vid risk"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 90,
-        "elderly_name": "Olivia Jones",
-        "was_fall_last_3_months": "yes",
-        "accident_date": "2024-08-07",
-        "accident_time": "07:52",
-        "accident_place": "Utomhus: Park",
-        "witness": "John Doe",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Att hantera object",
-            "Felbed\u00f6mning"
-        ],
-        "userActivity": [
-            "P\u00e5/avkl\u00e4nning, hygien",
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got"
-        ],
-        "precedingSymptoms": [
-            "Urintr\u00e5ngning"
-        ],
-        "fallConsequence": [
-            "Ingen skada",
-            "Skada"
-        ],
-        "injuryType": [
-            "Fraktur"
-        ],
-        "takenMeasures": [
-            "Varning vid risk"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 91,
-        "elderly_name": "Elijah Harris",
-        "was_fall_last_3_months": "yes",
-        "accident_date": "2024-07-27",
-        "accident_time": "18:20",
-        "accident_place": "Inomhus: K\u00f6k",
-        "witness": "Michael Scott",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Felbed\u00f6mning"
-        ],
-        "userActivity": [
-            "Reste/satte sig"
-        ],
-        "precedingSymptoms": [
-            "Svaghet"
-        ],
-        "fallConsequence": [
-            "Ingen skada"
-        ],
-        "injuryType": [
-            "St\u00f6rre s\u00e5rskada",
-            "Fraktur"
-        ],
-        "takenMeasures": [
-            "Varning vid risk",
-            "Milj\u00f6f\u00f6r\u00e4ndringar"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 92,
-        "elderly_name": "Olivia Jones",
-        "was_fall_last_3_months": "yes",
-        "accident_date": "2024-07-13",
-        "accident_time": "01:06",
-        "accident_place": "Utomhus: Tr\u00e4dg\u00e5rd",
-        "witness": "Sarah Connor",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Felbed\u00f6mning"
-        ],
-        "userActivity": [
-            "P\u00e5/avkl\u00e4nning, hygien",
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got"
-        ],
-        "precedingSymptoms": [
-            "Oro",
-            "Svaghet"
-        ],
-        "fallConsequence": [
-            "Skada",
-            "Medvetsl\u00f6shet"
-        ],
-        "injuryType": [
-            "Bl\u00e5m\u00e4rke/sm\u00e5 s\u00e5r"
-        ],
-        "takenMeasures": [
-            "Varning vid risk",
-            "Milj\u00f6f\u00f6r\u00e4ndringar"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 93,
-        "elderly_name": "Aiden Cooper",
-        "was_fall_last_3_months": "no",
-        "accident_date": "2024-08-02",
-        "accident_time": "22:58",
-        "accident_place": "Inomhus: K\u00f6k",
-        "witness": "Jane Doe",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Att hantera object",
-            "Felbed\u00f6mning"
-        ],
-        "userActivity": [
-            "Reste/satte sig"
-        ],
-        "precedingSymptoms": [
-            "Oro",
-            "Urintr\u00e5ngning"
-        ],
-        "fallConsequence": [
-            "Ingen skada"
-        ],
-        "injuryType": [
-            "Fraktur"
-        ],
-        "takenMeasures": [
-            "Extra tillsyn",
-            "Varning vid risk"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 94,
-        "elderly_name": "Emma Brown",
-        "was_fall_last_3_months": "yes",
-        "accident_date": "2024-12-10",
-        "accident_time": "23:54",
-        "accident_place": "Inomhus: Vardagsrum",
-        "witness": "Sarah Connor",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Felbed\u00f6mning",
-            "Oj\u00e4mn mark"
-        ],
-        "userActivity": [
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got",
-            "P\u00e5/avkl\u00e4nning, hygien"
-        ],
-        "precedingSymptoms": [
-            "Urintr\u00e5ngning",
-            "Yrsel"
-        ],
-        "fallConsequence": [
-            "Skada",
-            "Medvetsl\u00f6shet"
-        ],
-        "injuryType": [
-            "St\u00f6rre s\u00e5rskada"
-        ],
-        "takenMeasures": [
-            "Extra tillsyn",
-            "Milj\u00f6f\u00f6r\u00e4ndringar"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 95,
-        "elderly_name": "Sloane Patrick",
-        "was_fall_last_3_months": "no",
-        "accident_date": "2024-06-30",
-        "accident_time": "13:56",
-        "accident_place": "Utomhus: Tr\u00e4dg\u00e5rd",
-        "witness": "John Doe",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Felbed\u00f6mning"
-        ],
-        "userActivity": [
-            "Reste/satte sig"
-        ],
-        "precedingSymptoms": [
-            "Oro"
-        ],
-        "fallConsequence": [
-            "Ingen skada"
-        ],
-        "injuryType": [
-            "Fraktur",
-            "Bl\u00e5m\u00e4rke/sm\u00e5 s\u00e5r"
-        ],
-        "takenMeasures": [
-            "Varning vid risk"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 96,
-        "elderly_name": "Liam Johnson",
-        "was_fall_last_3_months": "yes",
-        "accident_date": "2024-03-13",
-        "accident_time": "00:52",
-        "accident_place": "Inomhus: Balkong",
-        "witness": "John Doe",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Oj\u00e4mn mark"
-        ],
-        "userActivity": [
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got"
-        ],
-        "precedingSymptoms": [
-            "Oro",
-            "Yrsel"
-        ],
-        "fallConsequence": [
-            "Medvetsl\u00f6shet",
-            "Skada"
-        ],
-        "injuryType": [
-            "Fraktur"
-        ],
-        "takenMeasures": [
-            "Extra tillsyn"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 97,
-        "elderly_name": "James White",
-        "was_fall_last_3_months": "no",
-        "accident_date": "2024-11-19",
-        "accident_time": "06:22",
-        "accident_place": "Utomhus: Park",
-        "witness": "No Witness",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Oj\u00e4mn mark",
-            "Att hantera object"
-        ],
-        "userActivity": [
-            "Reste/satte sig",
-            "P\u00e5/avkl\u00e4nning, hygien"
-        ],
-        "precedingSymptoms": [
-            "Urintr\u00e5ngning"
-        ],
-        "fallConsequence": [
-            "Ingen skada"
-        ],
-        "injuryType": [
-            "St\u00f6rre s\u00e5rskada",
-            "Bl\u00e5m\u00e4rke/sm\u00e5 s\u00e5r"
-        ],
-        "takenMeasures": [
-            "Varning vid risk"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 98,
-        "elderly_name": "Emma Brown",
-        "was_fall_last_3_months": "yes",
-        "accident_date": "2024-10-16",
-        "accident_time": "22:03",
-        "accident_place": "Inomhus: Balkong",
-        "witness": "Michael Scott",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Oj\u00e4mn mark"
-        ],
-        "userActivity": [
-            "Reste/satte sig"
-        ],
-        "precedingSymptoms": [
-            "Oro"
-        ],
-        "fallConsequence": [
-            "Skada",
-            "Medvetsl\u00f6shet"
-        ],
-        "injuryType": [
-            "Fraktur",
-            "Bl\u00e5m\u00e4rke/sm\u00e5 s\u00e5r"
-        ],
-        "takenMeasures": [
-            "Varning vid risk",
-            "Milj\u00f6f\u00f6r\u00e4ndringar"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 99,
-        "elderly_name": "Emma Brown",
-        "was_fall_last_3_months": "yes",
-        "accident_date": "2024-12-31",
-        "accident_time": "01:38",
-        "accident_place": "Inomhus: K\u00f6k",
-        "witness": "No Witness",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Oj\u00e4mn mark",
-            "Att hantera object"
-        ],
-        "userActivity": [
-            "P\u00e5/avkl\u00e4nning, hygien"
-        ],
-        "precedingSymptoms": [
-            "Oro"
-        ],
-        "fallConsequence": [
-            "Medvetsl\u00f6shet"
-        ],
-        "injuryType": [
-            "Fraktur",
-            "L\u00e4tt skada"
-        ],
-        "takenMeasures": [
-            "Extra tillsyn"
-        ],
-        "photos": [
-            ""
-        ]
-    },
-    {
-        "id": 100,
-        "elderly_name": "Olivia Jones",
-        "was_fall_last_3_months": "no",
-        "accident_date": "2024-03-18",
-        "accident_time": "08:54",
-        "accident_place": "Utomhus: Tr\u00e4dg\u00e5rd",
-        "witness": "Sarah Connor",
-        "additional_content": "Description of the incident",
-        "fallReason": [
-            "Felbed\u00f6mning",
-            "Oj\u00e4mn mark"
-        ],
-        "userActivity": [
-            "Gick f\u00f6r att h\u00e4mta n\u00e5got",
-            "Reste/satte sig"
-        ],
-        "precedingSymptoms": [
-            "Oro",
-            "Yrsel"
-        ],
-        "fallConsequence": [
-            "Skada"
-        ],
-        "injuryType": [
-            "Bl\u00e5m\u00e4rke/sm\u00e5 s\u00e5r",
-            "L\u00e4tt skada"
-        ],
-        "takenMeasures": [
-            "Milj\u00f6f\u00f6r\u00e4ndringar"
-        ],
-        "photos": [
-            ""
-        ]
-    }
+	{
+		"id": 1,
+		"elderly_name": "Liam Johnson",
+		"was_fall_last_3_months": "no",
+		"accident_date": "2024-11-04",
+		"accident_time": "00:30",
+		"accident_place": "Utomhus: Trädgård",
+		"witness": "John Doe",
+		"additional_content": "Description of the incident",
+		"fallReason": ["Felbedömning"],
+		"userActivity": ["Reste/satte sig"],
+		"precedingSymptoms": ["Oro"],
+		"fallConsequence": ["Medvetslöshet"],
+		"injuryType": ["Fraktur"],
+		"takenMeasures": ["Miljöförändringar"],
+		"photos": [""]
+	},
+	{
+		"id": 2,
+		"elderly_name": "Aiden Cooper",
+		"was_fall_last_3_months": "yes",
+		"accident_date": "2024-07-27",
+		"accident_time": "22:13",
+		"accident_place": "Utomhus: Trädgård",
+		"witness": "No Witness",
+		"additional_content": "Description of the incident",
+		"fallReason": ["Att hantera object", "Ojämn mark"],
+		"userActivity": ["På/avklädning, hygien"],
+		"precedingSymptoms": ["Oro", "Yrsel"],
+		"fallConsequence": ["Ingen skada", "Medvetslöshet"],
+		"injuryType": ["Fraktur", "Blåmärke/små sår"],
+		"takenMeasures": ["Extra tillsyn"],
+		"photos": [""]
+	},
+	{
+		"id": 3,
+		"elderly_name": "Liam Johnson",
+		"was_fall_last_3_months": "yes",
+		"accident_date": "2024-07-30",
+		"accident_time": "13:32",
+		"accident_place": "Inomhus: Kök",
+		"witness": "No Witness",
+		"additional_content": "Description of the incident",
+		"fallReason": ["Felbedömning", "Ojämn mark"],
+		"userActivity": ["På/avklädning, hygien"],
+		"precedingSymptoms": ["Urinträngning"],
+		"fallConsequence": ["Skada", "Ingen skada"],
+		"injuryType": ["Lätt skada", "Fraktur"],
+		"takenMeasures": ["Extra tillsyn", "Miljöförändringar"],
+		"photos": [""]
+	},
+	{
+		"id": 4,
+		"elderly_name": "Sloane Patrick",
+		"was_fall_last_3_months": "yes",
+		"accident_date": "2024-04-20",
+		"accident_time": "10:45",
+		"accident_place": "Inomhus: Balkong",
+		"witness": "No Witness",
+		"additional_content": "Description of the incident",
+		"fallReason": ["Ojämn mark", "Att hantera object"],
+		"userActivity": ["Gick för att hämta något"],
+		"precedingSymptoms": ["Yrsel", "Oro"],
+		"fallConsequence": ["Medvetslöshet"],
+		"injuryType": ["Blåmärke/små sår", "Lätt skada"],
+		"takenMeasures": ["Miljöförändringar", "Extra tillsyn"],
+		"photos": [""]
+	},
+	{
+		"id": 5,
+		"elderly_name": "James White",
+		"was_fall_last_3_months": "no",
+		"accident_date": "2024-12-01",
+		"accident_time": "13:50",
+		"accident_place": "Inomhus: Vardagsrum",
+		"witness": "Michael Scott",
+		"additional_content": "Description of the incident",
+		"fallReason": ["Ojämn mark", "Mörker"],
+		"userActivity": ["På/avklädning, hygien", "Gick för att hämta något"],
+		"precedingSymptoms": ["Oro"],
+		"fallConsequence": ["Skada"],
+		"injuryType": ["Blåmärke/små sår", "Lätt skada"],
+		"takenMeasures": ["Varning vid risk"],
+		"photos": [""]
+	},
+	{
+		"id": 6,
+		"elderly_name": "Olivia Jones",
+		"was_fall_last_3_months": "no",
+		"accident_date": "2024-07-07",
+		"accident_time": "20:05",
+		"accident_place": "Utomhus: Trädgård",
+		"witness": "Jane Doe",
+		"additional_content": "Description of the incident",
+		"fallReason": ["Att hantera object", "Olämpliga skor/sulor"],
+		"userActivity": ["Reste/satte sig"],
+		"precedingSymptoms": ["Oro", "Svaghet"],
+		"fallConsequence": ["Skada", "Ingen skada"],
+		"injuryType": ["Större sårskada"],
+		"takenMeasures": ["Varning vid risk"],
+		"photos": [""]
+	},
+	{
+		"id": 7,
+		"elderly_name": "Olivia Jones",
+		"was_fall_last_3_months": "no",
+		"accident_date": "2024-09-16",
+		"accident_time": "20:44",
+		"accident_place": "Inomhus: Balkong",
+		"witness": "Jane Doe",
+		"additional_content": "Description of the incident",
+		"fallReason": ["Ojämn mark", "Walking AIDS (hantering, trasig)"],
+		"userActivity": ["Gick för att hämta något", "På/avklädning, hygien"],
+		"precedingSymptoms": ["Urinträngning", "Yrsel"],
+		"fallConsequence": ["Skada"],
+		"injuryType": ["Fraktur", "Blåmärke/små sår"],
+		"takenMeasures": ["Varning vid risk", "Miljöförändringar"],
+		"photos": [""]
+	},
+	{
+		"id": 8,
+		"elderly_name": "Sophia Smith",
+		"was_fall_last_3_months": "yes",
+		"accident_date": "2024-08-17",
+		"accident_time": "11:47",
+		"accident_place": "Utomhus: Trädgård",
+		"witness": "John Doe",
+		"additional_content": "Description of the incident",
+		"fallReason": ["Ojämn mark", "Slirning"],
+		"userActivity": ["Reste/satte sig", "På/avklädning, hygien"],
+		"precedingSymptoms": ["Urinträngning", "Oro"],
+		"fallConsequence": ["Ingen skada", "Medvetslöshet"],
+		"injuryType": ["Lätt skada"],
+		"takenMeasures": ["Extra tillsyn"],
+		"photos": [""]
+	},
+	{
+		"id": 9,
+		"elderly_name": "James White",
+		"was_fall_last_3_months": "yes",
+		"accident_date": "2024-07-11",
+		"accident_time": "20:09",
+		"accident_place": "Inomhus: Kök",
+		"witness": "Jane Doe",
+		"additional_content": "Description of the incident",
+		"fallReason": ["Ojämn mark", "Att hantera object"],
+		"userActivity": ["Gick för att hämta något", "På/avklädning, hygien"],
+		"precedingSymptoms": ["Yrsel", "Svaghet"],
+		"fallConsequence": ["Medvetslöshet", "Skada"],
+		"injuryType": ["Fraktur"],
+		"takenMeasures": ["Varning vid risk", "Extra tillsyn"],
+		"photos": [""]
+	},
+	{
+		"id": 10,
+		"elderly_name": "Emma Brown",
+		"was_fall_last_3_months": "no",
+		"accident_date": "2024-09-18",
+		"accident_time": "13:03",
+		"accident_place": "Utomhus: Park",
+		"witness": "No Witness",
+		"additional_content": "Description of the incident",
+		"fallReason": ["Ojämn mark", "Slirning"],
+		"userActivity": ["På/avklädning, hygien"],
+		"precedingSymptoms": ["Urinträngning"],
+		"fallConsequence": ["Skada", "Ingen skada"],
+		"injuryType": ["Lätt skada", "Större sårskada"],
+		"takenMeasures": ["Extra tillsyn", "Miljöförändringar"],
+		"photos": [""]
+	},
+	{
+		"id": 11,
+		"elderly_name": "Elijah Harris",
+		"was_fall_last_3_months": "no",
+		"accident_date": "2024-08-29",
+		"accident_time": "09:22",
+		"accident_place": "Inomhus: Vardagsrum",
+		"witness": "Sarah Brown",
+		"additional_content": "Description of the incident",
+		"fallReason": ["Olämpliga skor/sulor", "Walking AIDS (hantering, trasig)"],
+		"userActivity": ["Reste/satte sig", "På/avklädning, hygien"],
+		"precedingSymptoms": ["Yrsel"],
+		"fallConsequence": ["Skada"],
+		"injuryType": ["Fraktur"],
+		"takenMeasures": ["Miljöförändringar", "Extra tillsyn"],
+		"photos": [""]
+	},
+	{
+		"id": 12,
+		"elderly_name": "Mia Taylor",
+		"was_fall_last_3_months": "yes",
+		"accident_date": "2024-06-30",
+		"accident_time": "15:35",
+		"accident_place": "Inomhus: Trappa",
+		"witness": "David Wilson",
+		"additional_content": "Description of the incident",
+		"fallReason": ["Slirning", "Olämpliga skor/sulor"],
+		"userActivity": ["Gick för att hämta något"],
+		"precedingSymptoms": ["Yrsel", "Oro"],
+		"fallConsequence": ["Medvetslöshet", "Skada"],
+		"injuryType": ["Fraktur", "Blåmärke/små sår"],
+		"takenMeasures": ["Extra tillsyn", "Varning vid risk"],
+		"photos": [""]
+	},
+	{
+		"id": 13,
+		"elderly_name": "Lucas Anderson",
+		"was_fall_last_3_months": "yes",
+		"accident_date": "2024-07-22",
+		"accident_time": "18:14",
+		"accident_place": "Utomhus: Trädgård",
+		"witness": "Emily Clark",
+		"additional_content": "Description of the incident",
+		"fallReason": ["Att hantera object", "Slirning"],
+		"userActivity": ["På/avklädning, hygien"],
+		"precedingSymptoms": ["Yrsel"],
+		"fallConsequence": ["Skada"],
+		"injuryType": ["Lätt skada"],
+		"takenMeasures": ["Miljöförändringar", "Varning vid risk"],
+		"photos": [""]
+	},
+	{
+		"id": 14,
+		"elderly_name": "Isabella Martin",
+		"was_fall_last_3_months": "yes",
+		"accident_date": "2024-10-05",
+		"accident_time": "14:27",
+		"accident_place": "Inomhus: Vardagsrum",
+		"witness": "Michael Johnson",
+		"additional_content": "Description of the incident",
+		"fallReason": ["Mörker", "Olämpliga skor/sulor"],
+		"userActivity": ["Gick för att hämta något"],
+		"precedingSymptoms": ["Oro", "Svaghet"],
+		"fallConsequence": ["Medvetslöshet"],
+		"injuryType": ["Blåmärke/små sår", "Fraktur"],
+		"takenMeasures": ["Extra tillsyn", "Miljöförändringar"],
+		"photos": [""]
+	},
+	{
+		"id": 15,
+		"elderly_name": "Noah White",
+		"was_fall_last_3_months": "no",
+		"accident_date": "2024-11-12",
+		"accident_time": "08:50",
+		"accident_place": "Utomhus: Park",
+		"witness": "No Witness",
+		"additional_content": "Description of the incident",
+		"fallReason": ["Ojämn mark", "Att hantera object"],
+		"userActivity": ["Reste/satte sig"],
+		"precedingSymptoms": ["Urinträngning"],
+		"fallConsequence": ["Skada"],
+		"injuryType": ["Fraktur"],
+		"takenMeasures": ["Miljöförändringar", "Varning vid risk"],
+		"photos": [""]
+	},
+	{
+		"id": 16,
+		"elderly_name": "Charlotte Scott",
+		"was_fall_last_3_months": "yes",
+		"accident_date": "2024-09-01",
+		"accident_time": "17:20",
+		"accident_place": "Inomhus: Trappa",
+		"witness": "John Doe",
+		"additional_content": "Description of the incident",
+		"fallReason": ["Walking AIDS (hantering, trasig)", "Slirning"],
+		"userActivity": ["Gick för att hämta något"],
+		"precedingSymptoms": ["Yrsel", "Oro"],
+		"fallConsequence": ["Skada", "Medvetslöshet"],
+		"injuryType": ["Blåmärke/små sår"],
+		"takenMeasures": ["Extra tillsyn", "Miljöförändringar"],
+		"photos": [""]
+	},
+	{
+		"id": 17,
+		"elderly_name": "Ethan Lewis",
+		"was_fall_last_3_months": "no",
+		"accident_date": "2024-08-15",
+		"accident_time": "11:05",
+		"accident_place": "Utomhus: Trädgård",
+		"witness": "Sarah Brown",
+		"additional_content": "Description of the incident",
+		"fallReason": ["Att hantera object", "Mörker"],
+		"userActivity": ["På/avklädning, hygien"],
+		"precedingSymptoms": ["Oro"],
+		"fallConsequence": ["Ingen skada"],
+		"injuryType": ["Lätt skada"],
+		"takenMeasures": ["Varning vid risk"],
+		"photos": [""]
+	},
+	{
+		"id": 18,
+		"elderly_name": "Mia Taylor",
+		"was_fall_last_3_months": "no",
+		"accident_date": "2024-07-25",
+		"accident_time": "14:30",
+		"accident_place": "Inomhus: Vardagsrum",
+		"witness": "Emily Clark",
+		"additional_content": "Description of the incident",
+		"fallReason": ["Slirning", "Ojämn mark"],
+		"userActivity": ["Reste/satte sig"],
+		"precedingSymptoms": ["Yrsel"],
+		"fallConsequence": ["Skada"],
+		"injuryType": ["Blåmärke/små sår", "Fraktur"],
+		"takenMeasures": ["Miljöförändringar", "Extra tillsyn"],
+		"photos": [""]
+	},
+	{
+		"id": 19,
+		"elderly_name": "Olivia Wilson",
+		"was_fall_last_3_months": "yes",
+		"accident_date": "2024-09-09",
+		"accident_time": "12:00",
+		"accident_place": "Inomhus: Kök",
+		"witness": "Michael Johnson",
+		"additional_content": "Description of the incident",
+		"fallReason": ["Olämpliga skor/sulor", "Att hantera object"],
+		"userActivity": ["Gick för att hämta något"],
+		"precedingSymptoms": ["Yrsel", "Urinträngning"],
+		"fallConsequence": ["Medvetslöshet"],
+		"injuryType": ["Fraktur"],
+		"takenMeasures": ["Extra tillsyn", "Miljöförändringar"],
+		"photos": [""]
+	},
+	{
+		"id": 20,
+		"elderly_name": "Sophia Martin",
+		"was_fall_last_3_months": "no",
+		"accident_date": "2024-10-23",
+		"accident_time": "16:45",
+		"accident_place": "Utomhus: Park",
+		"witness": "No Witness",
+		"additional_content": "Description of the incident",
+		"fallReason": ["Walking AIDS (hantering, trasig)", "Mörker"],
+		"userActivity": ["På/avklädning, hygien"],
+		"precedingSymptoms": ["Svaghet"],
+		"fallConsequence": ["Ingen skada"],
+		"injuryType": ["Lätt skada"],
+		"takenMeasures": ["Varning vid risk"],
+		"photos": [""]
+	},
+	{
+		"id": 21,
+		"elderly_name": "James Anderson",
+		"was_fall_last_3_months": "yes",
+		"accident_date": "2024-09-17",
+		"accident_time": "10:30",
+		"accident_place": "Inomhus: Badrum",
+		"witness": "Anna Smith",
+		"additional_content": "Description of the incident",
+		"fallReason": ["Slirning", "Att hantera object"],
+		"userActivity": ["På/avklädning, hygien"],
+		"precedingSymptoms": ["Yrsel", "Svaghet"],
+		"fallConsequence": ["Medvetslöshet"],
+		"injuryType": ["Fraktur"],
+		"takenMeasures": ["Miljöförändringar", "Varning vid risk"],
+		"photos": [""]
+	},
+	{
+		"id": 22,
+		"elderly_name": "Emma Brown",
+		"was_fall_last_3_months": "no",
+		"accident_date": "2024-08-03",
+		"accident_time": "13:15",
+		"accident_place": "Utomhus: Trädgård",
+		"witness": "Michael Johnson",
+		"additional_content": "Description of the incident",
+		"fallReason": ["Olämpliga skor/sulor", "Walking AIDS (hantering, trasig)"],
+		"userActivity": ["Reste/satte sig"],
+		"precedingSymptoms": ["Yrsel"],
+		"fallConsequence": ["Skada"],
+		"injuryType": ["Blåmärke/små sår"],
+		"takenMeasures": ["Extra tillsyn", "Miljöförändringar"],
+		"photos": [""]
+	},
+	{
+		"id": 23,
+		"elderly_name": "Lucas White",
+		"was_fall_last_3_months": "yes",
+		"accident_date": "2024-07-28",
+		"accident_time": "16:50",
+		"accident_place": "Inomhus: Kök",
+		"witness": "Sarah Brown",
+		"additional_content": "Description of the incident",
+		"fallReason": ["Mörker", "Slirning"],
+		"userActivity": ["På/avklädning, hygien"],
+		"precedingSymptoms": ["Yrsel", "Oro"],
+		"fallConsequence": ["Medvetslöshet"],
+		"injuryType": ["Fraktur"],
+		"takenMeasures": ["Miljöförändringar", "Varning vid risk"],
+		"photos": [""]
+	},
+	{
+		"id": 24,
+		"elderly_name": "Olivia Davis",
+		"was_fall_last_3_months": "no",
+		"accident_date": "2024-10-01",
+		"accident_time": "09:00",
+		"accident_place": "Utomhus: Gångväg",
+		"witness": "Emily Clark",
+		"additional_content": "Description of the incident",
+		"fallReason": ["Att hantera object", "Ojämn mark"],
+		"userActivity": ["Reste/satte sig"],
+		"precedingSymptoms": ["Oro"],
+		"fallConsequence": ["Skada"],
+		"injuryType": ["Blåmärke/små sår"],
+		"takenMeasures": ["Miljöförändringar"],
+		"photos": [""]
+	},
+	{
+		"id": 25,
+		"elderly_name": "Aiden Martinez",
+		"was_fall_last_3_months": "yes",
+		"accident_date": "2024-08-22",
+		"accident_time": "11:40",
+		"accident_place": "Inomhus: Hall",
+		"witness": "John Doe",
+		"additional_content": "Description of the incident",
+		"fallReason": ["Walking AIDS (hantering, trasig)", "Slirning"],
+		"userActivity": ["Gick för att hämta något"],
+		"precedingSymptoms": ["Yrsel"],
+		"fallConsequence": ["Medvetslöshet", "Skada"],
+		"injuryType": ["Fraktur", "Blåmärke/små sår"],
+		"takenMeasures": ["Extra tillsyn"],
+		"photos": [""]
+	},
+	{
+		"id": 26,
+		"elderly_name": "Sophia Johnson",
+		"was_fall_last_3_months": "no",
+		"accident_date": "2024-09-10",
+		"accident_time": "18:20",
+		"accident_place": "Inomhus: Vardagsrum",
+		"witness": "Emily Clark",
+		"additional_content": "Description of the incident",
+		"fallReason": ["Ojämn mark", "Att hantera object"],
+		"userActivity": ["På/avklädning, hygien"],
+		"precedingSymptoms": ["Yrsel"],
+		"fallConsequence": ["Skada"],
+		"injuryType": ["Blåmärke/små sår"],
+		"takenMeasures": ["Miljöförändringar"],
+		"photos": [""]
+	},
+	{
+		"id": 27,
+		"elderly_name": "Liam Thomas",
+		"was_fall_last_3_months": "yes",
+		"accident_date": "2024-07-09",
+		"accident_time": "14:55",
+		"accident_place": "Utomhus: Park",
+		"witness": "Michael Johnson",
+		"additional_content": "Description of the incident",
+		"fallReason": ["Mörker", "Slirning"],
+		"userActivity": ["Reste/satte sig"],
+		"precedingSymptoms": ["Yrsel", "Svaghet"],
+		"fallConsequence": ["Skada", "Medvetslöshet"],
+		"injuryType": ["Fraktur"],
+		"takenMeasures": ["Miljöförändringar", "Varning vid risk"],
+		"photos": [""]
+	},
+	{
+		"id": 28,
+		"elderly_name": "Isabella Williams",
+		"was_fall_last_3_months": "no",
+		"accident_date": "2024-10-12",
+		"accident_time": "12:15",
+		"accident_place": "Inomhus: Badrum",
+		"witness": "Anna Smith",
+		"additional_content": "Description of the incident",
+		"fallReason": ["Olämpliga skor/sulor", "Walking AIDS (hantering, trasig)"],
+		"userActivity": ["På/avklädning, hygien"],
+		"precedingSymptoms": ["Yrsel"],
+		"fallConsequence": ["Skada"],
+		"injuryType": ["Blåmärke/små sår"],
+		"takenMeasures": ["Extra tillsyn", "Miljöförändringar"],
+		"photos": [""]
+	},
+	{
+		"id": 29,
+		"elderly_name": "Mason Brown",
+		"was_fall_last_3_months": "yes",
+		"accident_date": "2024-08-30",
+		"accident_time": "09:10",
+		"accident_place": "Utomhus: Gångväg",
+		"witness": "Sarah Brown",
+		"additional_content": "Description of the incident",
+		"fallReason": ["Att hantera object", "Ojämn mark"],
+		"userActivity": ["Gick för att hämta något"],
+		"precedingSymptoms": ["Yrsel", "Oro"],
+		"fallConsequence": ["Medvetslöshet", "Skada"],
+		"injuryType": ["Fraktur"],
+		"takenMeasures": ["Miljöförändringar", "Extra tillsyn"],
+		"photos": [""]
+	},
+	{
+		"id": 30,
+		"elderly_name": "Charlotte Wilson",
+		"was_fall_last_3_months": "no",
+		"accident_date": "2024-09-21",
+		"accident_time": "17:00",
+		"accident_place": "Inomhus: Vardagsrum",
+		"witness": "Emily Clark",
+		"additional_content": "Description of the incident",
+		"fallReason": ["Slirning", "Att hantera object"],
+		"userActivity": ["På/avklädning, hygien"],
+		"precedingSymptoms": ["Yrsel"],
+		"fallConsequence": ["Skada"],
+		"injuryType": ["Blåmärke/små sår"],
+		"takenMeasures": ["Varning vid risk"],
+		"photos": [""]
+	},
+	{
+		"id": 30,
+		"elderly_name": "Parguzat Jacob",
+		"was_fall_last_3_months": "no",
+		"accident_date": "2024-1-09",
+		"accident_time": "17:00",
+		"accident_place": "Inomhus: Vardagsrum",
+		"witness": "Emily Clark",
+		"additional_content": "Description of the incident",
+		"fallReason": ["Slirning"],
+		"userActivity": ["På/avklädning, hygien"],
+		"precedingSymptoms": ["Yrsel"],
+		"fallConsequence": ["Skada"],
+		"injuryType": ["Blåmärke/små sår"],
+		"takenMeasures": ["Varning vid risk"],
+		"photos": [""]
+	}
 ]
