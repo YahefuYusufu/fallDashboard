@@ -16,3 +16,17 @@ export interface Report {
 	takenMeasures: string[] // An array of strings
 	photos: string[] // An array of photo URIs or empty
 }
+
+// types/fallTypes.ts
+export interface MonthlyFallCount {
+	[month: string]: number
+}
+
+export interface ReasonFallCount {
+	[reason: string]: number
+}
+
+export interface PlaceOfFallData {
+	place: string
+	people: number
+}

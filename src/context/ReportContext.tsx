@@ -1,13 +1,23 @@
-import { createContext, useState, useContext, ReactNode } from "react"
-import { countFallsByMonth, countFallsByReason } from "../utils/fallAlgorithms"
-import { Report } from "../types/report" // Import the Report type
+import React, { createContext, useState, useContext, ReactNode } from "react"
+import {
+	countFallsByMonth,
+	countFallsByReason,
+	countFallsByPlace,
+} from "../utils/fallAlgorithms"
+import {
+	MonthlyFallCount,
+	PlaceOfFallData,
+	ReasonFallCount,
+	Report,
+} from "../types" // Import the Report type
 
-// Define the context types
 interface ReportContextType {
 	reports: Report[] // An array of Report objects
-	monthlyFallCount: { [key: string]: number } // Keyed by month name
-	reasonFallCount: { [key: string]: number } // Keyed by reason
-	setReports: (reports: Report[]) => void // A function that accepts an array of reports
+	monthlyFallCount: MonthlyFallCount // Keyed by month name
+	reasonFallCount: ReasonFallCount // Keyed by reason
+	placeOfFallData: PlaceOfFallData[] // Array of places and counts
+	setReports: (reports: Report[]) => void // Function to set reports
+	setPlaceOfFallData: (data: PlaceOfFallData[]) => void // Function to set place of fall data
 }
 
 // Create the context
@@ -16,10 +26,17 @@ const ReportContext = createContext<ReportContextType | undefined>(undefined)
 // Create a provider component
 export const ReportProvider = ({ children }: { children: ReactNode }) => {
 	const [reports, setReports] = useState<Report[]>([]) // Initialize reports with the Report[] type
+	const [placeOfFallData, setPlaceOfFallData] = useState<PlaceOfFallData[]>([]) // Initialize placeOfFallData
 
 	// Calculate the monthly fall count and reason fall count
 	const monthlyFallCount = countFallsByMonth(reports)
 	const reasonFallCount = countFallsByReason(reports)
+	const placeData = countFallsByPlace(reports) // Function to get place of fall data
+
+	// Update placeOfFallData whenever reports change
+	React.useEffect(() => {
+		setPlaceOfFallData(placeData)
+	}, [reports, placeData])
 
 	return (
 		<ReportContext.Provider
@@ -27,7 +44,9 @@ export const ReportProvider = ({ children }: { children: ReactNode }) => {
 				reports,
 				monthlyFallCount,
 				reasonFallCount,
+				placeOfFallData,
 				setReports,
+				setPlaceOfFallData,
 			}}>
 			{children}
 		</ReportContext.Provider>

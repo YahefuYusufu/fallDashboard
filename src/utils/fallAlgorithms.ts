@@ -1,10 +1,9 @@
-import { Report } from "../types/report" // Import the Report type
+import { Report } from "../types"
+import { MonthlyFallCount, ReasonFallCount, PlaceOfFallData } from "../types"
 
 // Utility function to count falls by month
-export const countFallsByMonth = (
-	reports: Report[]
-): { [key: string]: number } => {
-	const monthlyFallCount: { [key: string]: number } = {}
+export const countFallsByMonth = (reports: Report[]): MonthlyFallCount => {
+	const monthlyFallCount: MonthlyFallCount = {}
 
 	reports.forEach((report) => {
 		const date = new Date(report.accident_date)
@@ -19,10 +18,8 @@ export const countFallsByMonth = (
 }
 
 // Utility function to count falls by reason
-export const countFallsByReason = (
-	reports: Report[]
-): { [key: string]: number } => {
-	const reasonFallCount: { [key: string]: number } = {}
+export const countFallsByReason = (reports: Report[]): ReasonFallCount => {
+	const reasonFallCount: ReasonFallCount = {}
 
 	reports.forEach((report) => {
 		report.fallReason.forEach((reason: string) => {
@@ -34,4 +31,19 @@ export const countFallsByReason = (
 	})
 
 	return reasonFallCount
+}
+
+// Utility function to count falls by place
+export const countFallsByPlace = (reports: Report[]): PlaceOfFallData[] => {
+	const placeCounts: Record<string, number> = {}
+
+	reports.forEach((report) => {
+		const place = report.accident_place
+		placeCounts[place] = (placeCounts[place] || 0) + 1
+	})
+
+	return Object.entries(placeCounts).map(([place, count]) => ({
+		place,
+		people: count,
+	}))
 }

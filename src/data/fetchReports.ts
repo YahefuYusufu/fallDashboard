@@ -1,4 +1,4 @@
-import { Report } from "../types/report" // Import the Report type
+import { Report } from "../types" // Import the Report type
 
 // Simulate fetching reports data (e.g., from a JSON file or mock API)
 export const fetchReports = async (): Promise<Report[]> => {
