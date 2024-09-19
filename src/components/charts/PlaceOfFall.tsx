@@ -11,8 +11,6 @@ import {
 } from "recharts"
 import { useNumberAnimation } from "../../hooks/useNumberAnimation"
 
-// import { AnnotationIcon } from "@heroicons/react/outline"
-
 export interface PlaceOfFallData {
 	place: string
 	people: number
