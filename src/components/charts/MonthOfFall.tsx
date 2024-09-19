@@ -88,6 +88,8 @@ const MonthOfFallChart: React.FC<MonthOfFallChartProps> = ({
 							stroke="#563BFF"
 							strokeWidth={5}
 							dot={false}
+							animationDuration={2000}
+							animationEasing="ease-in-out"
 						/>
 						{selectedDataPoint && (
 							<ReferenceDot
@@ -95,10 +97,9 @@ const MonthOfFallChart: React.FC<MonthOfFallChartProps> = ({
 								fill="#2D9CDB"
 								stroke="#1C1C1E"
 								strokeWidth={2}
-								x={selectedDataPoint.name} // X-axis uses the month (name)
-								y={selectedDataPoint.value} // Y-axis uses the value
-								isFront={true} // Ensure the dot is rendered in front
-							>
+								x={selectedDataPoint.name}
+								y={selectedDataPoint.value}
+								isFront={true}>
 								<Label
 									value={`Value: ${selectedDataPoint.value}`}
 									position="top"

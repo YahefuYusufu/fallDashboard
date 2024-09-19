@@ -46,12 +46,12 @@ const CustomDot = (props: DotProps) => {
 	if (cx && cx > 50) {
 		return (
 			<rect
-				x={cx! - 6}
-				y={cy! - 6}
-				width={12}
-				height={12}
-				rx={6}
-				ry={6}
+				x={cx! - 5}
+				y={cy! - 5}
+				width={10}
+				height={10}
+				rx={3}
+				ry={3}
 				fill={stroke}
 				stroke="none"
 			/>
@@ -111,7 +111,9 @@ const Gender: React.FC<GenderChartProps> = ({ data = [] }) => {
 					<div
 						key={index}
 						className="flex items-center justify-between sm:space-x-6">
-						<span className="w-1/4 text-sm text-left">{item.gender}</span>
+						<span className="w-1/4 text-sm text-left sm:text-sm">
+							{item.gender}
+						</span>
 						<div className="flex-grow flex justify-start my-3 md:max-w-[160px] lg:max-w-[200px]">
 							<div
 								className="w-full"
@@ -128,7 +130,7 @@ const Gender: React.FC<GenderChartProps> = ({ data = [] }) => {
 											type="monotone"
 											dataKey="value"
 											stroke={colors[index % colors.length]}
-											strokeWidth={11}
+											strokeWidth={10}
 											dot={<CustomDot />}
 											animationDuration={2000}
 											animationEasing="ease-in-out"
