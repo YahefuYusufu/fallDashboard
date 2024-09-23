@@ -7,30 +7,13 @@ import ReasonOfFall, {
 	ReasonOfFallData,
 } from "../components/charts/ReasonOfFall"
 import PlaceOfFall, { PlaceOfFallData } from "../components/charts/PlaceOfFall"
-import Gender, { GenderData } from "../components/charts/Gender"
-import Age, { AgeData } from "../components/charts/Age"
+import Gender from "../components/charts/Gender"
+import Age from "../components/charts/Age"
 import { fetchReports } from "../data/fetchReports"
 import { Report } from "../types"
 import { getPlaceOfFallData } from "../utils/fallAlgorithms"
 import { filterReportsByDate } from "../utils/dateUtils"
 import { useDateContext } from "../context/DateContext"
-
-const genderData: GenderData[] = [
-	{ gender: "Male", value: 51.3 },
-	{ gender: "Female", value: 23.1 },
-	{ gender: "Other", value: 0.6 },
-]
-
-const ageData: AgeData[] = [
-	{ ageGroup: "65-69", falls: 233 },
-	{ ageGroup: "70-74", falls: 189 },
-	{ ageGroup: "75-79", falls: 302 },
-	{ ageGroup: "80-84", falls: 274 },
-	{ ageGroup: "85-89", falls: 211 },
-	{ ageGroup: "90-94", falls: 153 },
-	{ ageGroup: "95-99", falls: 82 },
-	{ ageGroup: "99+", falls: 40 },
-]
 
 const getAllMonths = () => [
 	"Jan",
@@ -66,7 +49,11 @@ const Dashboard: React.FC = () => {
 				const reports: Report[] = await fetchReports()
 				console.log("Start Date at Dashboard:", startDate)
 				console.log("End Date at Dashboard:", endDate)
-				const filteredReports = filterReportsByDate(reports, startDate, endDate)
+				// Check if both dates are set
+				const filteredReports =
+					startDate && endDate
+						? filterReportsByDate(reports, startDate, endDate)
+						: reports // If not both dates are set, show all reports
 				console.log("Filtered Reports at Dashboard:", filteredReports)
 
 				if (filteredReports.length === 0) {
@@ -78,19 +65,24 @@ const Dashboard: React.FC = () => {
 
 				// Month of Fall
 				const fallCountByMonth = filteredReports.reduce((acc, report) => {
-					const month = new Date(report.accident_date).toLocaleString(
-						"default",
-						{ month: "short" }
-					)
+					const reportDate = new Date(report.accident_date)
+					const month = reportDate.toLocaleString("default", { month: "short" })
+
+					// Log each report's month for debugging
+					console.log("Report Date:", reportDate, "Month:", month)
+
 					acc[month] = (acc[month] || 0) + 1
 					return acc
 				}, {} as Record<string, number>)
+
+				console.log("Fall Count By Month:", fallCountByMonth)
 
 				const allMonths = getAllMonths()
 				const monthData: MonthDataPoint[] = allMonths.map((month) => ({
 					name: month,
 					value: fallCountByMonth[month] || 0,
 				}))
+
 				setMonthOfFallData(monthData)
 
 				// Reasons of Fall
@@ -151,14 +143,14 @@ const Dashboard: React.FC = () => {
 						<h2 className="text-xl font-semibold text-black dark:text-bodydark">
 							Gender
 						</h2>
-						<Gender data={genderData} />
+						<Gender />
 					</div>
 
 					<div className="bg-white dark:bg-bodydark2 p-4 rounded-lg shadow-md flex-1">
 						<h2 className="text-xl font-semibold text-black dark:text-bodydark mb-2">
 							Age
 						</h2>
-						<Age data={ageData} />
+						<Age />
 					</div>
 				</div>
 			</div>

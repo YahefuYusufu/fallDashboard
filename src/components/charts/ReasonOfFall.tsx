@@ -76,7 +76,7 @@ const ReasonOfFall: React.FC<ReasonOfFallProps> = ({ data = [] }) => {
 	const maxLineWidth = 250 // Maximum width for the largest value
 
 	return (
-		<div className="flex flex-col space-y-4">
+		<div className="flex flex-col space-y-1">
 			{data.map((item, index) => {
 				// Calculate the dynamic width as a percentage of the max value
 				const lineWidth = Math.max(
