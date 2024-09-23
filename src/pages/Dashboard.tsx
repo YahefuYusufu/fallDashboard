@@ -10,10 +10,11 @@ import PlaceOfFall, { PlaceOfFallData } from "../components/charts/PlaceOfFall"
 import Gender from "../components/charts/Gender"
 import Age from "../components/charts/Age"
 import { fetchReports } from "../data/fetchReports"
-import { Report } from "../types"
+import { GenderData, Report } from "../types"
 import { getPlaceOfFallData } from "../utils/fallAlgorithms"
 import { filterReportsByDate } from "../utils/dateUtils"
 import { useDateContext } from "../context/DateContext"
+import { getGenderAndAgeFromPersonNumber } from "../utils/getGenderAndAgeFromPersonNumber"
 
 const getAllMonths = () => [
 	"Jan",
@@ -39,6 +40,9 @@ const Dashboard: React.FC = () => {
 		[]
 	)
 	const [placeOfFallsData, setPlaceOfFallData] = useState<PlaceOfFallData[]>([])
+	const [genderData, setGenderData] = useState<GenderData[]>([])
+	const [filteredReports, setFilteredReports] = useState<Report[]>([])
+
 	const [loading, setLoading] = useState<boolean>(false)
 
 	useEffect(() => {
@@ -53,7 +57,8 @@ const Dashboard: React.FC = () => {
 				const filteredReports =
 					startDate && endDate
 						? filterReportsByDate(reports, startDate, endDate)
-						: reports // If not both dates are set, show all reports
+						: reports
+				setFilteredReports(filteredReports)
 				console.log("Filtered Reports at Dashboard:", filteredReports)
 
 				if (filteredReports.length === 0) {
@@ -104,6 +109,36 @@ const Dashboard: React.FC = () => {
 				// Place of Fall
 				const placeData = getPlaceOfFallData(filteredReports)
 				setPlaceOfFallData(placeData)
+
+				// Gender distribution calculation
+				const genderCount = filteredReports.reduce(
+					(acc, report) => {
+						const { gender } = getGenderAndAgeFromPersonNumber(
+							report.person_number
+						)
+
+						if (gender === "male") {
+							acc.male += 1
+						} else if (gender === "female") {
+							acc.female += 1
+						} else {
+							acc.other += 1
+						}
+						return acc
+					},
+					{ male: 0, female: 0, other: 0 }
+				)
+
+				const totalCount =
+					genderCount.male + genderCount.female + genderCount.other
+
+				const genderData: GenderData[] = [
+					{ gender: "male", value: (genderCount.male / totalCount) * 100 },
+					{ gender: "female", value: (genderCount.female / totalCount) * 100 },
+					{ gender: "other", value: (genderCount.other / totalCount) * 100 },
+				]
+
+				setGenderData(genderData)
 			} catch (error) {
 				console.error("Error loading reports:", error)
 			} finally {
@@ -143,7 +178,7 @@ const Dashboard: React.FC = () => {
 						<h2 className="text-xl font-semibold text-black dark:text-bodydark">
 							Gender
 						</h2>
-						<Gender />
+						<Gender data={fetchReports} />
 					</div>
 
 					<div className="bg-white dark:bg-bodydark2 p-4 rounded-lg shadow-md flex-1">

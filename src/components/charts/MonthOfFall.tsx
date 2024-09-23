@@ -60,6 +60,7 @@ const MonthOfFallChart: React.FC<MonthOfFallChartProps> = ({ data }) => {
 
 	return (
 		<>
+			<style>{`.custom-li::marker { color: blue; }`}</style>
 			<div className="flex justify-between items-center">
 				<li className="text-xl font-bold ml-auto custom-li">Current Period</li>
 			</div>
