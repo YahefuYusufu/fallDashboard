@@ -12,35 +12,8 @@ import Age, { AgeData } from "../components/charts/Age"
 import { fetchReports } from "../data/fetchReports"
 import { Report } from "../types"
 import { getPlaceOfFallData } from "../utils/fallAlgorithms"
-
-// Sample data - replace with your actual data
-// export const sampleMonthOfFallData: MonthDataPoint[] = [
-// 	{ name: "Jan", value: 30 },
-// 	{ name: "Feb", value: 25 },
-// 	{ name: "Mar", value: 35 },
-// 	{ name: "Apr", value: 40 },
-// 	{ name: "May", value: 28 },
-// 	{ name: "Jun", value: 32 },
-// 	{ name: "Jul", value: 38 },
-// 	{ name: "Aug", value: 42 },
-// 	{ name: "Sep", value: 30 },
-// 	{ name: "Oct", value: 35 },
-// 	{ name: "Nov", value: 28 },
-// 	{ name: "Dec", value: 32 },
-// ]
-
-// export const sampleReasonOfFallData: ReasonOfFallData[] = [
-// 	{ reason: "Halkade", value: 23.4 },
-// 	{ reason: "Yrsel", value: 15.0 },
-// 	{ reason: "Mörker", value: 30.0 },
-// 	{ reason: "Olämpliga skor", value: 22.0 },
-// 	{ reason: "Icke fungerande hjälpmedel", value: 10.0 },
-// ]
-
-export const placeOfFallData: PlaceOfFallData[] = [
-	{ place: "Inside", people: 240 },
-	{ place: "Outside", people: 87 },
-]
+import { filterReportsByDate } from "../utils/dateUtils"
+import { useDateContext } from "../context/DateContext"
 
 const genderData: GenderData[] = [
 	{ gender: "Male", value: 51.3 },
@@ -58,6 +31,7 @@ const ageData: AgeData[] = [
 	{ ageGroup: "95-99", falls: 82 },
 	{ ageGroup: "99+", falls: 40 },
 ]
+
 const getAllMonths = () => [
 	"Jan",
 	"Feb",
@@ -72,62 +46,84 @@ const getAllMonths = () => [
 	"Nov",
 	"Dec",
 ]
+
 const Dashboard: React.FC = () => {
+	const { startDate, endDate } = useDateContext()
+	console.log("Start Date at dashboard:", startDate)
+	console.log("End Date at dashboard:", endDate)
 	const [monthOfFallData, setMonthOfFallData] = useState<MonthDataPoint[]>([])
 	const [reasonOfFallData, setReasonOfFallData] = useState<ReasonOfFallData[]>(
 		[]
 	)
 	const [placeOfFallsData, setPlaceOfFallData] = useState<PlaceOfFallData[]>([])
+	const [loading, setLoading] = useState<boolean>(false)
 
 	useEffect(() => {
 		const loadReports = async () => {
-			const reports: Report[] = await fetchReports()
+			setLoading(true)
 
-			// Count falls per month
-			const fallCountByMonth = reports.reduce((acc, report) => {
-				const month = new Date(report.accident_date).toLocaleString("default", {
-					month: "short",
-				})
-				acc[month] = (acc[month] || 0) + 1
-				return acc
-			}, {} as Record<string, number>)
+			try {
+				const reports: Report[] = await fetchReports()
+				console.log("Start Date at Dashboard:", startDate)
+				console.log("End Date at Dashboard:", endDate)
+				const filteredReports = filterReportsByDate(reports, startDate, endDate)
+				console.log("Filtered Reports at Dashboard:", filteredReports)
 
-			// Ensure all months are included
-			const allMonths = getAllMonths()
-			const monthData: MonthDataPoint[] = allMonths.map((month) => ({
-				name: month,
-				value: fallCountByMonth[month] || 0, // Default to 0 if no data
-			}))
+				if (filteredReports.length === 0) {
+					setMonthOfFallData([])
+					setReasonOfFallData([])
+					setPlaceOfFallData([])
+					return
+				}
 
-			setMonthOfFallData(monthData)
+				// Month of Fall
+				const fallCountByMonth = filteredReports.reduce((acc, report) => {
+					const month = new Date(report.accident_date).toLocaleString(
+						"default",
+						{ month: "short" }
+					)
+					acc[month] = (acc[month] || 0) + 1
+					return acc
+				}, {} as Record<string, number>)
 
-			// Count reasons of fall
-			const fallReasonCounts = reports.reduce((acc, report) => {
-				report.fallReason.forEach((reason) => {
-					acc[reason] = (acc[reason] || 0) + 1
-				})
-				return acc
-			}, {} as Record<string, number>)
+				const allMonths = getAllMonths()
+				const monthData: MonthDataPoint[] = allMonths.map((month) => ({
+					name: month,
+					value: fallCountByMonth[month] || 0,
+				}))
+				setMonthOfFallData(monthData)
 
-			// Convert the reason counts into ReasonOfFallData format
-			const reasonData: ReasonOfFallData[] = Object.entries(
-				fallReasonCounts
-			).map(([reason, value]) => ({
-				reason,
-				value: (value / reports.length) * 100, // Convert to percentage
-			}))
-			setReasonOfFallData(reasonData)
+				// Reasons of Fall
+				const fallReasonCounts = filteredReports.reduce((acc, report) => {
+					report.fallReason.forEach((reason) => {
+						acc[reason] = (acc[reason] || 0) + 1
+					})
+					return acc
+				}, {} as Record<string, number>)
 
-			// Process place of fall data
-			const placeData = getPlaceOfFallData(reports)
-			setPlaceOfFallData(placeData)
+				const reasonData: ReasonOfFallData[] = Object.entries(
+					fallReasonCounts
+				).map(([reason, value]) => ({
+					reason,
+					value: (value / filteredReports.length) * 100,
+				}))
+				setReasonOfFallData(reasonData)
+
+				// Place of Fall
+				const placeData = getPlaceOfFallData(filteredReports)
+				setPlaceOfFallData(placeData)
+			} catch (error) {
+				console.error("Error loading reports:", error)
+			} finally {
+				setLoading(false)
+			}
 		}
-
 		loadReports()
-	}, [])
+	}, [startDate, endDate])
 
 	return (
 		<div className="h-screen w-full p-4 dark:bg-boxdark rounded-lg">
+			{loading && <p>Loading ....</p>}
 			<div className="grid grid-cols-1 md:grid-cols-8 gap-7 h-full">
 				{/* First Column */}
 				<div className="md:col-span-5 flex flex-col gap-y-4 h-full">
