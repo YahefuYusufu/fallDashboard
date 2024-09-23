@@ -62,7 +62,7 @@ const CustomDot = (props: DotProps) => {
 
 const AnimatedValue = ({ value }: { value: number }) => {
 	const animatedValue = useNumberAnimation(value)
-	return <span>{animatedValue.toFixed(1)}</span>
+	return <span>{animatedValue.toFixed()}</span>
 }
 
 const ReasonOfFall: React.FC<ReasonOfFallProps> = ({ data = [] }) => {
