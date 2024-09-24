@@ -63,7 +63,7 @@ const Age: React.FC<AgeDataProps> = ({ data = [] }) => {
 					<BarChart
 						data={data}
 						barCategoryGap="20%"
-						margin={{ top: 5, right: 5, left: 5, bottom: 25 }}>
+						margin={{ top: 5, right: 5, left: 5, bottom: 0 }}>
 						<XAxis
 							dataKey="ageGroup"
 							tick={{ fontSize: 9 }}
@@ -84,6 +84,7 @@ const Age: React.FC<AgeDataProps> = ({ data = [] }) => {
 					</BarChart>
 				</ResponsiveContainer>
 			</div>
+			<div className="w-full h-[1px]" style={{ backgroundColor: "#3E71A4" }} />
 		</div>
 	)
 }
