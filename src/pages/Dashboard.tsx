@@ -8,13 +8,14 @@ import ReasonOfFall, {
 } from "../components/charts/ReasonOfFall"
 import PlaceOfFall, { PlaceOfFallData } from "../components/charts/PlaceOfFall"
 import Gender from "../components/charts/Gender"
-import Age from "../components/charts/Age"
+import Age, { AgeData } from "../components/charts/Age"
 import { fetchReports } from "../data/fetchReports"
 import { GenderData, Report } from "../types"
 import { getPlaceOfFallData } from "../utils/fallAlgorithms"
 import { filterReportsByDate } from "../utils/dateUtils"
 import { useDateContext } from "../context/DateContext"
 import { getGenderAndAgeFromPersonNumber } from "../utils/getGenderAndAgeFromPersonNumber"
+import { calculateAgeDistribution } from "../utils/AgeUtils"
 
 const getAllMonths = () => [
 	"Jan",
@@ -40,10 +41,10 @@ const Dashboard: React.FC = () => {
 		[]
 	)
 	const [placeOfFallsData, setPlaceOfFallData] = useState<PlaceOfFallData[]>([])
-	const [genderData, setGenderData] = useState<GenderData[]>([])
 	const [filteredReports, setFilteredReports] = useState<Report[]>([])
-
+	const [ageData, setAgeData] = useState<AgeData[]>([])
 	const [loading, setLoading] = useState<boolean>(false)
+	const [, setGenderData] = useState<GenderData[]>([])
 
 	useEffect(() => {
 		const loadReports = async () => {
@@ -53,11 +54,13 @@ const Dashboard: React.FC = () => {
 				const reports: Report[] = await fetchReports()
 				console.log("Start Date at Dashboard:", startDate)
 				console.log("End Date at Dashboard:", endDate)
+
 				// Check if both dates are set
 				const filteredReports =
 					startDate && endDate
 						? filterReportsByDate(reports, startDate, endDate)
 						: reports
+
 				setFilteredReports(filteredReports)
 				console.log("Filtered Reports at Dashboard:", filteredReports)
 
@@ -65,6 +68,7 @@ const Dashboard: React.FC = () => {
 					setMonthOfFallData([])
 					setReasonOfFallData([])
 					setPlaceOfFallData([])
+					setAgeData([])
 					return
 				}
 
@@ -73,7 +77,6 @@ const Dashboard: React.FC = () => {
 					const reportDate = new Date(report.accident_date)
 					const month = reportDate.toLocaleString("default", { month: "short" })
 
-					// Log each report's month for debugging
 					console.log("Report Date:", reportDate, "Month:", month)
 
 					acc[month] = (acc[month] || 0) + 1
@@ -102,7 +105,7 @@ const Dashboard: React.FC = () => {
 					fallReasonCounts
 				).map(([reason, value]) => ({
 					reason,
-					value: (value / filteredReports.length) * 100,
+					value, // Directly using the count
 				}))
 				setReasonOfFallData(reasonData)
 
@@ -139,6 +142,9 @@ const Dashboard: React.FC = () => {
 				]
 
 				setGenderData(genderData)
+
+				const ageDistribution = calculateAgeDistribution(filteredReports)
+				setAgeData(ageDistribution)
 			} catch (error) {
 				console.error("Error loading reports:", error)
 			} finally {
@@ -160,9 +166,14 @@ const Dashboard: React.FC = () => {
 					</div>
 
 					<div className="bg-white dark:bg-bodydark2 p-4 rounded-lg shadow-md flex-1">
-						<h2 className="text-xl font-semibold text-black dark:text-bodydark mb-4">
-							Reason Of Fall
-						</h2>
+						<div className="flex justify-between items-center mb-4">
+							<h2 className="text-xl font-semibold text-black dark:text-bodydark">
+								Reason Of Fall
+							</h2>
+							<span className="text-sm font-medium text-gray-600 dark:text-bodydark1">
+								Number Of Reason
+							</span>
+						</div>
 						<ReasonOfFall data={reasonOfFallData} />
 					</div>
 				</div>
@@ -178,14 +189,14 @@ const Dashboard: React.FC = () => {
 						<h2 className="text-xl font-semibold text-black dark:text-bodydark">
 							Gender
 						</h2>
-						<Gender data={fetchReports} />
+						<Gender data={filteredReports} />
 					</div>
 
 					<div className="bg-white dark:bg-bodydark2 p-4 rounded-lg shadow-md flex-1">
 						<h2 className="text-xl font-semibold text-black dark:text-bodydark mb-2">
 							Age
 						</h2>
-						<Age />
+						<Age data={ageData} />
 					</div>
 				</div>
 			</div>

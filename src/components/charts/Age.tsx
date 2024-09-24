@@ -18,10 +18,9 @@ export interface AgeDataProps {
 	data: AgeData[]
 }
 
-// Custom shape for the bars with rounded top corners
 const RoundedBar = (props: DotProps) => {
 	const { x, y, width, height, fill } = props
-	const radius = 3 // Adjust the border radius value as needed
+	const radius = 3
 	return (
 		<g>
 			<rect
@@ -29,7 +28,7 @@ const RoundedBar = (props: DotProps) => {
 				y={y}
 				width={width}
 				height={height}
-				rx={radius} // Applies the border-radius to the top corners
+				rx={radius}
 				ry={radius}
 				fill={fill}
 			/>
@@ -38,49 +37,39 @@ const RoundedBar = (props: DotProps) => {
 }
 
 const Age: React.FC<AgeDataProps> = ({ data = [] }) => {
-	// State to store the dynamic bar size
 	const [barSize, setBarSize] = useState<number>(10)
 
-	// Adjust bar size based on screen width
 	useEffect(() => {
 		const handleResize = () => {
 			const screenWidth = window.innerWidth
 			if (screenWidth < 640) {
-				// Small screens
-				setBarSize(10)
+				setBarSize(6)
 			} else if (screenWidth >= 640 && screenWidth < 1024) {
-				// Medium screens
-				setBarSize(10)
+				setBarSize(8)
 			} else {
-				// Large screens
 				setBarSize(10)
 			}
 		}
 
-		// Set initial bar size based on current screen width
 		handleResize()
-
-		// Add event listener for screen resizing
 		window.addEventListener("resize", handleResize)
-
-		// Cleanup event listener
 		return () => window.removeEventListener("resize", handleResize)
 	}, [])
 
 	return (
 		<div className="flex flex-col items-center space-x-2">
-			{/* Bar Chart */}
 			<div className="w-full h-[236px] sm:w-[200px] md:w-[250px] md:h-[180px] lg:w-[300px] lg:h-[180px]">
 				<ResponsiveContainer width="100%" height="100%">
 					<BarChart
 						data={data}
 						barCategoryGap="20%"
-						margin={{ top: 5, right: 5, left: 5, bottom: 5 }}>
+						margin={{ top: 5, right: 5, left: 5, bottom: 0 }}>
 						<XAxis
 							dataKey="ageGroup"
-							tick={{ fontSize: 11 }}
+							tick={{ fontSize: 9 }}
 							axisLine={false}
 							tickLine={false}
+							interval={0}
 						/>
 						<YAxis hide={true} />
 						<Tooltip />
@@ -95,6 +84,7 @@ const Age: React.FC<AgeDataProps> = ({ data = [] }) => {
 					</BarChart>
 				</ResponsiveContainer>
 			</div>
+			<div className="w-full h-[1px]" style={{ backgroundColor: "#3E71A4" }} />
 		</div>
 	)
 }
