@@ -121,6 +121,8 @@ const Gender: React.FC<GenderChartProps> = ({ data }) => {
 
 	return (
 		<div className="flex flex-col space-y-4 mt-4">
+			<div className="w-full h-[1px]" style={{ backgroundColor: "#3E71A4" }} />
+
 			{genderData.map((item, index) => {
 				const lineWidth = Math.max(
 					minLineWidth,
