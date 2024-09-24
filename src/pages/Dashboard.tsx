@@ -41,11 +41,10 @@ const Dashboard: React.FC = () => {
 		[]
 	)
 	const [placeOfFallsData, setPlaceOfFallData] = useState<PlaceOfFallData[]>([])
-	const [, setGenderData] = useState<GenderData[]>([])
 	const [filteredReports, setFilteredReports] = useState<Report[]>([])
 	const [ageData, setAgeData] = useState<AgeData[]>([])
-
 	const [loading, setLoading] = useState<boolean>(false)
+	const [, setGenderData] = useState<GenderData[]>([])
 
 	useEffect(() => {
 		const loadReports = async () => {
@@ -55,11 +54,13 @@ const Dashboard: React.FC = () => {
 				const reports: Report[] = await fetchReports()
 				console.log("Start Date at Dashboard:", startDate)
 				console.log("End Date at Dashboard:", endDate)
+
 				// Check if both dates are set
 				const filteredReports =
 					startDate && endDate
 						? filterReportsByDate(reports, startDate, endDate)
 						: reports
+
 				setFilteredReports(filteredReports)
 				console.log("Filtered Reports at Dashboard:", filteredReports)
 
@@ -76,7 +77,6 @@ const Dashboard: React.FC = () => {
 					const reportDate = new Date(report.accident_date)
 					const month = reportDate.toLocaleString("default", { month: "short" })
 
-					// Log each report's month for debugging
 					console.log("Report Date:", reportDate, "Month:", month)
 
 					acc[month] = (acc[month] || 0) + 1
@@ -105,7 +105,7 @@ const Dashboard: React.FC = () => {
 					fallReasonCounts
 				).map(([reason, value]) => ({
 					reason,
-					value: (value / filteredReports.length) * 100,
+					value, // Directly using the count
 				}))
 				setReasonOfFallData(reasonData)
 

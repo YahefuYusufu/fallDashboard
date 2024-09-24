@@ -78,7 +78,6 @@ const ReasonOfFall: React.FC<ReasonOfFallProps> = ({ data = [] }) => {
 
 	return (
 		<div className="flex flex-col space-y-1 h-64 overflow-y-auto">
-			{" "}
 			{/* Set fixed height and overflow */}
 			{data.map((item, index) => {
 				// Calculate the dynamic width as a percentage of the max value
