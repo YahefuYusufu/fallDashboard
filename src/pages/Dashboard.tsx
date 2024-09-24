@@ -178,7 +178,7 @@ const Dashboard: React.FC = () => {
 						<h2 className="text-xl font-semibold text-black dark:text-bodydark">
 							Gender
 						</h2>
-						<Gender data={fetchReports} />
+						<Gender data={filteredReports} />
 					</div>
 
 					<div className="bg-white dark:bg-bodydark2 p-4 rounded-lg shadow-md flex-1">

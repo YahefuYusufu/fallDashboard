@@ -16,8 +16,8 @@ export const getGenderAndAgeFromPersonNumber = (personNumber: string) => {
 	const ageDate = new Date(ageDifMs) // Time from epoch
 	const age = Math.abs(ageDate.getUTCFullYear() - 1970)
 
-	// Determine gender (even: female, odd: male)
-	const genderDigit = parseInt(identifierPart.substring(0, 1), 10)
+	// Determine gender based on the third digit of the identifier part (even: female, odd: male)
+	const genderDigit = parseInt(identifierPart.substring(2, 3), 10) // third digit in identifier part
 	const gender = genderDigit % 2 === 0 ? "female" : "male"
 
 	return { gender, age }
