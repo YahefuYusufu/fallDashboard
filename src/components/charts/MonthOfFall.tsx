@@ -7,8 +7,8 @@ import {
 	ResponsiveContainer,
 	ReferenceDot,
 	Label,
+	YAxis,
 } from "recharts"
-import { sampleMonthOfFallData } from "../../pages/Dashboard"
 
 // Define the type for our data points
 export interface MonthDataPoint {
@@ -18,17 +18,14 @@ export interface MonthDataPoint {
 
 // Define the props for our component
 export interface MonthOfFallChartProps {
-	data?: MonthDataPoint[]
+	data: MonthDataPoint[]
 }
 
-const MonthOfFallChart: React.FC<MonthOfFallChartProps> = ({
-	data = sampleMonthOfFallData, // Default parameter value
-}) => {
+const MonthOfFallChart: React.FC<MonthOfFallChartProps> = ({ data }) => {
 	const [selectedMonth, setSelectedMonth] = useState<string | null>(null)
 
 	// Function to handle month click
 	const handleMonthClick = (month: string) => {
-		console.log("Selected Month:", month) // Debugging line
 		setSelectedMonth(month)
 	}
 
@@ -47,13 +44,12 @@ const MonthOfFallChart: React.FC<MonthOfFallChartProps> = ({
 		return (
 			<text
 				x={x}
-				y={y + 10} // Adjust vertical position
-				fill={isSelected ? "#4E4E4E" : "#A3ABBD"} // Highlight selected month
-				fontWeight={isSelected ? "bold" : "normal"} // Bold for the selected month
+				y={y + 40} // Increase the vertical position for more space
+				fill={isSelected ? "#4E4E4E" : "#A3ABBD"}
+				fontWeight={isSelected ? "bold" : "normal"}
 				textAnchor="middle"
 				style={{ cursor: "pointer" }}
-				onClick={() => handleMonthClick(month)} // Set the selected month when clicked
-			>
+				onClick={() => handleMonthClick(month)}>
 				{month}
 			</text>
 		)
@@ -73,14 +69,15 @@ const MonthOfFallChart: React.FC<MonthOfFallChartProps> = ({
 				<ResponsiveContainer width="100%" height="100%">
 					<LineChart
 						data={data}
-						margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-						{/* <CartesianGrid strokeDasharray="3 3" /> */}
+						margin={{ top: 25, right: 20, left: 20, bottom: 20 }} // Increase bottom margin for more space
+					>
 						<XAxis
 							dataKey="name"
 							tick={renderCustomAxisTick}
 							axisLine={false}
 							tickLine={false}
 						/>
+						<YAxis hide />
 						<Tooltip animationEasing="ease-in-out" />
 						<Line
 							type="natural"
@@ -88,6 +85,8 @@ const MonthOfFallChart: React.FC<MonthOfFallChartProps> = ({
 							stroke="#563BFF"
 							strokeWidth={5}
 							dot={false}
+							animationDuration={2000}
+							animationEasing="ease-in-out"
 						/>
 						{selectedDataPoint && (
 							<ReferenceDot
@@ -95,14 +94,13 @@ const MonthOfFallChart: React.FC<MonthOfFallChartProps> = ({
 								fill="#2D9CDB"
 								stroke="#1C1C1E"
 								strokeWidth={2}
-								x={selectedDataPoint.name} // X-axis uses the month (name)
-								y={selectedDataPoint.value} // Y-axis uses the value
-								isFront={true} // Ensure the dot is rendered in front
-							>
+								x={selectedDataPoint.name}
+								y={selectedDataPoint.value}
+								isFront={true}>
 								<Label
 									value={`Value: ${selectedDataPoint.value}`}
-									position="top"
-									offset={10}
+									position="top" // Position the label on top
+									offset={10} // Increase offset to prevent overlapping
 									fill="#333333"
 									fontSize={12}
 								/>

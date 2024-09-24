@@ -9,6 +9,7 @@ import Calendar from "./pages/Calendar"
 import Analysis from "./pages/Analysis"
 import Notification from "./pages/Notification"
 import Settings from "./pages/Settings"
+import { DateProvider } from "./context/DateContext"
 
 function App() {
 	const [loading, setLoading] = useState<boolean>(true)
@@ -19,61 +20,63 @@ function App() {
 	}, [pathname])
 
 	useEffect(() => {
-		setTimeout(() => setLoading(false), 1500)
+		setTimeout(() => setLoading(false), 2000)
 	}, [])
 
 	return loading ? (
 		<Loader />
 	) : (
-		<DefaultLayout>
-			<Routes>
-				<Route
-					index
-					element={
-						<>
-							<PageTitle title="Dashboard" />
-							<Dashboard />
-						</>
-					}
-				/>
-				<Route
-					path="/calendar"
-					element={
-						<>
-							<PageTitle title="Calendar" />
-							<Calendar />
-						</>
-					}
-				/>
-				<Route
-					path="/analysis"
-					element={
-						<>
-							<PageTitle title="Analysis " />
-							<Analysis />
-						</>
-					}
-				/>
-				<Route
-					path="notification"
-					element={
-						<>
-							<PageTitle title="Notification" />
-							<Notification />
-						</>
-					}
-				/>
-				<Route
-					path="settings"
-					element={
-						<>
-							<PageTitle title="Settings" />
-							<Settings />
-						</>
-					}
-				/>
-			</Routes>
-		</DefaultLayout>
+		<DateProvider>
+			<DefaultLayout>
+				<Routes>
+					<Route
+						index
+						element={
+							<>
+								<PageTitle title="Dashboard" />
+								<Dashboard />
+							</>
+						}
+					/>
+					<Route
+						path="/calendar"
+						element={
+							<>
+								<PageTitle title="Calendar" />
+								<Calendar />
+							</>
+						}
+					/>
+					<Route
+						path="/analysis"
+						element={
+							<>
+								<PageTitle title="Analysis " />
+								<Analysis />
+							</>
+						}
+					/>
+					<Route
+						path="notification"
+						element={
+							<>
+								<PageTitle title="Notification" />
+								<Notification />
+							</>
+						}
+					/>
+					<Route
+						path="settings"
+						element={
+							<>
+								<PageTitle title="Settings" />
+								<Settings />
+							</>
+						}
+					/>
+				</Routes>
+			</DefaultLayout>
+		</DateProvider>
 	)
 }
 

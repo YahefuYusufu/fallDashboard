@@ -62,7 +62,7 @@ const CustomDot = (props: DotProps) => {
 
 const AnimatedValue = ({ value }: { value: number }) => {
 	const animatedValue = useNumberAnimation(value)
-	return <span>{animatedValue.toFixed(1)}</span>
+	return <span>{animatedValue.toFixed()}</span>
 }
 
 const ReasonOfFall: React.FC<ReasonOfFallProps> = ({ data = [] }) => {
@@ -76,7 +76,7 @@ const ReasonOfFall: React.FC<ReasonOfFallProps> = ({ data = [] }) => {
 	const maxLineWidth = 250 // Maximum width for the largest value
 
 	return (
-		<div className="flex flex-col space-y-4">
+		<div className="flex flex-col space-y-1">
 			{data.map((item, index) => {
 				// Calculate the dynamic width as a percentage of the max value
 				const lineWidth = Math.max(
@@ -90,7 +90,7 @@ const ReasonOfFall: React.FC<ReasonOfFallProps> = ({ data = [] }) => {
 						className="flex items-center justify-between sm:space-x-6">
 						<span className="w-1/4 text-sm text-left">{item.reason}</span>
 						<div
-							className="flex-grow flex justify-start my-3"
+							className="flex-grow flex justify-start"
 							style={{ maxWidth: `${maxLineWidth}px` }}>
 							<div
 								style={{
