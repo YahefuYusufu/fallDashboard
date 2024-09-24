@@ -8,13 +8,14 @@ import ReasonOfFall, {
 } from "../components/charts/ReasonOfFall"
 import PlaceOfFall, { PlaceOfFallData } from "../components/charts/PlaceOfFall"
 import Gender from "../components/charts/Gender"
-import Age from "../components/charts/Age"
+import Age, { AgeData } from "../components/charts/Age"
 import { fetchReports } from "../data/fetchReports"
 import { GenderData, Report } from "../types"
 import { getPlaceOfFallData } from "../utils/fallAlgorithms"
 import { filterReportsByDate } from "../utils/dateUtils"
 import { useDateContext } from "../context/DateContext"
 import { getGenderAndAgeFromPersonNumber } from "../utils/getGenderAndAgeFromPersonNumber"
+import { calculateAgeDistribution } from "../utils/AgeUtils"
 
 const getAllMonths = () => [
 	"Jan",
@@ -40,8 +41,9 @@ const Dashboard: React.FC = () => {
 		[]
 	)
 	const [placeOfFallsData, setPlaceOfFallData] = useState<PlaceOfFallData[]>([])
-	const [genderData, setGenderData] = useState<GenderData[]>([])
+	const [, setGenderData] = useState<GenderData[]>([])
 	const [filteredReports, setFilteredReports] = useState<Report[]>([])
+	const [ageData, setAgeData] = useState<AgeData[]>([])
 
 	const [loading, setLoading] = useState<boolean>(false)
 
@@ -65,6 +67,7 @@ const Dashboard: React.FC = () => {
 					setMonthOfFallData([])
 					setReasonOfFallData([])
 					setPlaceOfFallData([])
+					setAgeData([])
 					return
 				}
 
@@ -139,6 +142,9 @@ const Dashboard: React.FC = () => {
 				]
 
 				setGenderData(genderData)
+
+				const ageDistribution = calculateAgeDistribution(filteredReports)
+				setAgeData(ageDistribution)
 			} catch (error) {
 				console.error("Error loading reports:", error)
 			} finally {
@@ -185,7 +191,7 @@ const Dashboard: React.FC = () => {
 						<h2 className="text-xl font-semibold text-black dark:text-bodydark mb-2">
 							Age
 						</h2>
-						<Age />
+						<Age data={ageData} />
 					</div>
 				</div>
 			</div>
