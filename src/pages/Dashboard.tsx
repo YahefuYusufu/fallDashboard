@@ -166,9 +166,14 @@ const Dashboard: React.FC = () => {
 					</div>
 
 					<div className="bg-white dark:bg-bodydark2 p-4 rounded-lg shadow-md flex-1">
-						<h2 className="text-xl font-semibold text-black dark:text-bodydark mb-4">
-							Reason Of Fall
-						</h2>
+						<div className="flex justify-between items-center mb-4">
+							<h2 className="text-xl font-semibold text-black dark:text-bodydark">
+								Reason Of Fall
+							</h2>
+							<span className="text-sm font-medium text-gray-600 dark:text-bodydark1">
+								Number Of Reason
+							</span>
+						</div>
 						<ReasonOfFall data={reasonOfFallData} />
 					</div>
 				</div>

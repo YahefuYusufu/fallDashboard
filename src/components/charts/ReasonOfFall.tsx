@@ -39,6 +39,7 @@ const CustomTooltip: React.FC<CustomTooltipProps> = ({ active, payload }) => {
 	}
 	return null
 }
+
 const CustomDot = (props: DotProps) => {
 	const { cx, cy, stroke } = props
 
@@ -76,7 +77,9 @@ const ReasonOfFall: React.FC<ReasonOfFallProps> = ({ data = [] }) => {
 	const maxLineWidth = 250 // Maximum width for the largest value
 
 	return (
-		<div className="flex flex-col space-y-1">
+		<div className="flex flex-col space-y-1 h-64 overflow-y-auto">
+			{" "}
+			{/* Set fixed height and overflow */}
 			{data.map((item, index) => {
 				// Calculate the dynamic width as a percentage of the max value
 				const lineWidth = Math.max(
