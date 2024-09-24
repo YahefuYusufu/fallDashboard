@@ -82,7 +82,7 @@ const useNumberAnimation = (endValue: number) => {
 
 const AnimatedValue = ({ value }: { value: number }) => {
 	const animatedValue = useNumberAnimation(value)
-	return <span>{animatedValue.toFixed(1)}%</span>
+	return <span>{animatedValue.toFixed(0)}%</span>
 }
 
 const Gender: React.FC<GenderChartProps> = ({ data }) => {

@@ -68,7 +68,11 @@ const AnimatedPercentage = ({ value }: { value: number }) => {
 }
 
 const PlaceOfFall: React.FC<PlaceOfFallProps> = ({ data = [] }) => {
-	if (!Array.isArray(data) || data.length === 0) {
+	if (!Array.isArray(data)) {
+		return <div>Error: Invalid data format</div>
+	}
+
+	if (data.length === 0) {
 		return <div>No data available</div>
 	}
 

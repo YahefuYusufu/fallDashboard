@@ -9,33 +9,17 @@ import ReasonOfFall, {
 import PlaceOfFall, { PlaceOfFallData } from "../components/charts/PlaceOfFall"
 import Gender from "../components/charts/Gender"
 import Age, { AgeData } from "../components/charts/Age"
-import { fetchReports } from "../data/fetchReports"
+import { fetchReports } from "../data/fetchReports" // fetch function
 import { GenderData, Report } from "../types"
 import { getPlaceOfFallData } from "../utils/fallAlgorithms"
 import { filterReportsByDate } from "../utils/dateUtils"
 import { useDateContext } from "../context/DateContext"
 import { getGenderAndAgeFromPersonNumber } from "../utils/getGenderAndAgeFromPersonNumber"
 import { calculateAgeDistribution } from "../utils/AgeUtils"
-
-const getAllMonths = () => [
-	"Jan",
-	"Feb",
-	"Mar",
-	"Apr",
-	"May",
-	"Jun",
-	"Jul",
-	"Aug",
-	"Sep",
-	"Oct",
-	"Nov",
-	"Dec",
-]
+import { getAllMonths, getMonthFromDate } from "../utils/getMonthFromDate" // Import the utility function
 
 const Dashboard: React.FC = () => {
-	const { startDate, endDate } = useDateContext()
-	console.log("Start Date at dashboard:", startDate)
-	console.log("End Date at dashboard:", endDate)
+	const { startDate, endDate } = useDateContext() // Date context
 	const [monthOfFallData, setMonthOfFallData] = useState<MonthDataPoint[]>([])
 	const [reasonOfFallData, setReasonOfFallData] = useState<ReasonOfFallData[]>(
 		[]
@@ -51,19 +35,19 @@ const Dashboard: React.FC = () => {
 			setLoading(true)
 
 			try {
+				// Fetch real reports from API
 				const reports: Report[] = await fetchReports()
-				console.log("Start Date at Dashboard:", startDate)
-				console.log("End Date at Dashboard:", endDate)
+				console.log("Fetched Reports:", reports)
 
-				// Check if both dates are set
+				// Filter reports by selected dates (if any)
 				const filteredReports =
 					startDate && endDate
 						? filterReportsByDate(reports, startDate, endDate)
 						: reports
 
 				setFilteredReports(filteredReports)
-				console.log("Filtered Reports at Dashboard:", filteredReports)
 
+				// If no reports, reset the charts
 				if (filteredReports.length === 0) {
 					setMonthOfFallData([])
 					setReasonOfFallData([])
@@ -72,18 +56,14 @@ const Dashboard: React.FC = () => {
 					return
 				}
 
-				// Month of Fall
+				// 1. Month of Fall
 				const fallCountByMonth = filteredReports.reduce((acc, report) => {
-					const reportDate = new Date(report.accident_date)
-					const month = reportDate.toLocaleString("default", { month: "short" })
-
-					console.log("Report Date:", reportDate, "Month:", month)
-
-					acc[month] = (acc[month] || 0) + 1
+					const month = getMonthFromDate(report.accident_date) // Here it handles the string
+					if (month) {
+						acc[month] = (acc[month] || 0) + 1
+					}
 					return acc
 				}, {} as Record<string, number>)
-
-				console.log("Fall Count By Month:", fallCountByMonth)
 
 				const allMonths = getAllMonths()
 				const monthData: MonthDataPoint[] = allMonths.map((month) => ({
@@ -93,7 +73,7 @@ const Dashboard: React.FC = () => {
 
 				setMonthOfFallData(monthData)
 
-				// Reasons of Fall
+				// 2. Reasons of Fall
 				const fallReasonCounts = filteredReports.reduce((acc, report) => {
 					report.fallReason.forEach((reason) => {
 						acc[reason] = (acc[reason] || 0) + 1
@@ -105,20 +85,27 @@ const Dashboard: React.FC = () => {
 					fallReasonCounts
 				).map(([reason, value]) => ({
 					reason,
-					value, // Directly using the count
+					value,
 				}))
 				setReasonOfFallData(reasonData)
 
-				// Place of Fall
+				// 3. Place of Fall
 				const placeData = getPlaceOfFallData(filteredReports)
 				setPlaceOfFallData(placeData)
 
-				// Gender distribution calculation
+				// 4. Gender distribution
 				const genderCount = filteredReports.reduce(
 					(acc, report) => {
-						const { gender } = getGenderAndAgeFromPersonNumber(
-							report.person_number
-						)
+						const { person_number } = report // Extract person_number
+						// Check if person_number is valid
+						if (
+							typeof person_number !== "string" ||
+							person_number.length < 10
+						) {
+							return acc // Skip to the next report
+						}
+
+						const { gender } = getGenderAndAgeFromPersonNumber(person_number)
 
 						if (gender === "male") {
 							acc.male += 1
@@ -134,15 +121,14 @@ const Dashboard: React.FC = () => {
 
 				const totalCount =
 					genderCount.male + genderCount.female + genderCount.other
-
 				const genderData: GenderData[] = [
 					{ gender: "male", value: (genderCount.male / totalCount) * 100 },
 					{ gender: "female", value: (genderCount.female / totalCount) * 100 },
 					{ gender: "other", value: (genderCount.other / totalCount) * 100 },
 				]
-
 				setGenderData(genderData)
 
+				// 5. Age distribution
 				const ageDistribution = calculateAgeDistribution(filteredReports)
 				setAgeData(ageDistribution)
 			} catch (error) {
@@ -151,8 +137,10 @@ const Dashboard: React.FC = () => {
 				setLoading(false)
 			}
 		}
+
+		// Fetch and set the data when component mounts or dates change
 		loadReports()
-	}, [startDate, endDate])
+	}, [startDate, endDate]) // Dependency on date changes
 
 	return (
 		<div className="h-screen w-full p-4 dark:bg-boxdark rounded-lg">
@@ -171,7 +159,7 @@ const Dashboard: React.FC = () => {
 								Reason Of Fall
 							</h2>
 							<span className="text-sm font-medium text-gray-600 dark:text-bodydark1">
-								Number Of Reason
+								Number Of Reasons
 							</span>
 						</div>
 						<ReasonOfFall data={reasonOfFallData} />
@@ -186,7 +174,7 @@ const Dashboard: React.FC = () => {
 					</div>
 
 					<div className="bg-white dark:bg-bodydark2 p-4 rounded-lg shadow-md flex-1">
-						<h2 className="text-xl font-semibold text-black dark:text-bodydark">
+						<h2 className="text-xl font-semibold text-black dark:text-bodydark mb-2">
 							Gender
 						</h2>
 						<Gender data={filteredReports} />

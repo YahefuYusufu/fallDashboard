@@ -10,13 +10,11 @@ import {
 	YAxis,
 } from "recharts"
 
-// Define the type for our data points
 export interface MonthDataPoint {
 	name: string
 	value: number
 }
 
-// Define the props for our component
 export interface MonthOfFallChartProps {
 	data: MonthDataPoint[]
 }
@@ -29,7 +27,6 @@ const MonthOfFallChart: React.FC<MonthOfFallChartProps> = ({ data }) => {
 		setSelectedMonth(month)
 	}
 
-	// Custom tick for clickable month names with highlighting
 	const renderCustomAxisTick = ({
 		x,
 		y,
@@ -44,7 +41,7 @@ const MonthOfFallChart: React.FC<MonthOfFallChartProps> = ({ data }) => {
 		return (
 			<text
 				x={x}
-				y={y + 40} // Increase the vertical position for more space
+				y={y + 40}
 				fill={isSelected ? "#4E4E4E" : "#A3ABBD"}
 				fontWeight={isSelected ? "bold" : "normal"}
 				textAnchor="middle"
@@ -55,7 +52,11 @@ const MonthOfFallChart: React.FC<MonthOfFallChartProps> = ({ data }) => {
 		)
 	}
 
-	// Find the selected data point
+	// Check if data is empty
+	if (!data || data.length === 0) {
+		return <div>No data available</div>
+	}
+
 	const selectedDataPoint = data.find((point) => point.name === selectedMonth)
 
 	return (
@@ -69,8 +70,7 @@ const MonthOfFallChart: React.FC<MonthOfFallChartProps> = ({ data }) => {
 				<ResponsiveContainer width="100%" height="100%">
 					<LineChart
 						data={data}
-						margin={{ top: 25, right: 20, left: 20, bottom: 20 }} // Increase bottom margin for more space
-					>
+						margin={{ top: 25, right: 20, left: 20, bottom: 23 }}>
 						<XAxis
 							dataKey="name"
 							tick={renderCustomAxisTick}
@@ -99,8 +99,8 @@ const MonthOfFallChart: React.FC<MonthOfFallChartProps> = ({ data }) => {
 								isFront={true}>
 								<Label
 									value={`Value: ${selectedDataPoint.value}`}
-									position="top" // Position the label on top
-									offset={10} // Increase offset to prevent overlapping
+									position="top"
+									offset={10}
 									fill="#333333"
 									fontSize={12}
 								/>

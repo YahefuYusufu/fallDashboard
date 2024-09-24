@@ -1,8 +1,31 @@
-// utils/personUtils.ts
 export const getGenderAndAgeFromPersonNumber = (personNumber: string) => {
+	if (!personNumber) {
+		throw new Error("Person number is empty")
+	}
+
+	if (personNumber.length < 10) {
+		throw new Error(
+			`Invalid person number format: "${personNumber}" (length: ${personNumber.length})`
+		)
+	}
+
 	// Extract birthdate and identifier parts
 	const birthdatePart = personNumber.substring(0, 8)
 	const identifierPart = personNumber.substring(9)
+
+	// Validate birthdate part
+	if (birthdatePart.length !== 8 || isNaN(Number(birthdatePart))) {
+		throw new Error(
+			`Invalid birthdate format in person number: "${personNumber}"`
+		)
+	}
+
+	// Validate identifier part
+	if (identifierPart.length < 3 || isNaN(Number(identifierPart))) {
+		throw new Error(
+			`Invalid identifier format in person number: "${personNumber}"`
+		)
+	}
 
 	// Parse birthdate
 	const birthYear = parseInt(birthdatePart.substring(0, 4), 10)

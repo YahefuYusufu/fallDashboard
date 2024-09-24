@@ -47,14 +47,11 @@ export const countFallsByPlace = (reports: Report[]): PlaceOfFallData[] => {
 		people: count,
 	}))
 }
-
 export const getPlaceOfFallData = (reports: Report[]): PlaceOfFallData[] => {
 	// Create a map to count occurrences of each place
 	const placeCounts = reports.reduce((acc, report) => {
-		const place = report.accident_place.split(":")[0] // Extract "Inomhus" or "Utomhus" part
-		if (place === "Inomhus" || place === "Utomhus") {
-			acc[place] = (acc[place] || 0) + 1
-		}
+		const place = report.was_fall_inside ? "Inomhus" : "Utomhus" // Use was_fall_inside
+		acc[place] = (acc[place] || 0) + 1 // Increment the count for the respective place
 		return acc
 	}, {} as Record<string, number>)
 

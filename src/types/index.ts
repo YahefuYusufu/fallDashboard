@@ -6,9 +6,10 @@ export interface Report {
 	accident_date: string // In ISO format or standard date string
 	accident_time: string
 	accident_place: string
-	witness: string // If we don't know the structure of witness yet
+	witness: string
 	additional_content: string
-	person_number: string // Swedish person number (format: YYYYMMDD-XXXX)
+	was_fall_inside: boolean
+	person_number: string
 	fallReason: string[]
 	userActivity: string[]
 	precedingSymptoms: string[]
