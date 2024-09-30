@@ -9,15 +9,7 @@ import {
 	Label,
 	YAxis,
 } from "recharts"
-
-export interface MonthDataPoint {
-	name: string
-	value: number
-}
-
-export interface MonthOfFallChartProps {
-	data: MonthDataPoint[]
-}
+import { MonthOfFallChartProps } from "../../types"
 
 const MonthOfFallChart: React.FC<MonthOfFallChartProps> = ({ data }) => {
 	const [selectedMonth, setSelectedMonth] = useState<string | null>(null)
