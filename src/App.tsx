@@ -1,14 +1,12 @@
 import { useEffect, useState } from "react"
 import { Route, Routes, useLocation } from "react-router-dom"
-import Loader from "./components/common"
 
-import Dashboard from "./pages/Dashboard"
+import { Dashboard, Analysis, Calendar, Notification, Settings } from "./pages"
 import DefaultLayout from "./layout/DefaultLayout"
+
+import Loader from "./components/common"
 import PageTitle from "./components/PageTitle"
-import Calendar from "./pages/Calendar"
-import Analysis from "./pages/Analysis"
-import Notification from "./pages/Notification"
-import Settings from "./pages/Settings"
+
 import { DateProvider } from "./context/DateContext"
 import { ReportProvider } from "./context/ReportContext"
 
