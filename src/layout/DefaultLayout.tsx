@@ -1,7 +1,7 @@
 import React, { useState, ReactNode } from "react"
-import Header from "../components/header/Header"
-import Sidebar from "../components/sidebar/Sidebar"
+
 import { useDateContext } from "../context/DateContext"
+import { Header, Sidebar } from "../components"
 
 const DefaultLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
 	const [sidebarOpen, setSidebarOpen] = useState<boolean>(false)
