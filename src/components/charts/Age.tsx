@@ -48,6 +48,9 @@ const Age: React.FC<AgeDataProps> = ({ data = [] }) => {
 		return () => window.removeEventListener("resize", handleResize)
 	}, [])
 
+	if (!data || data.length === 0) {
+		return <div>No data available</div>
+	}
 	return (
 		<div className="flex flex-col items-center space-x-2">
 			<div className="w-full h-[236px] sm:w-[200px] md:w-[250px] md:h-[180px] lg:w-[300px] lg:h-[180px]">
