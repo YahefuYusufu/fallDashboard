@@ -1,0 +1,6 @@
+export { default as MonthOfFall } from "./charts/MonthOfFall"
+export { default as SectionHeader } from "./charts/SectionHeader"
+export { default as ReasonOfFall } from "./charts/ReasonOfFall"
+export { default as PlaceOfFall } from "./charts/PlaceOfFall"
+export { default as Gender } from "./charts/Gender"
+export { default as Age } from "./charts/Age"

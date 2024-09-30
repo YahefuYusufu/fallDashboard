@@ -10,6 +10,7 @@ import Analysis from "./pages/Analysis"
 import Notification from "./pages/Notification"
 import Settings from "./pages/Settings"
 import { DateProvider } from "./context/DateContext"
+import { ReportProvider } from "./context/ReportContext"
 
 function App() {
 	const [loading, setLoading] = useState<boolean>(true)
@@ -26,57 +27,59 @@ function App() {
 	return loading ? (
 		<Loader />
 	) : (
-		<DateProvider>
-			<DefaultLayout>
-				<Routes>
-					<Route
-						index
-						element={
-							<>
-								<PageTitle title="Dashboard" />
-								<Dashboard />
-							</>
-						}
-					/>
-					<Route
-						path="/calendar"
-						element={
-							<>
-								<PageTitle title="Calendar" />
-								<Calendar />
-							</>
-						}
-					/>
-					<Route
-						path="/analysis"
-						element={
-							<>
-								<PageTitle title="Analysis " />
-								<Analysis />
-							</>
-						}
-					/>
-					<Route
-						path="notification"
-						element={
-							<>
-								<PageTitle title="Notification" />
-								<Notification />
-							</>
-						}
-					/>
-					<Route
-						path="settings"
-						element={
-							<>
-								<PageTitle title="Settings" />
-								<Settings />
-							</>
-						}
-					/>
-				</Routes>
-			</DefaultLayout>
-		</DateProvider>
+		<ReportProvider>
+			<DateProvider>
+				<DefaultLayout>
+					<Routes>
+						<Route
+							index
+							element={
+								<>
+									<PageTitle title="Dashboard" />
+									<Dashboard />
+								</>
+							}
+						/>
+						<Route
+							path="/calendar"
+							element={
+								<>
+									<PageTitle title="Calendar" />
+									<Calendar />
+								</>
+							}
+						/>
+						<Route
+							path="/analysis"
+							element={
+								<>
+									<PageTitle title="Analysis " />
+									<Analysis />
+								</>
+							}
+						/>
+						<Route
+							path="notification"
+							element={
+								<>
+									<PageTitle title="Notification" />
+									<Notification />
+								</>
+							}
+						/>
+						<Route
+							path="settings"
+							element={
+								<>
+									<PageTitle title="Settings" />
+									<Settings />
+								</>
+							}
+						/>
+					</Routes>
+				</DefaultLayout>
+			</DateProvider>
+		</ReportProvider>
 	)
 }
 

@@ -10,15 +10,7 @@ import {
 	DotProps,
 } from "recharts"
 import { useNumberAnimation } from "../../hooks/useNumberAnimation"
-
-export interface ReasonOfFallData {
-	reason: string
-	value: number
-}
-
-export interface ReasonOfFallProps {
-	data: ReasonOfFallData[]
-}
+import { ReasonOfFallData, ReasonOfFallProps } from "../../types"
 
 interface CustomTooltipProps extends TooltipProps<number, string> {
 	active?: boolean

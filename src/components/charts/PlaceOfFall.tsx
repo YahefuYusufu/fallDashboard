@@ -10,15 +10,7 @@ import {
 	DotProps,
 } from "recharts"
 import { useNumberAnimation } from "../../hooks/useNumberAnimation"
-
-export interface PlaceOfFallData {
-	place: string
-	people: number
-}
-
-export interface PlaceOfFallProps {
-	data: PlaceOfFallData[]
-}
+import { PlaceOfFallData, PlaceOfFallProps } from "../../types"
 
 interface CustomTooltipProps extends TooltipProps<number, string> {
 	active?: boolean

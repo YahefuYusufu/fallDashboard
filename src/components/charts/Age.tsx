@@ -8,15 +8,7 @@ import {
 	ResponsiveContainer,
 	DotProps,
 } from "recharts"
-
-export interface AgeData {
-	ageGroup: string
-	falls: number
-}
-
-export interface AgeDataProps {
-	data: AgeData[]
-}
+import { AgeDataProps } from "../../types"
 
 const RoundedBar = (props: DotProps) => {
 	const { x, y, width, height, fill } = props
