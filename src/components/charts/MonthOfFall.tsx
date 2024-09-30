@@ -34,7 +34,7 @@ const MonthOfFallChart: React.FC<MonthOfFallChartProps> = ({ data }) => {
 			<text
 				x={x}
 				y={y + 40}
-				fill={isSelected ? "#4E4E4E" : "#A3ABBD"}
+				fill={isSelected ? "#3C50E0" : "#AEB7C0"}
 				fontWeight={isSelected ? "bold" : "normal"}
 				textAnchor="middle"
 				style={{ cursor: "pointer" }}
@@ -74,7 +74,7 @@ const MonthOfFallChart: React.FC<MonthOfFallChartProps> = ({ data }) => {
 						<Line
 							type="natural"
 							dataKey="value"
-							stroke="#563BFF"
+							stroke="#3C50E0"
 							strokeWidth={5}
 							dot={false}
 							animationDuration={2000}

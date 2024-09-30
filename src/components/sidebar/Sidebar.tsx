@@ -11,7 +11,7 @@ import {
 } from "@heroicons/react/24/solid"
 import { Link } from "react-router-dom"
 import Logo from "../../assets/hestia_logo.png"
-import User from "../../images/user/user-01.png"
+import User from "../../assets/user/user-01.png"
 
 interface SidebarProps {
 	sidebarOpen: boolean
