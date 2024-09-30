@@ -9,17 +9,17 @@ import ReasonOfFall, {
 import PlaceOfFall, { PlaceOfFallData } from "../components/charts/PlaceOfFall"
 import Gender from "../components/charts/Gender"
 import Age, { AgeData } from "../components/charts/Age"
-import { fetchReports } from "../data/fetchReports" // fetch function
+import { fetchReportsJson } from "../data/fetchReports"
 import { GenderData, Report } from "../types"
 import { getPlaceOfFallData } from "../utils/fallAlgorithms"
 import { filterReportsByDate } from "../utils/dateUtils"
 import { useDateContext } from "../context/DateContext"
 import { getGenderAndAgeFromPersonNumber } from "../utils/getGenderAndAgeFromPersonNumber"
 import { calculateAgeDistribution } from "../utils/AgeUtils"
-import { getAllMonths, getMonthFromDate } from "../utils/getMonthFromDate" // Import the utility function
+import { getAllMonths, getMonthFromDate } from "../utils/getMonthFromDate"
 
 const Dashboard: React.FC = () => {
-	const { startDate, endDate } = useDateContext() // Date context
+	const { startDate, endDate } = useDateContext()
 	const [monthOfFallData, setMonthOfFallData] = useState<MonthDataPoint[]>([])
 	const [reasonOfFallData, setReasonOfFallData] = useState<ReasonOfFallData[]>(
 		[]
@@ -36,7 +36,7 @@ const Dashboard: React.FC = () => {
 
 			try {
 				// Fetch real reports from API
-				const reports: Report[] = await fetchReports()
+				const reports: Report[] = await fetchReportsJson()
 				console.log("Fetched Reports:", reports)
 
 				// Filter reports by selected dates (if any)
