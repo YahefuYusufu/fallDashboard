@@ -1,5 +1,5 @@
 // src/utils/fetchDashboardData.ts
-import { fetchReportsJson } from "../data/fetchReports"
+import { fetchReports } from "../data/fetchReports"
 import { Report } from "../types"
 import { getPlaceOfFallData } from "../utils/fallAlgorithms"
 import { filterReportsByDate } from "../utils/dateUtils"
@@ -11,7 +11,7 @@ export const fetchDashboardData = async (
 	endDate: Date | null,
 	setReports: (reports: Report[]) => void
 ) => {
-	const fetchedReports: Report[] = await fetchReportsJson()
+	const fetchedReports: Report[] = await fetchReports()
 	console.log("Fetched Reports:", fetchedReports)
 	setReports(fetchedReports)
 

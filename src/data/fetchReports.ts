@@ -25,7 +25,7 @@ export const fetchReportsJson = async (): Promise<Report[]> => {
 export const fetchReports = async (): Promise<Report[]> => {
 	try {
 		// Fetch data from the endpoint
-		const response = await fetch("http://192.168.1.168:3000/api/reports", {
+		const response = await fetch("http://192.168.0.125:3000/api/reports", {
 			method: "GET",
 			headers: {
 				"Content-Type": "application/json",
