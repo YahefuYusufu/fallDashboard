@@ -146,7 +146,7 @@ const PlaceOfFall: React.FC<PlaceOfFallProps> = ({ data = [] }) => {
 
 			<div className="flex flex-row justify-center space-x-8 sm:space-x-16 w-full mt-8 sm:mt-10">
 				<div className="relative flex flex-col items-center">
-					<span className="mt-7">Inomhus</span>
+					<span className="mt-7">Utomhus</span>
 					<div
 						className="w-7 h-7 rounded-lg mt-2"
 						style={{
@@ -158,7 +158,7 @@ const PlaceOfFall: React.FC<PlaceOfFallProps> = ({ data = [] }) => {
 					</div>
 				</div>
 				<div className="relative flex flex-col items-center">
-					<span className="mt-7">Utomhus</span>
+					<span className="mt-7">Inomhus</span>
 					<div
 						className="w-7 h-7 rounded-lg mt-2"
 						style={{
