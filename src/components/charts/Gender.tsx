@@ -80,7 +80,7 @@ const Gender: React.FC<GenderChartProps> = ({ data }) => {
 	}
 
 	const maxValue = Math.max(...data.map((d) => d.value))
-	const colors = ["#FF8F6B", "#5B93FF", "#4CAF50"]
+	const colors = ["#FF8F6B", "#5B93FF"]
 	const minLineWidth = 30
 	const maxLineWidth = 200
 
