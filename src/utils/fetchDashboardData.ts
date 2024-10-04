@@ -1,10 +1,11 @@
 // src/utils/fetchDashboardData.ts
 import { fetchReports } from "../data/fetchReports"
-import { Report } from "../types"
+import { GenderData, Report } from "../types"
 import { getPlaceOfFallData } from "../utils/fallAlgorithms"
 import { filterReportsByDate } from "../utils/dateUtils"
 import { calculateAgeDistribution } from "../utils/AgeUtils"
 import { getAllMonths, getMonthFromDate } from "../utils/getMonthFromDate"
+import { getGenderAndAgeFromPersonNumber } from "./getGenderAndAgeFromPersonNumber"
 
 export const fetchDashboardData = async (
 	startDate: Date | null,
@@ -24,8 +25,41 @@ export const fetchDashboardData = async (
 	const reasonOfFallData = getReasonOfFallData(filteredReports)
 	const placeOfFallsData = getPlaceOfFallData(filteredReports)
 	const ageData = calculateAgeDistribution(filteredReports)
+	const genderData = getGenderData(filteredReports)
 
-	return { monthOfFallData, reasonOfFallData, placeOfFallsData, ageData }
+	return {
+		monthOfFallData,
+		reasonOfFallData,
+		placeOfFallsData,
+		ageData,
+		genderData,
+	}
+}
+
+const getGenderData = (reports: Report[]): GenderData[] => {
+	const genderCounts = reports.reduce(
+		(acc, report) => {
+			try {
+				const { gender } = getGenderAndAgeFromPersonNumber(report.person_number)
+				if (gender === "male" || gender === "female") {
+					acc[gender] += 1
+				}
+			} catch (error) {
+				console.error(
+					`Error processing person number: ${report.person_number}`,
+					error
+				)
+			}
+			return acc
+		},
+		{ male: 0, female: 0 } as Record<"male" | "female", number>
+	)
+
+	const totalCount = genderCounts.male + genderCounts.female
+	return [
+		{ gender: "male", value: (genderCounts.male / totalCount) * 100 },
+		{ gender: "female", value: (genderCounts.female / totalCount) * 100 },
+	]
 }
 
 const getMonthOfFallData = (reports: Report[]) => {

@@ -1,4 +1,3 @@
-// src/hooks/useDashboardData.ts
 import { useEffect, useState } from "react"
 import { fetchReportsJson } from "../data/fetchReports"
 import {
@@ -7,11 +6,13 @@ import {
 	PlaceOfFallData,
 	ReasonOfFallData,
 	Report,
+	GenderData,
 } from "../types"
 import { getPlaceOfFallData } from "../utils/fallAlgorithms"
 import { filterReportsByDate } from "../utils/dateUtils"
 import { calculateAgeDistribution } from "../utils/AgeUtils"
 import { getAllMonths, getMonthFromDate } from "../utils/getMonthFromDate"
+import { getGenderAndAgeFromPersonNumber } from "../utils/getGenderAndAgeFromPersonNumber"
 
 const useDashboardData = (
 	startDate: Date | null,
@@ -24,6 +25,7 @@ const useDashboardData = (
 	)
 	const [placeOfFallsData, setPlaceOfFallData] = useState<PlaceOfFallData[]>([])
 	const [ageData, setAgeData] = useState<AgeData[]>([])
+	const [genderData, setGenderData] = useState<GenderData[]>([])
 	const [loading, setLoading] = useState<boolean>(false)
 
 	useEffect(() => {
@@ -45,6 +47,7 @@ const useDashboardData = (
 					setReasonOfFallData([])
 					setPlaceOfFallData([])
 					setAgeData([])
+					setGenderData([])
 					return
 				}
 
@@ -88,6 +91,35 @@ const useDashboardData = (
 				// Age distribution
 				const ageDistribution = calculateAgeDistribution(filteredReports)
 				setAgeData(ageDistribution)
+
+				// Gender distribution
+				const genderCounts = filteredReports.reduce(
+					(acc, report) => {
+						try {
+							const { gender } = getGenderAndAgeFromPersonNumber(
+								report.person_number
+							)
+							if (gender === "male" || gender === "female") {
+								acc[gender] += 1
+							}
+						} catch (error) {
+							console.error(
+								`Error processing person number: ${report.person_number}`,
+								error
+							)
+						}
+						return acc
+					},
+					{ male: 0, female: 0 } as Record<"male" | "female", number>
+				)
+
+				const totalCount = genderCounts.male + genderCounts.female
+				const genderDataArray: GenderData[] = [
+					{ gender: "male", value: (genderCounts.male / totalCount) * 100 },
+					{ gender: "female", value: (genderCounts.female / totalCount) * 100 },
+				]
+
+				setGenderData(genderDataArray)
 			} catch (error) {
 				console.error("Error loading reports:", error)
 			} finally {
@@ -103,6 +135,7 @@ const useDashboardData = (
 		reasonOfFallData,
 		placeOfFallsData,
 		ageData,
+		genderData,
 		loading,
 	}
 }
