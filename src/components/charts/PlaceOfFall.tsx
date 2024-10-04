@@ -56,7 +56,7 @@ const AnimatedValue = ({ value }: { value: number }) => {
 
 const AnimatedPercentage = ({ value }: { value: number }) => {
 	const animatedValue = useNumberAnimation(value)
-	return <span>{animatedValue.toFixed(1)}%</span>
+	return <span>{animatedValue.toFixed(0)} %</span>
 }
 
 const PlaceOfFall: React.FC<PlaceOfFallProps> = ({ data = [] }) => {
@@ -75,10 +75,12 @@ const PlaceOfFall: React.FC<PlaceOfFallProps> = ({ data = [] }) => {
 	const outsideData = data.find((item) => item.place === "Utomhus")
 
 	const insidePercentage =
-		totalPeople > 0 && insideData ? (insideData.people / totalPeople) * 100 : 0
+		totalPeople > 0 && insideData
+			? Math.round((insideData.people / totalPeople) * 100)
+			: 0
 	const outsidePercentage =
 		totalPeople > 0 && outsideData
-			? (outsideData.people / totalPeople) * 100
+			? Math.round((outsideData.people / totalPeople) * 100)
 			: 0
 
 	return (
