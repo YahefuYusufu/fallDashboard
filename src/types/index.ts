@@ -1,3 +1,5 @@
+import { TooltipProps } from "recharts"
+
 // types/fallTypes.ts
 export * from "./reportTypes"
 export interface MonthlyFallCount {
@@ -46,4 +48,13 @@ export interface AgeData {
 }
 export interface AgeDataProps {
 	data: AgeData[]
+}
+
+export interface CustomTooltipProps extends TooltipProps<number, string> {
+	active?: boolean
+	payload?: Array<{
+		value: number
+		payload: PlaceOfFallData
+	}>
+	label?: string
 }

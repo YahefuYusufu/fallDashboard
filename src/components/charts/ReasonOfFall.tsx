@@ -6,20 +6,10 @@ import {
 	Tooltip,
 	XAxis,
 	ResponsiveContainer,
-	TooltipProps,
 	DotProps,
 } from "recharts"
 import { useNumberAnimation } from "../../hooks/useNumberAnimation"
-import { ReasonOfFallData, ReasonOfFallProps } from "../../types"
-
-interface CustomTooltipProps extends TooltipProps<number, string> {
-	active?: boolean
-	payload?: Array<{
-		value: number
-		payload: ReasonOfFallData
-	}>
-	label?: string
-}
+import { CustomTooltipProps, ReasonOfFallProps } from "../../types"
 
 const CustomTooltip: React.FC<CustomTooltipProps> = ({ active, payload }) => {
 	if (active && payload && payload.length) {

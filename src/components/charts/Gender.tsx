@@ -6,23 +6,13 @@ import {
 	Tooltip,
 	XAxis,
 	ResponsiveContainer,
-	TooltipProps,
 	DotProps,
 } from "recharts"
 import { useState, useEffect } from "react"
-import { GenderData } from "../../types"
+import { CustomTooltipProps, GenderData } from "../../types"
 
 export interface GenderChartProps {
 	data: GenderData[]
-}
-
-interface CustomTooltipProps extends TooltipProps<number, string> {
-	active?: boolean
-	payload?: Array<{
-		value: number
-		payload: GenderData
-	}>
-	label?: string
 }
 
 const CustomTooltip: React.FC<CustomTooltipProps> = ({ active, payload }) => {
