@@ -154,7 +154,7 @@ const PlaceOfFall: React.FC<PlaceOfFallProps> = ({ data = [] }) => {
 						}}
 					/>
 					<div className="text-center text-xs mt-3">
-						<AnimatedPercentage value={insidePercentage} />
+						<AnimatedPercentage value={outsidePercentage} />
 					</div>
 				</div>
 				<div className="relative flex flex-col items-center">
@@ -166,7 +166,7 @@ const PlaceOfFall: React.FC<PlaceOfFallProps> = ({ data = [] }) => {
 						}}
 					/>
 					<div className="text-center text-xs mt-3">
-						<AnimatedPercentage value={outsidePercentage} />
+						<AnimatedPercentage value={insidePercentage} />
 					</div>
 				</div>
 			</div>
