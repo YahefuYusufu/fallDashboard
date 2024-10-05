@@ -54,9 +54,6 @@ const MonthOfFallChart: React.FC<MonthOfFallChartProps> = ({ data }) => {
 	return (
 		<>
 			<style>{`.custom-li::marker { color: blue; }`}</style>
-			<div className="flex justify-between items-center">
-				<li className="text-xl font-bold ml-auto custom-li">Current Period</li>
-			</div>
 
 			<div className="w-full" style={{ height: 300 }}>
 				<ResponsiveContainer width="100%" height="100%">
@@ -90,7 +87,7 @@ const MonthOfFallChart: React.FC<MonthOfFallChartProps> = ({ data }) => {
 								y={selectedDataPoint.value}
 								isFront={true}>
 								<Label
-									value={`Value: ${selectedDataPoint.value}`}
+									value={`Antal: ${selectedDataPoint.value}`}
 									position="top"
 									offset={10}
 									fill="#333333"

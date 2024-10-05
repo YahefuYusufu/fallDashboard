@@ -1,13 +1,6 @@
 // src/screens/Dashboard.tsx
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 
-import { fetchDashboardData } from "../utils/fetchDashboardData"
-import {
-	AgeData,
-	MonthDataPoint,
-	PlaceOfFallData,
-	ReasonOfFallData,
-} from "../types"
 import {
 	Age,
 	Gender,
@@ -17,38 +10,21 @@ import {
 	MonthOfFall,
 } from "../components"
 import { useDateContext } from "../context/DateContext"
-import { useReportContext } from "../context/ReportContext"
+import useDashboardData from "../utils/useDashboardData"
+import { Report } from "../types"
 
 const Dashboard: React.FC = () => {
 	const { startDate, endDate } = useDateContext()
-	const { reports, setReports } = useReportContext()
-	const [monthOfFallData, setMonthOfFallData] = useState<MonthDataPoint[]>([])
-	const [reasonOfFallData, setReasonOfFallData] = useState<ReasonOfFallData[]>(
-		[]
-	)
-	const [placeOfFallsData, setPlaceOfFallData] = useState<PlaceOfFallData[]>([])
-	const [ageData, setAgeData] = useState<AgeData[]>([])
-	const [loading, setLoading] = useState<boolean>(false)
+	const [, setReports] = useState<Report[]>([])
 
-	useEffect(() => {
-		const loadReports = async () => {
-			setLoading(true)
-
-			try {
-				const data = await fetchDashboardData(startDate, endDate, setReports)
-				setMonthOfFallData(data.monthOfFallData)
-				setReasonOfFallData(data.reasonOfFallData)
-				setPlaceOfFallData(data.placeOfFallsData)
-				setAgeData(data.ageData)
-			} catch (error) {
-				console.error("Error loading dashboard data:", error)
-			} finally {
-				setLoading(false)
-			}
-		}
-
-		loadReports()
-	}, [startDate, endDate, setReports])
+	const {
+		monthOfFallData,
+		reasonOfFallData,
+		placeOfFallsData,
+		ageData,
+		genderData,
+		loading,
+	} = useDashboardData(startDate, endDate, setReports)
 
 	return (
 		<div className="h-screen w-full p-4 dark:bg-boxdark rounded-lg">
@@ -85,7 +61,7 @@ const Dashboard: React.FC = () => {
 						<h2 className="text-xl font-semibold text-black dark:text-bodydark mb-2">
 							Gender
 						</h2>
-						<Gender data={reports} />
+						<Gender data={genderData} />
 						{/* Pass the full reports to the Gender chart */}
 					</div>
 

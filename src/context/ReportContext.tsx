@@ -19,35 +19,31 @@ import {
 	GenderData,
 	AgeData,
 	Report,
-} from "../types" // Import the Report type
+} from "../types"
 
 interface ReportContextType {
-	reports: Report[] // An array of Report objects
-	monthlyFallCount: MonthlyFallCount // A single MonthlyFallCount object
-	reasonFallCount: ReasonFallCount // Reason fall count data
-	placeOfFallData: PlaceOfFallData[] // Place of fall data
-	genderData: GenderData[] // Gender data
-	ageData: AgeData[] // Age data
-	setReports: (reports: Report[]) => void // Function to set reports
+	reports: Report[]
+	monthlyFallCount: MonthlyFallCount
+	reasonFallCount: ReasonFallCount
+	placeOfFallData: PlaceOfFallData[]
+	genderData: GenderData[]
+	ageData: AgeData[]
+	setReports: (reports: Report[]) => void
 }
 
-// Create the context
 const ReportContext = createContext<ReportContextType | undefined>(undefined)
 
-// Create a provider component
 export const ReportProvider = ({ children }: { children: ReactNode }) => {
-	const [reports, setReports] = useState<Report[]>([]) // Initialize reports with the Report[] type
-	const [monthlyFallCount, setMonthlyFallCount] = useState<MonthlyFallCount>({}) // Monthly fall count data
-	const [reasonFallCount, setReasonFallCount] = useState<ReasonFallCount>({}) // Reason fall count data
-	const [placeOfFallData, setPlaceOfFallData] = useState<PlaceOfFallData[]>([]) // Place of fall data
-	const [genderData, setGenderData] = useState<GenderData[]>([]) // Gender data
-	const [ageData, setAgeData] = useState<AgeData[]>([]) // Age data
+	const [reports, setReports] = useState<Report[]>([])
+	const [monthlyFallCount, setMonthlyFallCount] = useState<MonthlyFallCount>({})
+	const [reasonFallCount, setReasonFallCount] = useState<ReasonFallCount>({})
+	const [placeOfFallData, setPlaceOfFallData] = useState<PlaceOfFallData[]>([])
+	const [genderData, setGenderData] = useState<GenderData[]>([])
+	const [ageData, setAgeData] = useState<AgeData[]>([])
 
-	// Update all calculated data whenever the reports change
 	useEffect(() => {
 		if (reports.length === 0) {
-			// Reset all counts if there are no reports
-			setMonthlyFallCount({}) // Reset to an empty object
+			setMonthlyFallCount({})
 			setReasonFallCount({})
 			setPlaceOfFallData([])
 			setGenderData([])
@@ -55,19 +51,15 @@ export const ReportProvider = ({ children }: { children: ReactNode }) => {
 			return
 		}
 
-		// Calculate Monthly Fall Count
 		const newMonthlyFallCount = countFallsByMonth(reports)
 		setMonthlyFallCount(newMonthlyFallCount)
 
-		// Reason Fall Count Calculation
 		const newReasonFallCount = countFallsByReason(reports)
 		setReasonFallCount(newReasonFallCount)
 
-		// Place of Fall Calculation
 		const newPlaceOfFallData = countFallsByPlace(reports)
 		setPlaceOfFallData(newPlaceOfFallData)
 
-		// Gender Distribution Calculation
 		const genderCount = reports.reduce(
 			(acc, report) => {
 				const { person_number } = report
@@ -81,23 +73,19 @@ export const ReportProvider = ({ children }: { children: ReactNode }) => {
 					acc.male += 1
 				} else if (gender === "female") {
 					acc.female += 1
-				} else {
-					acc.other += 1
 				}
 				return acc
 			},
-			{ male: 0, female: 0, other: 0 }
+			{ male: 0, female: 0 }
 		)
 
-		const totalCount = genderCount.male + genderCount.female + genderCount.other
+		const totalCount = genderCount.male + genderCount.female
 		const newGenderData: GenderData[] = [
 			{ gender: "male", value: (genderCount.male / totalCount) * 100 },
 			{ gender: "female", value: (genderCount.female / totalCount) * 100 },
-			{ gender: "other", value: (genderCount.other / totalCount) * 100 },
 		]
 		setGenderData(newGenderData)
 
-		// Age Distribution Calculation
 		const newAgeData = calculateAgeDistribution(reports)
 		setAgeData(newAgeData)
 	}, [reports])
@@ -118,7 +106,6 @@ export const ReportProvider = ({ children }: { children: ReactNode }) => {
 	)
 }
 
-// Custom hook to use the ReportContext
 export const useReportContext = () => {
 	const context = useContext(ReportContext)
 	if (!context) {

@@ -6,20 +6,10 @@ import {
 	Tooltip,
 	XAxis,
 	ResponsiveContainer,
-	TooltipProps,
 	DotProps,
 } from "recharts"
 import { useNumberAnimation } from "../../hooks/useNumberAnimation"
-import { PlaceOfFallData, PlaceOfFallProps } from "../../types"
-
-interface CustomTooltipProps extends TooltipProps<number, string> {
-	active?: boolean
-	payload?: Array<{
-		value: number
-		payload: PlaceOfFallData
-	}>
-	label?: string
-}
+import { CustomTooltipProps, PlaceOfFallProps } from "../../types"
 
 const CustomTooltip: React.FC<CustomTooltipProps> = ({ active, payload }) => {
 	if (active && payload && payload.length) {
@@ -56,7 +46,7 @@ const AnimatedValue = ({ value }: { value: number }) => {
 
 const AnimatedPercentage = ({ value }: { value: number }) => {
 	const animatedValue = useNumberAnimation(value)
-	return <span>{animatedValue.toFixed(1)}%</span>
+	return <span>{animatedValue.toFixed(0)} %</span>
 }
 
 const PlaceOfFall: React.FC<PlaceOfFallProps> = ({ data = [] }) => {
@@ -75,10 +65,12 @@ const PlaceOfFall: React.FC<PlaceOfFallProps> = ({ data = [] }) => {
 	const outsideData = data.find((item) => item.place === "Utomhus")
 
 	const insidePercentage =
-		totalPeople > 0 && insideData ? (insideData.people / totalPeople) * 100 : 0
+		totalPeople > 0 && insideData
+			? Math.round((insideData.people / totalPeople) * 100)
+			: 0
 	const outsidePercentage =
 		totalPeople > 0 && outsideData
-			? (outsideData.people / totalPeople) * 100
+			? Math.round((outsideData.people / totalPeople) * 100)
 			: 0
 
 	return (
@@ -146,7 +138,7 @@ const PlaceOfFall: React.FC<PlaceOfFallProps> = ({ data = [] }) => {
 
 			<div className="flex flex-row justify-center space-x-8 sm:space-x-16 w-full mt-8 sm:mt-10">
 				<div className="relative flex flex-col items-center">
-					<span className="mt-7">Inomhus</span>
+					<span className="mt-7">Utomhus</span>
 					<div
 						className="w-7 h-7 rounded-lg mt-2"
 						style={{
@@ -154,11 +146,11 @@ const PlaceOfFall: React.FC<PlaceOfFallProps> = ({ data = [] }) => {
 						}}
 					/>
 					<div className="text-center text-xs mt-3">
-						<AnimatedPercentage value={insidePercentage} />
+						<AnimatedPercentage value={outsidePercentage} />
 					</div>
 				</div>
 				<div className="relative flex flex-col items-center">
-					<span className="mt-7">Utomhus</span>
+					<span className="mt-7">Inomhus</span>
 					<div
 						className="w-7 h-7 rounded-lg mt-2"
 						style={{
@@ -166,7 +158,7 @@ const PlaceOfFall: React.FC<PlaceOfFallProps> = ({ data = [] }) => {
 						}}
 					/>
 					<div className="text-center text-xs mt-3">
-						<AnimatedPercentage value={outsidePercentage} />
+						<AnimatedPercentage value={insidePercentage} />
 					</div>
 				</div>
 			</div>

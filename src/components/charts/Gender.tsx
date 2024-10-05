@@ -6,24 +6,13 @@ import {
 	Tooltip,
 	XAxis,
 	ResponsiveContainer,
-	TooltipProps,
 	DotProps,
 } from "recharts"
 import { useState, useEffect } from "react"
-import { GenderData, Report } from "../../types"
-import { getGenderAndAgeFromPersonNumber } from "../../utils/getGenderAndAgeFromPersonNumber"
+import { CustomTooltipProps, GenderData } from "../../types"
 
 export interface GenderChartProps {
-	data: Report[]
-}
-
-interface CustomTooltipProps extends TooltipProps<number, string> {
-	active?: boolean
-	payload?: Array<{
-		value: number
-		payload: GenderData
-	}>
-	label?: string
+	data: GenderData[]
 }
 
 const CustomTooltip: React.FC<CustomTooltipProps> = ({ active, payload }) => {
@@ -61,7 +50,7 @@ const useNumberAnimation = (endValue: number) => {
 
 	useEffect(() => {
 		let startTime: number
-		const duration = 2000 // Animation duration in milliseconds
+		const duration = 2000
 
 		const animate = (currentTime: number) => {
 			if (!startTime) startTime = currentTime
@@ -90,32 +79,8 @@ const Gender: React.FC<GenderChartProps> = ({ data }) => {
 		return <div>No data available</div>
 	}
 
-	// Calculate gender distribution based on person_number from Report type
-	let maleCount = 0
-	let femaleCount = 0
-
-	data.forEach((report) => {
-		const { person_number } = report
-		if (person_number) {
-			const { gender } = getGenderAndAgeFromPersonNumber(person_number)
-			if (gender === "male") {
-				maleCount++
-			} else if (gender === "female") {
-				femaleCount++
-			}
-		}
-	})
-
-	const totalCount = maleCount + femaleCount
-	if (totalCount === 0) return <div>No valid gender data</div>
-
-	const genderData: GenderData[] = [
-		{ gender: "male", value: (maleCount / totalCount) * 100 },
-		{ gender: "female", value: (femaleCount / totalCount) * 100 },
-	]
-
-	const maxValue = Math.max(...genderData.map((d) => d.value))
-	const colors = ["#FF8F6B", "#5B93FF", "#4CAF50"]
+	const maxValue = Math.max(...data.map((d) => d.value))
+	const colors = ["#FF8F6B", "#5B93FF"]
 	const minLineWidth = 30
 	const maxLineWidth = 200
 
@@ -123,7 +88,7 @@ const Gender: React.FC<GenderChartProps> = ({ data }) => {
 		<div className="flex flex-col space-y-4 mt-4">
 			<div className="w-full h-[1px]" style={{ backgroundColor: "#3E71A4" }} />
 
-			{genderData.map((item, index) => {
+			{data.map((item, index) => {
 				const lineWidth = Math.max(
 					minLineWidth,
 					(item.value / maxValue) * maxLineWidth

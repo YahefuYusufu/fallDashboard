@@ -6,20 +6,10 @@ import {
 	Tooltip,
 	XAxis,
 	ResponsiveContainer,
-	TooltipProps,
 	DotProps,
 } from "recharts"
 import { useNumberAnimation } from "../../hooks/useNumberAnimation"
-import { ReasonOfFallData, ReasonOfFallProps } from "../../types"
-
-interface CustomTooltipProps extends TooltipProps<number, string> {
-	active?: boolean
-	payload?: Array<{
-		value: number
-		payload: ReasonOfFallData
-	}>
-	label?: string
-}
+import { CustomTooltipProps, ReasonOfFallProps } from "../../types"
 
 const CustomTooltip: React.FC<CustomTooltipProps> = ({ active, payload }) => {
 	if (active && payload && payload.length) {
@@ -70,12 +60,11 @@ const ReasonOfFall: React.FC<ReasonOfFallProps> = ({ data = [] }) => {
 
 	return (
 		<div className="flex flex-col space-y-1 h-64 overflow-y-auto">
-			{/* Set fixed height and overflow */}
 			{data.map((item, index) => {
 				// Calculate the dynamic width as a percentage of the max value
-				const lineWidth = Math.max(
-					minLineWidth,
-					(item.value / maxValue) * maxLineWidth
+				const lineWidth = Math.min(
+					maxLineWidth,
+					Math.max(minLineWidth, (item.value / maxValue) * maxLineWidth)
 				)
 
 				return (
@@ -89,7 +78,7 @@ const ReasonOfFall: React.FC<ReasonOfFallProps> = ({ data = [] }) => {
 							<div
 								style={{
 									width: `${lineWidth}px`,
-									maxWidth: `${maxLineWidth}`,
+									maxWidth: `${maxLineWidth}px`, // Ensure the div doesn't exceed the maximum width
 								}}>
 								<ResponsiveContainer width="100%" height={12}>
 									<LineChart

@@ -25,8 +25,8 @@ function App() {
 	return loading ? (
 		<Loader />
 	) : (
-		<ReportProvider>
-			<DateProvider>
+		<DateProvider>
+			<ReportProvider>
 				<DefaultLayout>
 					<Routes>
 						<Route
@@ -76,8 +76,8 @@ function App() {
 						/>
 					</Routes>
 				</DefaultLayout>
-			</DateProvider>
-		</ReportProvider>
+			</ReportProvider>
+		</DateProvider>
 	)
 }
 

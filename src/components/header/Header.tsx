@@ -1,7 +1,6 @@
 import React from "react"
 import DarkModeSwitcher from "./DarkModeSwitcher"
 import CustomDatePicker from "./CustomDatePicker"
-import { MagnifyingGlassIcon } from "@heroicons/react/24/outline"
 
 interface HeaderProps {
 	sidebarOpen: boolean
@@ -54,18 +53,7 @@ const Header: React.FC<HeaderProps> = ({
 
 				<div className="hidden sm:block">
 					<form action="https://formbold.com/s/unique_form_id" method="POST">
-						<div className="relative">
-							<input
-								type="text"
-								placeholder="Type to search..."
-								className="w-full dark:bg-body text-gray-900 dark:text-gray-200 placeholder-gray-500 dark:placeholder-gray-400 pl-10 pr-4 py-2 rounded-lg shadow-sm focus:outline-none focus:ring-primary focus:ring-opacity-50 transition-all duration-500 ease-in-out transform xl:w-125"
-							/>
-							<button
-								type="submit"
-								className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-primary dark:text-bodydark2 dark:hover:text-blue-600">
-								<MagnifyingGlassIcon className="w-5 h-5" />
-							</button>
-						</div>
+						{/* Empty form */}
 					</form>
 				</div>
 

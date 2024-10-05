@@ -10,13 +10,11 @@ interface SectionHeaderProps {
 
 const SectionHeader: React.FC<SectionHeaderProps> = ({
 	title,
-	year,
 	className = "",
 }) => {
 	return (
 		<div className={`flex justify-between mb-0 ${className}`}>
 			<h2 className="text-lg font-bold text-black">{title}</h2>
-			{year && <h4 className="font-semibold">{year}</h4>}
 		</div>
 	)
 }
