@@ -6,7 +6,6 @@ import {
 	Tooltip,
 	XAxis,
 	ResponsiveContainer,
-	DotProps,
 } from "recharts"
 import { useNumberAnimation } from "../../hooks/useNumberAnimation"
 import { CustomTooltipProps, ReasonOfFallProps } from "../../types"
@@ -22,26 +21,26 @@ const CustomTooltip: React.FC<CustomTooltipProps> = ({ active, payload }) => {
 	return null
 }
 
-const CustomDot = (props: DotProps) => {
-	const { cx, cy, stroke } = props
+// const CustomDot = (props: DotProps) => {
+// 	const { cx, cy, stroke } = props
 
-	// Check if the dot is on the right side (usually the last point)
-	if (cx && cx > 50) {
-		return (
-			<rect
-				x={cx! - 6}
-				y={cy! - 6}
-				width={12}
-				height={12}
-				rx={6}
-				ry={6}
-				fill={stroke}
-				stroke="none"
-			/>
-		)
-	}
-	return null
-}
+// 	// Check if the dot is on the right side (usually the last point)
+// 	if (cx && cx > 50) {
+// 		return (
+// 			<rect
+// 				x={cx! - 6}
+// 				y={cy! - 6}
+// 				width={12}
+// 				height={12}
+// 				rx={6}
+// 				ry={6}
+// 				fill={stroke}
+// 				stroke="none"
+// 			/>
+// 		)
+// 	}
+// 	return null
+// }
 
 const AnimatedValue = ({ value }: { value: number }) => {
 	const animatedValue = useNumberAnimation(value)
@@ -91,7 +90,7 @@ const ReasonOfFall: React.FC<ReasonOfFallProps> = ({ data = [] }) => {
 											dataKey="value"
 											stroke={colors[index % colors.length]}
 											strokeWidth={12}
-											dot={<CustomDot />}
+											dot={false}
 											animationDuration={2000}
 											animationEasing="ease-in-out"
 										/>

@@ -6,7 +6,6 @@ import {
 	Tooltip,
 	XAxis,
 	ResponsiveContainer,
-	DotProps,
 } from "recharts"
 import { useState, useEffect } from "react"
 import { CustomTooltipProps, GenderData } from "../../types"
@@ -26,24 +25,24 @@ const CustomTooltip: React.FC<CustomTooltipProps> = ({ active, payload }) => {
 	return null
 }
 
-const CustomDot = (props: DotProps) => {
-	const { cx, cy, stroke } = props
-	if (typeof cx === "number" && typeof cy === "number" && cx > 50) {
-		return (
-			<rect
-				x={cx - 5}
-				y={cy - 5}
-				width={10}
-				height={10}
-				rx={3}
-				ry={3}
-				fill={stroke}
-				stroke="none"
-			/>
-		)
-	}
-	return null
-}
+// const CustomDot = (props: DotProps) => {
+// 	const { cx, cy, stroke } = props
+// 	if (typeof cx === "number" && typeof cy === "number" && cx > 50) {
+// 		return (
+// 			<rect
+// 				x={cx - 5}
+// 				y={cy - 5}
+// 				width={10}
+// 				height={10}
+// 				rx={3}
+// 				ry={3}
+// 				fill={stroke}
+// 				stroke="none"
+// 			/>
+// 		)
+// 	}
+// 	return null
+// }
 
 const useNumberAnimation = (endValue: number) => {
 	const [animatedValue, setAnimatedValue] = useState(0)
@@ -118,7 +117,7 @@ const Gender: React.FC<GenderChartProps> = ({ data }) => {
 											dataKey="value"
 											stroke={colors[index % colors.length]}
 											strokeWidth={10}
-											dot={<CustomDot />}
+											dot={false}
 											animationDuration={2000}
 											animationEasing="ease-in-out"
 										/>

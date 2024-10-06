@@ -6,7 +6,6 @@ import {
 	Tooltip,
 	XAxis,
 	ResponsiveContainer,
-	DotProps,
 } from "recharts"
 import { useNumberAnimation } from "../../hooks/useNumberAnimation"
 import { CustomTooltipProps, PlaceOfFallProps } from "../../types"
@@ -22,22 +21,22 @@ const CustomTooltip: React.FC<CustomTooltipProps> = ({ active, payload }) => {
 	return null
 }
 
-const CustomDot = (props: DotProps) => {
-	const { cx, cy, stroke } = props
+// const CustomDot = (props: DotProps) => {
+// 	const { cx, cy, stroke } = props
 
-	return (
-		<rect
-			x={cx! - 6}
-			y={cy! - 6}
-			width={12}
-			height={12}
-			rx={6}
-			ry={6}
-			fill={stroke}
-			stroke="none"
-		/>
-	)
-}
+// 	return (
+// 		<rect
+// 			x={cx! - 6}
+// 			y={cy! - 6}
+// 			width={12}
+// 			height={12}
+// 			rx={6}
+// 			ry={6}
+// 			fill={stroke}
+// 			stroke="none"
+// 		/>
+// 	)
+// }
 
 const AnimatedValue = ({ value }: { value: number }) => {
 	const animatedValue = useNumberAnimation(value)
@@ -111,7 +110,7 @@ const PlaceOfFall: React.FC<PlaceOfFallProps> = ({ data = [] }) => {
 													dataKey="people"
 													stroke={colors[index % colors.length]}
 													strokeWidth={10}
-													dot={<CustomDot />}
+													dot={false}
 													animationDuration={2000}
 													animationEasing="ease-in-out"
 												/>
