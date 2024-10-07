@@ -69,20 +69,20 @@ export const ReportProvider = ({ children }: { children: ReactNode }) => {
 
 				const { gender } = getGenderAndAgeFromPersonNumber(person_number)
 
-				if (gender === "male") {
-					acc.male += 1
-				} else if (gender === "female") {
-					acc.female += 1
+				if (gender === "man") {
+					acc.man += 1
+				} else if (gender === "kvinna") {
+					acc.kvinna += 1
 				}
 				return acc
 			},
 			{ male: 0, female: 0 }
 		)
 
-		const totalCount = genderCount.male + genderCount.female
+		const totalCount = genderCount.man + genderCount.kvinna
 		const newGenderData: GenderData[] = [
-			{ gender: "male", value: (genderCount.male / totalCount) * 100 },
-			{ gender: "female", value: (genderCount.female / totalCount) * 100 },
+			{ gender: "man", value: (genderCount.man / totalCount) * 100 },
+			{ gender: "kvinna", value: (genderCount.kvinna / totalCount) * 100 },
 		]
 		setGenderData(newGenderData)
 
