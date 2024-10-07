@@ -21,7 +21,7 @@ Welcome to the frontend repository of our Mobile Report App! This project serves
   - **Location Insights**: Provides geographical data insights using maps and charts.
   - **User Queries**: Allows users to query and filter data based on custom parameters.
   - **Visual Data Representation**: Utilizes charts and graphs for clear and concise data presentation.
-  - **Animated Chart Line: Smooth and engaging animations added to the chart lines for an enhanced visual experience. The dynamic updates make the data analysis more interactive and visually appealing.
+  - **Animated Chart Line**: Smooth and engaging animations added to the chart lines for an enhanced visual experience. The dynamic updates make the data analysis more interactive and visually appealing.
 
 ## Integration with Backend
 
