@@ -79,7 +79,7 @@ const Sidebar: React.FC<SidebarProps> = ({
 		activeIndex === index || hoveredIndex === index
 
 	const iconClassName =
-		"w-5 h-5 transition-all duration-300 ease-in-out transform  group-hover:text-white"
+		"w-5 h-5 transition-all duration-300 ease-in-out transform group-hover:text-white"
 
 	return (
 		<aside
@@ -131,7 +131,7 @@ const Sidebar: React.FC<SidebarProps> = ({
 							<div className="relative flex items-center w-full pl-4 rounded-lg">
 								{/* Left blue line */}
 								<div
-									className={`absolute -left-5 top-1/2 transform -translate-y-1/2 w-1.5 h-8 bg-customPurple rounded-lg transition-all duration-300 ease-in-out ${
+									className={`absolute -left-5 top-1/2 transform -translate-y-1/2 w-1.5 h-8 bg-blue-600 rounded-lg transition-all duration-300 ease-in-out ${
 										isActive(index) ? "opacity-100" : "opacity-0"
 									}`}
 								/>
@@ -139,12 +139,12 @@ const Sidebar: React.FC<SidebarProps> = ({
 								<Link to={to} className="flex items-center w-full">
 									<div
 										className={`w-9 h-9 flex items-center justify-center rounded-xl transition-all duration-300 ease-in-out ${
-											isActive(index) ? "bg-customPurple" : "bg-transparent"
-										}`}>
+											isActive(index) ? "bg-blue-600" : "bg-transparent"
+										} group-hover:bg-customPurple`}>
 										<Icon
 											className={`w-5 h-5 transform transition-all duration-300 ease-in-out group-hover:scale-125 ${
 												isActive(index) ? "text-white" : "text-gray-600"
-											}`}
+											} group-hover:text-white`}
 										/>
 									</div>
 								</Link>
