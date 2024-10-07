@@ -99,7 +99,7 @@ const useDashboardData = (
 							const { gender } = getGenderAndAgeFromPersonNumber(
 								report.person_number
 							)
-							if (gender === "male" || gender === "female") {
+							if (gender === "man" || gender === "kvinna") {
 								acc[gender] += 1
 							}
 						} catch (error) {
@@ -110,13 +110,13 @@ const useDashboardData = (
 						}
 						return acc
 					},
-					{ male: 0, female: 0 } as Record<"male" | "female", number>
+					{ man: 0, kvinna: 0 } as Record<"man" | "kvinna", number>
 				)
 
-				const totalCount = genderCounts.male + genderCounts.female
+				const totalCount = genderCounts.man + genderCounts.kvinna
 				const genderDataArray: GenderData[] = [
-					{ gender: "male", value: (genderCounts.male / totalCount) * 100 },
-					{ gender: "female", value: (genderCounts.female / totalCount) * 100 },
+					{ gender: "man", value: (genderCounts.man / totalCount) * 100 },
+					{ gender: "kvinna", value: (genderCounts.kvinna / totalCount) * 100 },
 				]
 
 				setGenderData(genderDataArray)

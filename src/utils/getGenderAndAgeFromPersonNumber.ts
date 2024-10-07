@@ -41,7 +41,7 @@ export const getGenderAndAgeFromPersonNumber = (personNumber: string) => {
 
 	// Determine gender based on the third digit of the identifier part (even: female, odd: male)
 	const genderDigit = parseInt(identifierPart.substring(2, 3), 10) // third digit in identifier part
-	const gender = genderDigit % 2 === 0 ? "female" : "male"
+	const gender = genderDigit % 2 === 0 ? "kvinna" : "man"
 
 	return { gender, age }
 }
