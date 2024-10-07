@@ -58,7 +58,7 @@ const Header: React.FC<HeaderProps> = ({
 				</div>
 
 				{/* Date Pickers */}
-				<div className="lg:flex md:flex items-center gap-4 hidden sm:hidden">
+				<div className="lg:flex md:flex sm:flex xsm:flex items-center gap-4">
 					<CustomDatePicker
 						onDateChange={(date) => setStartDate(date)}
 						placeHolder="From"
@@ -71,7 +71,7 @@ const Header: React.FC<HeaderProps> = ({
 					/>
 				</div>
 
-				<div className="flex items-center gap-2 lg:hidden">
+				<div className="flex items-center gap-2 lg:hidden md:hidden sm:hidden xsm:hidden">
 					<DarkModeSwitcher />
 				</div>
 			</div>
