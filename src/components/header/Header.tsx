@@ -61,12 +61,12 @@ const Header: React.FC<HeaderProps> = ({
 				<div className="lg:flex md:flex sm:flex xsm:flex items-center gap-4">
 					<CustomDatePicker
 						onDateChange={(date) => setStartDate(date)}
-						placeHolder="From"
+						placeHolder="Från"
 						selectedDate={startDate}
 					/>
 					<CustomDatePicker
 						onDateChange={(date) => setEndDate(date)}
-						placeHolder="To"
+						placeHolder="Till"
 						selectedDate={endDate}
 					/>
 				</div>

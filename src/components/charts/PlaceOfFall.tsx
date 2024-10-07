@@ -127,7 +127,7 @@ const PlaceOfFall: React.FC<PlaceOfFallProps> = ({ data = [] }) => {
 
 								<div className="flex flex-row items-center justify-end text-xs sm:text-sm md:text-sm space-x-1 sm:space-x-2 w-1/4">
 									<AnimatedValue value={item.people} />
-									<span className="hidden sm:inline">people</span>
+									<span className="hidden sm:inline">Personer</span>
 								</div>
 							</div>
 						</div>

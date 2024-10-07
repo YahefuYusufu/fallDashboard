@@ -38,7 +38,7 @@ export interface PlaceOfFallProps {
 	data: PlaceOfFallData[]
 }
 export interface GenderData {
-	gender: "male" | "female"
+	gender: "man" | "kvinna"
 	value: number
 }
 
